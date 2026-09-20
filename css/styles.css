@@ -117,7 +117,7 @@ button { font-family: inherit; cursor: pointer; }
   display: flex; gap: 40px;
   padding: 10px 0;
   white-space: nowrap;
-  animation: tick 90s linear infinite;
+  animation: tick 130s linear infinite;
   width: max-content;
 }
 .ticker-item { font-size: 13px; letter-spacing: 0.04em; }
@@ -676,8 +676,18 @@ body.network .hero {
 body.network .hero h1 { color: #F7F3E8; }
 body.network .hero .lede { color: #F7F3E8; }
 body.network .kicker { color: #FEE123; }
-body.network h1, body.network h2, body.network h3 { color: #111111; }
-body.network .hero h1 { color: #F7F3E8; }
+body.network h1,
+body.network h2,
+body.network h3,
+body.network .section-head h2,
+body.network .school-tile h3,
+body.network th,
+body.network td,
+body.network .section-head p {
+  color: #111111;
+}
+body.network .hero h1,
+body.network .hero .lede { color: #F7F3E8; }
 body.network .section-head p,
 body.network .school-tile p { color: #4a4538; }
 body.network .school-tile {
@@ -749,3 +759,12 @@ body.channel .more { color: #FEE123; }
 .jersey-ph { display: block; font-size: 36px; color: #FEE123; }
 .product-art small { display: block; margin-top: 8px; color: #F7F3E8; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; }
 .news-item h4, .story h3 a { color: inherit; }
+
+.story-photo-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  display: block;
+}
