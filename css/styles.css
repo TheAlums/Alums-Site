@@ -738,3 +738,14 @@ body.channel .avatar { background: #FEE123; color: #154733; }
 body.channel footer { color: #F7F3E8; border-top: 1px solid #FEE123; }
 body.channel .ad { background: #1a1a1a; color: #F7F3E8; border-color: #FEE123; }
 body.channel .more { color: #FEE123; }
+
+.footnote { margin-top: 10px; font-size: 13px; color: #c4b896; max-width: 70ch; }
+.story-photo {
+  height: 180px; border-radius: 10px; margin-bottom: 14px;
+  display: grid; place-items: center;
+  background: linear-gradient(160deg, #154733, #111);
+  color: #FEE123; letter-spacing: 0.06em; text-transform: uppercase; font-size: 13px;
+}
+.jersey-ph { display: block; font-size: 36px; color: #FEE123; }
+.product-art small { display: block; margin-top: 8px; color: #F7F3E8; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; }
+.news-item h4, .story h3 a { color: inherit; }
