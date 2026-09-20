@@ -1,0 +1,13 @@
+The Alums — locked rules
+Network: black #111111, cream #F7F3E8, gold #FEE123
+ProDucks extra: green #154733
+Fonts: Caslon Display = big titles only. Caslon Text / Source Sans elsewhere.
+Seals: img/alums-seal-cream.png, producks-seal.png, protide-seal.png — no extra zoom.
+ProDucks URL: /producks/  (trailing slash). Do not use /producks/index.html (redirects to a player).
+Ticker: 90s loop. Lines by position. Defense = snaps/tackles note + team score*. ST appended when week1.st exists.
+Defense has no PPR grade. * = that NFL club’s W/L score that week.
+CFL: Stats and roster CFL filter only.
+News: headlines open href in a new tab. Featured photo is a branded placeholder until licensed art exists.
+Shop: official-looking jersey placeholder + Fanatics link. No scraped product photos.
+Stats/player: hand sample Week 1. Player page has 2026 week table + season table + news links.
+Live Sunday: not wired yet. lastUpdated in FLOCK.meta. Next hook is a public NFL box-score feed.
