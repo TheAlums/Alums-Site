@@ -98,6 +98,35 @@
     return p.week1?.ppr || "—";
   }
 
+  function parseBox(p) {
+    const w = p.week1 || {};
+    const s = p.season || {};
+    const pass = String(w.pass || "");
+    const cmpm = pass.match(/(\d+)\s*\/\s*(\d+)/);
+    const yds = pass.match(/(\d+)\s*yds/i);
+    const td = pass.match(/(\d+)\s*TD/i);
+    const ints = pass.match(/(\d+)\s*INT/i);
+    const rush = String(w.rush || "");
+    const rm = rush.match(/(\d+)\s*[–-]\s*(\d+)/);
+    const recLine = String(w.recLine || w.note || "");
+    const recm = recLine.match(/(\d+)\s*rec/i);
+    return {
+      cmp: cmpm ? cmpm[1] : "—",
+      att: cmpm ? cmpm[2] : "—",
+      pyds: yds ? yds[1] : (s.passYds || "—"),
+      ptd: td ? td[1] : (s.passTD || "—"),
+      pint: ints ? ints[1] : (s.int || "—"),
+      ratt: rm ? rm[1] : "—",
+      ryds: rm ? rm[2] : (s.rushYds || "—"),
+      rtd: s.rushTD || "—",
+      rec: recm ? recm[1] : (s.rec || "—"),
+      recy: s.recYds || "—",
+      rectd: s.recTD || "—",
+      tack: s.tackles || "—",
+      sack: s.sacks || "—"
+    };
+  }
+
   function renderTicker() {
     const el = $("#ticker-track");
     if (!el) return;
@@ -189,18 +218,26 @@
     });
     rows = [...rows].sort((a, b) => (b.week1.ppr || 0) - (a.week1.ppr || 0));
     el.innerHTML = rows.map((p) => {
-      const line = p.week1.pass && p.week1.pass !== "—" ? p.week1.pass : (p.week1.rush || p.week1.note);
+      const b = parseBox(p);
       return `
       <tr>
         <td><a href="player.html?id=${p.id}">${p.name}</a></td>
         <td>${p.pos}</td>
-        <td>${p.league || "NFL"}</td>
         <td>${p.team}</td>
-        <td>${p.week1.result}</td>
-        <td>${line}</td>
+        <td>${p.week1.result || "—"}</td>
+        <td class="num">${b.cmp}/${b.att}</td>
+        <td class="num">${b.pyds}</td>
+        <td class="num">${b.ptd}</td>
+        <td class="num">${b.pint}</td>
+        <td class="num">${b.ratt}</td>
+        <td class="num">${b.ryds}</td>
+        <td class="num">${b.rtd}</td>
+        <td class="num">${b.rec}</td>
+        <td class="num">${b.recy}</td>
+        <td class="num">${b.rectd}</td>
+        <td class="num">${b.tack}</td>
+        <td class="num">${b.sack}</td>
         <td class="num">${pprCell(p)}</td>
-        <td class="num">${isDef(p) ? "—" : (p.fantasy?.proj ?? "—")}</td>
-        <td>${isDef(p) ? "—" : `<span class="grade ${p.fantasy?.grade || ""}">${p.fantasy?.grade || "—"}</span>`}</td>
       </tr>`;
     }).join("");
   }
@@ -255,12 +292,15 @@
     if (feature) {
       const n = FLOCK.news.find((x) => x.featured) || FLOCK.news[0];
       const href = n.href || `https://www.espn.com/search/_/q/${encodeURIComponent(n.title)}`;
+      const img = n.photo
+        ? `<a href="${href}" target="_blank" rel="noopener"><img class="story-photo-img" src="${n.photo}" alt=""></a>`
+        : `<a href="${href}" target="_blank" rel="noopener"><div class="story-photo">${n.source || "Read story"}</div></a>`;
       feature.innerHTML = `
-        <div class="story-photo">${n.photoLabel || "Week desk"}</div>
+        ${img}
         <span class="tag">${n.tag}</span>
         <h3><a href="${href}" target="_blank" rel="noopener">${n.title}</a></h3>
         <p>${n.dek}</p>
-        <p style="margin-top:16px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#8a9a91">${n.time} · ${n.source || n.author} · <a href="${href}" target="_blank" rel="noopener">Open article</a></p>`;
+        <p style="margin-top:16px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#8a9a91">${n.time} · ${n.source || n.author} · <a href="${href}" target="_blank" rel="noopener">Read on ${n.source || "the web"}</a></p>`;
     }
     if (list) {
       const rest = FLOCK.news.filter((x) => !x.featured).slice(0, 4);
@@ -400,23 +440,49 @@
         </div>
       </div>
       <div class="section" style="padding-left:0;padding-right:0">
-        <div class="section-head"><h2>2026 weeks</h2></div>
+        <div class="section-head"><h2>2026 week box</h2></div>
         <div class="table-wrap">
-          <table>
-            <thead><tr><th>Wk</th><th>Result</th><th>Line</th><th>PPR / team</th></tr></thead>
+          <table class="box-grid">
+            <thead><tr><th>Wk</th><th>Result</th><th>C/A</th><th>Pass</th><th>pTD</th><th>INT</th><th>RuAtt</th><th>RuYds</th><th>RuTD</th><th>Rec</th><th>ReYds</th><th>ReTD</th><th>Tkl</th><th>Sk</th><th>PPR*</th></tr></thead>
             <tbody>
-              ${(p.weeks || [{ wk: FLOCK.meta.week, result: p.week1.result, line: boxLine(p), mark: pprCell(p) }]).map((w) => `
-                <tr><td>${w.wk}</td><td>${w.result}</td><td>${w.line}</td><td class="num">${w.mark}</td></tr>`).join("")}
+              <tr>
+                <td>${FLOCK.meta.week}</td>
+                <td>${p.week1.result}</td>
+                <td class="num">${parseBox(p).cmp}/${parseBox(p).att}</td>
+                <td class="num">${parseBox(p).pyds}</td>
+                <td class="num">${parseBox(p).ptd}</td>
+                <td class="num">${parseBox(p).pint}</td>
+                <td class="num">${parseBox(p).ratt}</td>
+                <td class="num">${parseBox(p).ryds}</td>
+                <td class="num">${parseBox(p).rtd}</td>
+                <td class="num">${parseBox(p).rec}</td>
+                <td class="num">${parseBox(p).recy}</td>
+                <td class="num">${parseBox(p).rectd}</td>
+                <td class="num">${parseBox(p).tack}</td>
+                <td class="num">${parseBox(p).sack}</td>
+                <td class="num">${pprCell(p)}</td>
+              </tr>
             </tbody>
           </table>
         </div>
-        <div class="section-head" style="margin-top:24px"><h2>Seasons</h2></div>
+        <div class="section-head" style="margin-top:24px"><h2>Season box</h2></div>
         <div class="table-wrap">
-          <table>
-            <thead><tr><th>Year</th><th>Pass</th><th>Rush</th><th>Rec</th><th>Tackles</th></tr></thead>
+          <table class="box-grid">
+            <thead><tr><th>Year</th><th>Pass yds</th><th>pTD</th><th>INT</th><th>Rush yds</th><th>RuTD</th><th>Rec</th><th>ReYds</th><th>ReTD</th><th>Tkl</th><th>Sk</th></tr></thead>
             <tbody>
-              ${(p.seasons || [{ year: FLOCK.meta.season, pass: p.season.passYds, rush: p.season.rushYds, rec: p.season.rec, tack: p.season.tackles }]).map((s) => `
-                <tr><td>${s.year}</td><td>${s.pass}</td><td>${s.rush}</td><td>${s.rec}</td><td>${s.tack}</td></tr>`).join("")}
+              <tr>
+                <td>${FLOCK.meta.season}</td>
+                <td class="num">${p.season.passYds}</td>
+                <td class="num">${p.season.passTD}</td>
+                <td class="num">${p.season.int}</td>
+                <td class="num">${p.season.rushYds}</td>
+                <td class="num">${p.season.rushTD}</td>
+                <td class="num">${p.season.rec}</td>
+                <td class="num">${p.season.recYds}</td>
+                <td class="num">${p.season.recTD}</td>
+                <td class="num">${p.season.tackles}</td>
+                <td class="num">${p.season.sacks}</td>
+              </tr>
             </tbody>
           </table>
         </div>
