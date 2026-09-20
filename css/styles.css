@@ -70,8 +70,8 @@ button { font-family: inherit; cursor: pointer; }
   align-items: center;
   gap: 12px;
   height: 100%;
-  font-family: "Libre Caslon Display", "Libre Caslon Text", "Times New Roman", serif;
-  letter-spacing: 0.08em;
+  font-family: "Libre Caslon Text", "Libre Caslon Display", "Times New Roman", serif;
+  letter-spacing: 0.04em;
   font-size: 18px;
   font-weight: 700;
   line-height: 1;
@@ -117,7 +117,7 @@ button { font-family: inherit; cursor: pointer; }
   display: flex; gap: 40px;
   padding: 10px 0;
   white-space: nowrap;
-  animation: tick 42s linear infinite;
+  animation: tick 57s linear infinite;
   width: max-content;
 }
 .ticker-item { font-size: 13px; letter-spacing: 0.04em; }
@@ -139,7 +139,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 .kicker {
   display: inline-flex; align-items: center; gap: 8px;
-  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--gold); font-weight: 700; margin-bottom: 14px;
 }
 .kicker:before {
@@ -148,15 +148,15 @@ button { font-family: inherit; cursor: pointer; }
 h1, .display {
   font-family: "Libre Caslon Display", "Libre Caslon Text", "Times New Roman", serif;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.02em;
   color: var(--white);
 }
 h2, h3 {
-  font-family: "Libre Caslon Display", "Libre Caslon Text", "Times New Roman", serif;
+  font-family: "Libre Caslon Text", "Times New Roman", serif;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   color: var(--white);
-  text-transform: uppercase;
+  text-transform: none;
 }
 .hero h1 {
   font-size: clamp(40px, 6vw, 72px);
@@ -176,14 +176,14 @@ h2, h3 {
 }
 .stat b {
   display: block;
-  font-family: "Libre Caslon Display", "Libre Caslon Text", "Times New Roman", serif;
+  font-family: "Libre Caslon Text", "Libre Caslon Display", "Times New Roman", serif;
   font-size: 32px;
   color: var(--gold);
   line-height: 1;
 }
 .stat span {
   font-size: 12px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--muted);
 }
@@ -223,7 +223,7 @@ h2, h3 {
 .story .tag, .tag {
   display: inline-block;
   font-size: 10px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 700;
   color: var(--green);
@@ -264,7 +264,7 @@ h2, h3 {
 .avatar {
   width: 52px; height: 52px; border-radius: 12px;
   display: grid; place-items: center;
-  font-family: "Libre Caslon Display", "Libre Caslon Text", "Times New Roman", serif;
+  font-family: "Libre Caslon Text", "Libre Caslon Display", "Times New Roman", serif;
   font-size: 20px;
   background: linear-gradient(160deg, var(--green-3), var(--green));
   color: var(--gold);
@@ -272,7 +272,7 @@ h2, h3 {
   flex-shrink: 0;
 }
 .avatar.lg { width: 84px; height: 84px; font-size: 32px; border-radius: 16px; }
-.pc-name { font-family: "Libre Caslon Display", "Libre Caslon Text", "Times New Roman", serif; font-size: 20px; color: var(--white); text-transform: uppercase; line-height: 1.1; }
+.pc-name { font-family: "Libre Caslon Text", "Libre Caslon Display", "Times New Roman", serif; font-size: 20px; color: var(--white); text-transform: uppercase; line-height: 1.1; }
 .pc-meta { font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chip {
@@ -296,7 +296,7 @@ h2, h3 {
 .pc-week b { color: var(--white); }
 .ppr {
   margin-left: auto;
-  font-family: "Libre Caslon Display", "Libre Caslon Text", "Times New Roman", serif;
+  font-family: "Libre Caslon Text", "Libre Caslon Display", "Times New Roman", serif;
   font-size: 22px;
   color: var(--gold);
 }
@@ -308,7 +308,7 @@ table { width: 100%; border-collapse: collapse; font-size: 14px; }
 th {
   text-align: left;
   font-size: 11px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--muted);
   font-weight: 600;
@@ -377,7 +377,7 @@ td a:hover { color: var(--gold); }
 }
 .stat-box b {
   display: block;
-  font-family: "Libre Caslon Display", "Libre Caslon Text", "Times New Roman", serif;
+  font-family: "Libre Caslon Text", "Libre Caslon Display", "Times New Roman", serif;
   font-size: 28px;
   color: var(--gold);
 }
@@ -417,7 +417,7 @@ footer a:hover { color: var(--gold); }
   border: 1px solid var(--line);
   border-radius: 12px;
 }
-.step b { color: var(--gold); font-family: "Libre Caslon Display", "Libre Caslon Text", "Times New Roman", serif; font-size: 20px; }
+.step b { color: var(--gold); font-family: "Libre Caslon Text", "Libre Caslon Display", "Times New Roman", serif; font-size: 20px; }
 
 .empty { color: var(--muted); padding: 24px; text-align: center; }
 
@@ -438,8 +438,8 @@ footer a:hover { color: var(--gold); }
   text-align: center;
   padding: 16px;
 }
-.ad small { letter-spacing: 0.16em; text-transform: uppercase; font-size: 10px; color: #6d7a73; }
-.ad b { color: var(--gold); font-family: "Libre Caslon Display", "Libre Caslon Text", "Times New Roman", serif; letter-spacing: 0.06em; }
+.ad small { letter-spacing: 0.08em; text-transform: uppercase; font-size: 10px; color: #6d7a73; }
+.ad b { color: var(--gold); font-family: "Libre Caslon Text", "Libre Caslon Display", "Times New Roman", serif; letter-spacing: 0.06em; }
 .ad.leader { min-height: 90px; }
 .ad.sidebar { min-height: 250px; }
 .ad.inline { min-height: 70px; margin: 16px 0; }
@@ -459,13 +459,13 @@ footer a:hover { color: var(--gold); }
   border-radius: 10px;
   display: grid;
   place-items: center;
-  font-family: "Libre Caslon Display", "Libre Caslon Text", "Times New Roman", serif;
+  font-family: "Libre Caslon Text", "Libre Caslon Display", "Times New Roman", serif;
   font-size: 28px;
   color: var(--gold);
   background: linear-gradient(160deg, #1d6a4a, #0d2f22);
 }
 .product h3 { font-size: 18px; text-transform: uppercase; }
-.price { color: var(--gold); font-family: "Libre Caslon Display", "Libre Caslon Text", "Times New Roman", serif; font-size: 22px; }
+.price { color: var(--gold); font-family: "Libre Caslon Text", "Libre Caslon Display", "Times New Roman", serif; font-size: 22px; }
 .buy {
   display: inline-block;
   background: var(--gold);
@@ -497,7 +497,7 @@ footer a:hover { color: var(--gold); }
 .more {
   color: var(--gold);
   font-size: 13px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   font-weight: 600;
   white-space: nowrap;
@@ -516,7 +516,7 @@ footer a:hover { color: var(--gold); }
   padding: 22px;
 }
 .desk-link h3 {
-  font-family: "Libre Caslon Display", "Libre Caslon Text", "Times New Roman", serif;
+  font-family: "Libre Caslon Text", "Libre Caslon Display", "Times New Roman", serif;
   text-transform: uppercase;
   margin: 10px 0 6px;
 }
@@ -525,8 +525,8 @@ footer a:hover { color: var(--gold); }
   .desk-links { grid-template-columns: 1fr; }
 }
 .channel {
-  font-family: "Libre Caslon Display", "Libre Caslon Text", "Times New Roman", serif;
-  letter-spacing: 0.12em;
+  font-family: "Libre Caslon Text", "Libre Caslon Display", "Times New Roman", serif;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   font-size: 13px;
   color: var(--ink);
@@ -545,7 +545,7 @@ footer a:hover { color: var(--gold); }
   min-height: 140px;
 }
 .school-tile.live { border-color: var(--gold); }
-.school-tile h3 { font-family: "Libre Caslon Display", "Libre Caslon Text", "Times New Roman", serif; text-transform: uppercase; font-size: 22px; margin: 8px 0; }
+.school-tile h3 { font-family: "Libre Caslon Text", "Libre Caslon Display", "Times New Roman", serif; text-transform: uppercase; font-size: 22px; margin: 8px 0; }
 .school-tile p { color: var(--muted); font-size: 14px; }
 .soon { color: var(--muted); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
 @media (max-width: 720px) {
