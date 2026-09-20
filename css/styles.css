@@ -15,43 +15,46 @@ button { font-family: inherit; cursor: pointer; }
 .ticker-track { display: flex; gap: 40px; padding: 10px 0; white-space: nowrap; animation: tick 130s linear infinite; width: max-content; }
 @keyframes tick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 h1, h2, h3 { font-family: "Libre Caslon Text", serif; font-weight: 700; }
-.hero { padding: 48px 0 36px; }
-.hero h1 { font-size: clamp(40px, 6vw, 72px); text-transform: uppercase; line-height: 0.95; }
-.hero .lede { margin-top: 16px; max-width: 52ch; font-size: 18px; }
-.hero-stats { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 28px; }
+.hero { padding: 36px 0; }
+.hero h1 { font-size: clamp(40px, 5.5vw, 68px); text-transform: uppercase; line-height: 0.95; margin: 0; }
+.hero-kicker { color: #FEE123; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.25; }
+.hero.compact .hero-brand { display: grid; grid-template-columns: auto auto 1.2fr 1fr auto; align-items: center; gap: 18px 22px; }
+.hero.compact .hero-seal { width: 110px; height: 110px; }
+.hero.compact .lede { margin: 0; max-width: 36ch; font-size: 16px; }
+.hero.compact .hero-stats { display: flex; flex-direction: column; gap: 14px; margin: 0; }
+.hero.slim { padding: 20px 0; }
+.hero.slim .hero-title { display: flex; align-items: center; gap: 16px; }
+.hero.slim h1 { font-size: 40px; }
+.hero.slim .hero-seal { width: 72px; height: 72px; }
+.hero-seal { width: 110px; height: 110px; border-radius: 50%; object-fit: contain; display: block; flex-shrink: 0; }
 .stat b { display: block; font-family: "Libre Caslon Text", serif; font-size: 32px; color: #FEE123; }
 .stat span { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
-.kicker { color: #FEE123; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; margin-bottom: 14px; }
-.hero-brand { display: flex; align-items: center; gap: 28px; }
-.hero-seal { width: 148px; height: 148px; border-radius: 50%; object-fit: contain; display: block; margin: 0; flex-shrink: 0; }
-.hero-copy { min-width: 0; flex: 1; }
 .section { padding: 40px 0; }
 .section-head { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
 .section-head h2 { font-size: 28px; }
 .stat-block { margin: 28px 0; }
-.stat-block h3 { font-size: 22px; color: #F7F3E8; margin-bottom: 10px; }
+.stat-block h3 { font-size: 22px; margin-bottom: 10px; }
 .grid-2 { display: grid !important; grid-template-columns: 1.4fr 1fr !important; gap: 22px; }
 .grid-3 { display: grid !important; grid-template-columns: repeat(3, minmax(0,1fr)) !important; gap: 18px; }
 .shop-grid { display: grid !important; grid-template-columns: repeat(3, minmax(0,1fr)) !important; gap: 16px; }
-.desk-links { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.card, .product, .player-card, .desk-link, .school-tile { background: #1a1a1a; border: 1px solid #FEE123; border-radius: 14px; }
-.product, .player-card, .desk-link, .school-tile, .card.pad { padding: 18px; }
+.card, .product, .player-card, .school-tile { background: #1a1a1a; border: 1px solid #FEE123; border-radius: 14px; }
+.product, .player-card, .school-tile, .card.pad { padding: 18px; }
 .product { display: flex; flex-direction: column; gap: 10px; }
 .product-art { height: 140px; border-radius: 10px; display: grid; place-items: center; font-family: "Libre Caslon Text", serif; font-size: 28px; color: #FEE123; background: #103725; }
 .buy { display: block; background: #FEE123; color: #111111; font-weight: 700; text-align: center; padding: 10px; border-radius: 8px; }
 .more, .price, .ppr { color: #FEE123; }
 .player-card { display: flex; flex-direction: column; gap: 14px; }
-.pc-top { display: flex; gap: 12px; align-items: flex-start; }
-.avatar { width: 52px; height: 52px; border-radius: 12px; display: grid; place-items: center; background: #FEE123; color: #111111; font-family: "Libre Caslon Text", serif; }
+.pc-top { display: flex; gap: 12px; }
+.avatar { width: 52px; height: 52px; border-radius: 12px; display: grid; place-items: center; background: #FEE123; color: #111; font-family: "Libre Caslon Text", serif; }
 .pc-name { font-family: "Libre Caslon Text", serif; font-size: 20px; line-height: 1.3; margin-bottom: 6px; }
 .pc-meta { font-size: 13px; color: #E8D9A0; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip { font-size: 11px; padding: 6px 10px; border-radius: 999px; background: #111; border: 1px solid #FEE123; color: #F7F3E8; }
-.chip.gold { background: #FEE123; color: #111111; }
+.chip.gold { background: #FEE123; color: #111; }
 .pc-week { font-size: 13px; color: #E8D9A0; background: #111; border-radius: 10px; padding: 12px 14px; }
 .filters { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 22px; }
-.filter { background: #1a1a1a; border: 1px solid #FEE123; color: #F7F3E8; border-radius: 999px; padding: 8px 14px; }
-.filter.active { background: #FEE123; color: #111111; font-weight: 700; }
+.filter, .search { background: #1a1a1a; border: 1px solid #FEE123; color: #F7F3E8; border-radius: 999px; padding: 8px 14px; }
+.filter.active { background: #FEE123; color: #111; font-weight: 700; }
 .table-wrap { display: block; width: 100%; overflow-x: auto; border: 1px solid #FEE123; border-radius: 14px; }
 table { width: max-content; min-width: 100%; border-collapse: collapse; font-size: 13px; }
 th { font-size: 11px; text-transform: uppercase; color: #FEE123; background: #111; padding: 10px 8px; text-align: left; }
@@ -60,23 +63,24 @@ td a { color: #FEE123; font-weight: 600; }
 footer { border-top: 1px solid #FEE123; padding: 36px 0 48px; font-size: 13px; }
 .seal-wrap { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; }
 .seal-wrap img { width: 44px; height: 44px; object-fit: contain; }
-a.channel { background: transparent !important; padding: 0 !important; display: flex; height: 44px; align-items: center; }
 .story { min-height: 280px; padding: 24px; }
 .schools-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
-body.network { background: #F7F3E8; color: #111111; }
-body.network .nav { background: #111111; }
+body.network { background: #F7F3E8; color: #111; }
+body.network .nav { background: #111; }
 body.network .brand, body.network .nav-links a { color: #F7F3E8; }
-body.network .hero { background: #111111; color: #F7F3E8; }
-body.network .hero h1, body.network .hero .lede { color: #F7F3E8; }
-body.network .section, body.network footer { background: #F7F3E8; color: #111111; }
-body.network h2, body.network h3, body.network .school-tile h3 { color: #111111; }
-body.network .school-tile, body.network .card, body.network table { background: #fffdf6; border: 1px solid #FEE123; color: #111111; }
-body.channel { background: #111111; color: #F7F3E8; }
+body.network .hero { background: #111; color: #F7F3E8; }
+body.network .section, body.network footer { background: #F7F3E8; color: #111; }
+body.network h2, body.network h3 { color: #111; }
+body.network .school-tile, body.network .card, body.network table { background: #fffdf6; border: 1px solid #FEE123; color: #111; }
+body.channel { background: #111; color: #F7F3E8; }
 body.channel .hero, body.channel .ticker { background: #103725; color: #F7F3E8; }
-body.channel .section, body.channel footer { background: #111111; color: #F7F3E8; }
+body.channel .section, body.channel footer { background: #111; color: #F7F3E8; }
 body.channel h1, body.channel h2, body.channel h3 { color: #F7F3E8; }
 body.channel .section-head p, body.channel th { color: #FEE123; }
-@media (max-width: 700px) {
-  .shop-grid, .grid-3, .grid-2, .desk-links, .schools-grid { grid-template-columns: 1fr !important; }
-  .hero-brand { flex-direction: column; align-items: flex-start; }
+@media (max-width: 900px) {
+  .hero.compact .hero-brand { grid-template-columns: auto 1fr; }
+  .hero.compact .hero-kicker { display: none; }
+  .hero.compact .lede, .hero.compact .hero-stats { grid-column: 1 / -1; }
+  .hero.compact .hero-stats { flex-direction: row; }
+  .shop-grid, .grid-3, .grid-2, .schools-grid { grid-template-columns: 1fr !important; }
 }
