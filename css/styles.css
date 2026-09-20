@@ -46,9 +46,12 @@ button { font-family: inherit; cursor: pointer; }
   border-bottom: 1px solid var(--line);
 }
 .nav-inner {
-  height: 100%;
+  min-height: 100%;
+  height: auto;
   display: flex; align-items: center; justify-content: space-between;
-  gap: 24px;
+  gap: 12px 24px;
+  flex-wrap: wrap;
+  padding: 8px 0;
 }
 .brand {
   display: flex;
@@ -652,7 +655,7 @@ body.network a { color: #111111; }
 body.network td a:hover { color: #111111; }
 body.network tr:hover td { background: #F7F3E8; }
 
-/* ProDucks channel: green + gold + cream + black only */
+/* ProDucks: black page, green hero only, gold lines, cream type */
 body.channel {
   background: #111111;
   color: #F7F3E8;
@@ -660,6 +663,7 @@ body.channel {
 body.channel .nav {
   background: #111111;
   border-bottom: 1px solid #FEE123;
+  height: auto;
 }
 body.channel .hero {
   background: #154733;
@@ -669,20 +673,23 @@ body.channel h1, body.channel h2, body.channel h3 { color: #F7F3E8; }
 body.channel .lede,
 body.channel .section-head p,
 body.channel .prose p,
-body.channel .story p { color: #F7F3E8; }
+body.channel .story p,
+body.channel .school-tile p { color: #F7F3E8; }
 body.channel .panel,
 body.channel .player-card,
 body.channel .school-tile,
 body.channel table {
-  background: #154733;
+  background: #1a1a1a;
   border-color: #FEE123;
   color: #F7F3E8;
 }
-body.channel th, body.channel td { border-color: #FEE123; color: #F7F3E8; }
+body.channel th, body.channel td { border-color: #3a3a3a; color: #F7F3E8; }
+body.channel tr:hover td { background: #222; }
 body.channel .chip { background: #111111; color: #F7F3E8; border-color: #FEE123; }
 body.channel .chip.gold,
 body.channel .filter.active,
 body.channel .buy { background: #FEE123; color: #111111; border-color: #FEE123; }
 body.channel .avatar { background: #FEE123; color: #154733; }
 body.channel footer { color: #F7F3E8; border-top: 1px solid #FEE123; }
-body.channel .ad { background: #111111; color: #F7F3E8; border-color: #FEE123; }
+body.channel .ad { background: #1a1a1a; color: #F7F3E8; border-color: #FEE123; }
+body.channel .more { color: #FEE123; }
