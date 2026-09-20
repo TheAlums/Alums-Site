@@ -1,93 +1,73 @@
 html, body {
-  display: block;
-  width: 100%;
-  min-height: 100%;
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
   background: #111111;
   color: #F7F3E8;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
   font-family: "Source Sans 3", "Segoe UI", sans-serif;
   line-height: 1.5;
 }
+* { box-sizing: border-box; margin: 0; padding: 0; }
 img { max-width: 100%; display: block; }
 a { color: #F7F3E8; text-decoration: none; }
 button { font-family: inherit; cursor: pointer; }
-.wrap { display: block; width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
-.nav, .hero, .section, .ticker, footer { display: block; width: 100%; }
-.nav { position: sticky; top: 0; z-index: 50; background: #111111; border-bottom: 1px solid #FEE123; }
+.wrap { display: block; width: min(1180px, calc(100% - 40px)); margin: 0 auto; max-width: 100%; }
+.nav, .hero, .section, .ticker, footer {
+  display: block !important;
+  width: 100% !important;
+  float: none !important;
+}
+.nav { position: relative; z-index: 50; background: #111111; border-bottom: 1px solid #FEE123; }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; padding: 8px 0; }
 .brand { display: flex; align-items: center; gap: 12px; font-family: "Libre Caslon Text", serif; font-size: 18px; font-weight: 700; color: #F7F3E8; }
-.nav-links { display: flex; gap: 4px; align-items: center; }
+.nav-links { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
 .nav-links a { padding: 8px 12px; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #E8D9A0; font-weight: 600; border-radius: 8px; white-space: nowrap; }
 .nav-links a:hover, .nav-links a.active { color: #111111; background: #FEE123; }
-.nav-meta { font-size: 12px; color: #FEE123; letter-spacing: 0.06em; text-transform: uppercase; }
 .ticker { background: #154733; color: #F7F3E8; overflow: hidden; }
 .ticker-track { display: flex; gap: 40px; padding: 10px 0; white-space: nowrap; animation: tick 130s linear infinite; width: max-content; }
-.ticker-item { font-size: 13px; color: #F7F3E8; }
 @keyframes tick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-h1, h2, h3 { font-family: "Libre Caslon Text", serif; font-weight: 700; color: #F7F3E8; letter-spacing: 0.02em; }
-.section { padding: 48px 0; background: #111111; color: #F7F3E8; }
-.section-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
-.section-head h2 { font-size: 28px; color: #F7F3E8 !important; }
-.section-head p, #roster-count, .footnote { color: #FEE123 !important; font-size: 14px; }
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.player-card { background: #1a1a1a; border: 1px solid #FEE123; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 14px; color: #F7F3E8; }
-.pc-top { display: flex; gap: 12px; align-items: flex-start; }
-.avatar { width: 52px; height: 52px; border-radius: 12px; display: grid; place-items: center; font-family: "Libre Caslon Text", serif; font-size: 20px; background: #FEE123; color: #111111; flex-shrink: 0; }
-.pc-name { display: block; font-family: "Libre Caslon Text", serif; font-size: 20px; color: #F7F3E8; line-height: 1.3; margin-bottom: 6px; }
-.pc-meta { display: block; font-size: 13px; color: #E8D9A0; line-height: 1.4; }
-.chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.chip { font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; padding: 6px 10px; border-radius: 999px; background: #111; border: 1px solid #FEE123; color: #F7F3E8; line-height: 1.3; white-space: nowrap; }
-.chip.gold { background: #FEE123; color: #111111; }
-.pc-week { font-size: 13px; color: #E8D9A0; background: #111; border-radius: 10px; padding: 12px 14px; line-height: 1.45; }
-.ppr { margin-left: auto; font-family: "Libre Caslon Text", serif; font-size: 22px; color: #FEE123; }
-.filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 22px; }
-.filter, .search { background: #1a1a1a; border: 1px solid #FEE123; color: #F7F3E8; border-radius: 999px; padding: 8px 14px; font-size: 13px; }
+h1, h2, h3 { font-family: "Libre Caslon Text", serif; font-weight: 700; color: #F7F3E8; }
+.section { padding: 36px 0; background: #111111; }
+.section-head h2 { font-size: 28px; color: #F7F3E8 !important; margin-bottom: 8px; }
+.section-head p, .footnote { color: #FEE123 !important; }
+.filters { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 22px; }
+.filter { background: #1a1a1a; border: 1px solid #FEE123; color: #F7F3E8; border-radius: 999px; padding: 8px 14px; font-size: 13px; }
 .filter.active { background: #FEE123; color: #111111; font-weight: 700; }
-.search { min-width: 220px; border-radius: 10px; }
-.table-wrap { overflow-x: auto; border: 1px solid #FEE123; border-radius: 14px; background: #1a1a1a; }
-table { width: 100%; border-collapse: collapse; font-size: 14px; background: #1a1a1a; color: #F7F3E8; }
-th { font-size: 11px; text-transform: uppercase; color: #FEE123; background: #111111; padding: 12px 10px; text-align: left; border-bottom: 1px solid #FEE123; }
-td { padding: 12px 10px; color: #F7F3E8; border-bottom: 1px solid #3a3a3a; }
+.table-wrap {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  border: 1px solid #FEE123;
+  border-radius: 14px;
+  background: #1a1a1a;
+}
+table { width: max-content; min-width: 100%; border-collapse: collapse; font-size: 13px; background: #1a1a1a; color: #F7F3E8; }
+th { font-size: 11px; text-transform: uppercase; color: #FEE123; background: #111111; padding: 10px 8px; text-align: left; border-bottom: 1px solid #FEE123; white-space: nowrap; }
+td { padding: 10px 8px; color: #F7F3E8; border-bottom: 1px solid #3a3a3a; white-space: nowrap; }
 td a { color: #FEE123; font-weight: 600; }
-.num { color: #F7F3E8; font-variant-numeric: tabular-nums; }
-footer { margin-top: 40px; border-top: 1px solid #FEE123; padding: 36px 0 48px; color: #E8D9A0; font-size: 13px; background: #111111; }
-.hero { padding: 56px 0 36px; background: #154733; color: #F7F3E8; }
-.hero h1 { font-size: clamp(40px, 6vw, 72px); color: #F7F3E8; }
-.kicker { color: #FEE123; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; margin-bottom: 14px; }
-.grid-2 { display: grid; grid-template-columns: 1.4fr 1fr; gap: 22px; }
-.card { background: #1a1a1a; border: 1px solid #FEE123; border-radius: 14px; color: #F7F3E8; }
-.shop-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.product { background: #1a1a1a; border: 1px solid #FEE123; border-radius: 14px; padding: 16px; color: #F7F3E8; }
-.buy { display: block; background: #FEE123; color: #111111; font-weight: 700; text-align: center; padding: 10px 14px; border-radius: 8px; }
+footer { margin-top: 40px; border-top: 1px solid #FEE123; padding: 36px 0 48px; color: #E8D9A0; font-size: 13px; }
+.player-card { background: #1a1a1a; border: 1px solid #FEE123; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 14px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.pc-name { font-family: "Libre Caslon Text", serif; font-size: 20px; color: #F7F3E8; line-height: 1.3; margin-bottom: 6px; }
+.pc-meta { font-size: 13px; color: #E8D9A0; }
+.avatar { width: 52px; height: 52px; border-radius: 12px; display: grid; place-items: center; background: #FEE123; color: #111; font-family: "Libre Caslon Text", serif; }
+.pc-top { display: flex; gap: 12px; align-items: flex-start; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font-size: 11px; padding: 6px 10px; border-radius: 999px; background: #111; border: 1px solid #FEE123; color: #F7F3E8; }
+.chip.gold { background: #FEE123; color: #111; }
+.pc-week { font-size: 13px; color: #E8D9A0; background: #111; border-radius: 10px; padding: 12px 14px; }
+.ppr { margin-left: auto; font-size: 22px; color: #FEE123; }
 .seal-wrap { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-.seal-wrap img { width: 44px; height: 44px; object-fit: contain; display: block; }
-a.channel {
-  background: transparent !important;
-  padding: 0 !important;
-  display: flex;
-  align-items: center;
-  height: 44px;
-}
-body.channel {
-  background: #111111 !important;
-  color: #F7F3E8 !important;
-}
-body.channel h1, body.channel h2, body.channel h3,
-body.channel .section-head h2, body.channel th, body.channel td,
-body.channel p, body.channel .footnote {
-  color: #F7F3E8;
-}
-body.channel .section-head p, body.channel .footnote { color: #FEE123 !important; }
-body.network { background: #F7F3E8; color: #111111; }
-body.network .nav { background: #111111; }
-body.network .brand, body.network .nav-links a { color: #F7F3E8; }
-body.network .section { background: #F7F3E8; color: #111111; }
-body.network h2, body.network h3, body.network .section-head h2 { color: #111111 !important; }
-body.network .hero { background: #111111; }
-body.network .hero h1 { color: #F7F3E8 !important; }
-body.network table, body.network th, body.network td { background: #fffdf6; color: #111111; }
-@media (max-width: 900px) {
-  .grid-3, .grid-2, .shop-grid { grid-template-columns: 1fr; }
-}
+.seal-wrap img { width: 44px; height: 44px; object-fit: contain; }
+a.channel { background: transparent !important; padding: 0 !important; display: flex; height: 44px; align-items: center; }
+body.channel { background: #111 !important; color: #F7F3E8 !important; }
+body.network { background: #F7F3E8; color: #111; }
+body.network .nav { background: #111; }
+body.network .section { background: #F7F3E8; }
+body.network h2 { color: #111 !important; }
+.hero { padding: 56px 0 36px; background: #154733; }
+.card, .product { background: #1a1a1a; border: 1px solid #FEE123; border-radius: 14px; padding: 16px; }
+.buy { display: block; background: #FEE123; color: #111; text-align: center; padding: 10px; border-radius: 8px; font-weight: 700; }
+@media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr; } }
