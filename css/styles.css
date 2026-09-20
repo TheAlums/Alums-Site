@@ -768,3 +768,58 @@ body.channel .more { color: #FEE123; }
   margin-bottom: 14px;
   display: block;
 }
+
+/* Tight-text and overflow fixes */
+.chip, .filter, .grade, .buy, .nav-links a {
+  white-space: nowrap;
+  line-height: 1.35;
+  overflow: visible;
+}
+.chip {
+  padding: 6px 10px;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+.filter {
+  padding: 8px 14px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+.pc-name {
+  text-transform: none;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+.search {
+  background: #1a1a1a;
+  color: #F7F3E8;
+  border: 1px solid #FEE123;
+  padding: 10px 12px;
+  border-radius: 8px;
+  min-width: 220px;
+}
+.search::placeholder { color: #c4b896; }
+.box-grid th, .box-grid td {
+  padding: 10px 8px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+body.channel .card,
+body.channel .player-card,
+body.channel .stat-box {
+  color: #F7F3E8;
+}
+body.channel .pc-meta,
+body.channel .pc-week,
+body.channel .section-head p {
+  color: #d9d2b8;
+}
+body.network .chip {
+  background: #111111;
+  color: #F7F3E8;
+  border-color: #FEE123;
+}
+body.network .chip.gold {
+  background: #FEE123;
+  color: #111111;
+}
