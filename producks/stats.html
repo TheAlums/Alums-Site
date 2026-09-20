@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Libre+Caslon+Display&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/styles.css?v=19" />
+  <link rel="stylesheet" href="../css/styles.css?v=22" />
 </head>
 <body class="channel">
   <header class="nav">
@@ -27,38 +27,26 @@
     </div>
   </header>
   <div class="ticker"><div class="ticker-track" id="ticker-track"></div></div>
-
   <section class="section">
     <div class="wrap">
       <div class="section-head">
         <div>
-          <h2>Sunday board</h2>
-          <p>Box score, PPR, projection, grade. NFL only unless you hit CFL.</p>
+          <h2>Oregon box 2026</h2>
+          <p>Week 1 hand sample. Tabs match an NFL stat board, plus fantasy.</p>
         </div>
       </div>
       <div class="filters" id="stats-filters"></div>
       <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Player</th>
-              <th>Pos</th>
-              <th>Lg</th>
-              <th>Team</th>
-              <th>Result</th>
-              <th>Line</th>
-              <th>PPR</th>
-              <th>Proj</th>
-              <th>Grade</th>
-            </tr>
-          </thead>
+        <table class="box-grid">
+          <thead id="stats-head"></thead>
           <tbody id="stats-body"></tbody>
         </table>
       </div>
+      <p class="footnote">Passing = QBs (CMP, ATT, CMP%, YDS, AVG, TD, INT, PPR). Fantasy = PPR / proj / ADP / grade. Defense = tackles and club score*. Blanks mean the sample does not have that number yet.</p>
     </div>
   </section>
   <footer>
-    <div class="wrap"><p>© 2026 The Alums · Not affiliated with the University of Oregon, the NFL, the CFL, or Alum hotels.</p></div>
+    <div class="wrap"><p>© 2026 The Alums · Not affiliated with the University of Oregon, the NFL, or the CFL.</p></div>
   </footer>
   <script src="../js/data.js"></script>
   <script src="../js/app.js"></script>
