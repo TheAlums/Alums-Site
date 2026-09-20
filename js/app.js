@@ -50,15 +50,60 @@
     }).join("");
   }
 
+  const DEF = ["DL", "DE", "DT", "EDGE", "LB", "OLB", "ILB", "DB", "CB", "S", "FS", "SS"];
+
+  function teamScore(p) {
+    if (p.week1?.teamScore) return p.week1.teamScore;
+    const m = String(p.week1?.result || "").match(/[WL]\s+\d+[–\-]\d+/);
+    return m ? m[0] : "—";
+  }
+
+  function isDef(p) {
+    return DEF.includes(p.pos);
+  }
+
+  function tickerLine(p) {
+    const w = p.week1 || {};
+    const tag = `${p.name} · ${p.pos} ${p.team}`;
+    if ((p.league || "NFL") === "CFL") return `${tag} · CFL · ${w.result || w.note || "—"}`;
+    if (p.pos === "QB") return `${tag} · ${w.pass || "—"} · ${w.ppr || 0} PPR`;
+    if (p.pos === "RB") return `${tag} · ${w.rush && w.rush !== "—" ? w.rush : w.note || "—"} · ${w.ppr || 0} PPR`;
+    if (p.pos === "WR" || p.pos === "TE") {
+      const rec = w.recLine || w.pass || w.note || "—";
+      return `${tag} · ${rec} · ${w.ppr || 0} PPR`;
+    }
+    if (p.pos === "K") return `${tag} · ${w.kick || w.note || "—"} · ${w.ppr || 0} PPR`;
+    if (isDef(p)) {
+      const def = w.def || `${w.note || "—"}`;
+      const st = w.st ? ` · ST ${w.st}` : "";
+      return `${tag} · ${def}${st} · team ${teamScore(p)}*`;
+    }
+    return `${tag} · ${w.note || w.result || "—"}`;
+  }
+
+  function boxLine(p) {
+    const w = p.week1 || {};
+    if (p.pos === "QB") return w.pass || "—";
+    if (p.pos === "RB") return w.rush && w.rush !== "—" ? w.rush : (w.note || "—");
+    if (p.pos === "WR" || p.pos === "TE") return w.recLine || w.note || "—";
+    if (p.pos === "K") return w.kick || w.note || "—";
+    if (isDef(p)) return (w.def || w.note || "—") + (w.st ? ` · ST ${w.st}` : "");
+    return w.note || "—";
+  }
+
+  function pprCell(p) {
+    if (isDef(p) || !p.fantasyRelevant) {
+      return `${teamScore(p)}*`;
+    }
+    return p.week1?.ppr || "—";
+  }
+
   function renderTicker() {
     const el = $("#ticker-track");
     if (!el) return;
     const bits = channelPlayers()
-      .filter((p) => p.featured || p.week1.ppr)
-      .map((p) => {
-        const pts = p.week1.ppr ? `${p.week1.ppr} PPR` : p.status;
-        return `<span class="ticker-item"><strong>${p.name}</strong> · ${p.pos} ${p.team} · ${p.week1.result} · ${pts}</span>`;
-      });
+      .filter((p) => p.featured || p.week1)
+      .map((p) => `<span class="ticker-item">${tickerLine(p)}</span>`);
     el.innerHTML = bits.concat(bits).join("");
   }
 
@@ -92,17 +137,22 @@
     const el = $("#home-performers");
     if (!el) return;
     const rows = [...channelPlayers()]
-      .filter((p) => (p.week1.ppr || 0) > 0)
-      .sort((a, b) => (b.week1.ppr || 0) - (a.week1.ppr || 0))
-      .slice(0, 6);
+      .filter((p) => (p.league || "NFL") !== "CFL" && (p.featured || (p.week1.ppr || 0) > 0 || isDef(p)))
+      .sort((a, b) => {
+        const av = isDef(a) ? 0 : (a.week1.ppr || 0);
+        const bv = isDef(b) ? 0 : (b.week1.ppr || 0);
+        return bv - av;
+      })
+      .slice(0, 10);
     el.innerHTML = rows.map((p, i) => `
       <tr>
         <td class="num">${i + 1}</td>
         <td><a href="player.html?id=${p.id}">${p.name}</a></td>
         <td>${p.pos}</td>
         <td>${p.team}</td>
-        <td class="num">${p.week1.ppr}</td>
-        <td>${p.week1.pass !== "—" ? p.week1.pass : p.week1.note}</td>
+        <td>${p.week1.result || "—"}</td>
+        <td>${boxLine(p)}</td>
+        <td class="num">${pprCell(p)}</td>
       </tr>`).join("");
   }
 
@@ -111,7 +161,7 @@
     if (!el || !FLOCK.shopItems) return;
     el.innerHTML = FLOCK.shopItems.slice(0, 4).map((s) => `
       <article class="product">
-        <div class="product-art">${s.art}</div>
+        <div class="product-art"><span class="jersey-ph">#${s.art}</span><small>Official team shop</small></div>
         <span class="chip gold">${s.team}</span>
         <h3>${s.name}</h3>
         <div class="price">${s.price}</div>
@@ -148,9 +198,9 @@
         <td>${p.team}</td>
         <td>${p.week1.result}</td>
         <td>${line}</td>
-        <td class="num">${p.week1.ppr || "—"}</td>
-        <td class="num">${p.fantasy?.proj ?? "—"}</td>
-        <td><span class="grade ${p.fantasy?.grade || ""}">${p.fantasy?.grade || "—"}</span></td>
+        <td class="num">${pprCell(p)}</td>
+        <td class="num">${isDef(p) ? "—" : (p.fantasy?.proj ?? "—")}</td>
+        <td>${isDef(p) ? "—" : `<span class="grade ${p.fantasy?.grade || ""}">${p.fantasy?.grade || "—"}</span>`}</td>
       </tr>`;
     }).join("");
   }
@@ -204,19 +254,24 @@
     const list = $("#news-list");
     if (feature) {
       const n = FLOCK.news.find((x) => x.featured) || FLOCK.news[0];
+      const href = n.href || `https://www.espn.com/search/_/q/${encodeURIComponent(n.title)}`;
       feature.innerHTML = `
+        <div class="story-photo">${n.photoLabel || "Week desk"}</div>
         <span class="tag">${n.tag}</span>
-        <h3>${n.title}</h3>
+        <h3><a href="${href}" target="_blank" rel="noopener">${n.title}</a></h3>
         <p>${n.dek}</p>
-        <p style="margin-top:16px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8a9a91">${n.time} · ${n.author}</p>`;
+        <p style="margin-top:16px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#8a9a91">${n.time} · ${n.source || n.author} · <a href="${href}" target="_blank" rel="noopener">Open article</a></p>`;
     }
     if (list) {
       const rest = FLOCK.news.filter((x) => !x.featured).slice(0, 4);
-      list.innerHTML = rest.map((n) => `
-        <a class="news-item" href="news.html#${n.id}">
+      list.innerHTML = rest.map((n) => {
+        const href = n.href || `https://www.espn.com/search/_/q/${encodeURIComponent(n.title)}`;
+        return `
+        <a class="news-item" href="${href}" target="_blank" rel="noopener">
           <small>${n.tag} · ${n.time}</small>
           <h4>${n.title}</h4>
-        </a>`).join("");
+        </a>`;
+      }).join("");
     }
   }
 
@@ -225,12 +280,13 @@
     if (!el) return;
     el.innerHTML = FLOCK.news.map((n) => {
       const names = n.playerIds.map((id) => playerById(id)?.name).filter(Boolean);
+      const href = n.href || `https://www.espn.com/search/_/q/${encodeURIComponent(n.title)}`;
       return `
         <article class="card pad" id="${n.id}" style="margin-bottom:16px">
           <span class="tag">${n.tag}</span>
-          <h3 style="font-size:28px;text-transform:uppercase;margin:8px 0">${n.title}</h3>
+          <h3 style="font-size:28px;margin:8px 0"><a href="${href}" target="_blank" rel="noopener">${n.title}</a></h3>
           <p style="color:#c5d1ca">${n.dek}</p>
-          <p style="margin-top:12px;font-size:12px;color:#8a9a91;letter-spacing:.08em;text-transform:uppercase">${n.time} · ${n.author}${names.length ? " · " + names.join(", ") : ""}</p>
+          <p style="margin-top:12px;font-size:12px;color:#8a9a91">${n.time} · ${n.source || n.author}${names.length ? " · " + names.join(", ") : ""} · <a href="${href}" target="_blank" rel="noopener">Open article</a></p>
         </article>`;
     }).join("");
   }
@@ -344,12 +400,35 @@
         </div>
       </div>
       <div class="section" style="padding-left:0;padding-right:0">
-        <div class="section-head"><h2>Related</h2></div>
-        ${related.length ? related.map((n) => `
-          <a class="news-item card" href="news.html#${n.id}" style="margin-bottom:8px">
+        <div class="section-head"><h2>2026 weeks</h2></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Wk</th><th>Result</th><th>Line</th><th>PPR / team</th></tr></thead>
+            <tbody>
+              ${(p.weeks || [{ wk: FLOCK.meta.week, result: p.week1.result, line: boxLine(p), mark: pprCell(p) }]).map((w) => `
+                <tr><td>${w.wk}</td><td>${w.result}</td><td>${w.line}</td><td class="num">${w.mark}</td></tr>`).join("")}
+            </tbody>
+          </table>
+        </div>
+        <div class="section-head" style="margin-top:24px"><h2>Seasons</h2></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Year</th><th>Pass</th><th>Rush</th><th>Rec</th><th>Tackles</th></tr></thead>
+            <tbody>
+              ${(p.seasons || [{ year: FLOCK.meta.season, pass: p.season.passYds, rush: p.season.rushYds, rec: p.season.rec, tack: p.season.tackles }]).map((s) => `
+                <tr><td>${s.year}</td><td>${s.pass}</td><td>${s.rush}</td><td>${s.rec}</td><td>${s.tack}</td></tr>`).join("")}
+            </tbody>
+          </table>
+        </div>
+        <div class="section-head" style="margin-top:24px"><h2>News</h2></div>
+        ${related.length ? related.map((n) => {
+          const href = n.href || `https://www.espn.com/search/_/q/${encodeURIComponent(n.title)}`;
+          return `
+          <a class="news-item card" href="${href}" target="_blank" rel="noopener" style="margin-bottom:8px">
             <small>${n.tag} · ${n.time}</small>
             <h4>${n.title}</h4>
-          </a>`).join("") : `<p class="empty">No tagged stories yet.</p>`}
+          </a>`;
+        }).join("") : `<p class="empty">No tagged stories yet.</p>`}
       </div>
     `;
   }

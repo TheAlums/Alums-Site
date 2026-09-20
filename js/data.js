@@ -884,6 +884,7 @@ FLOCK.news = [
   {
     id: "n1",
     tag: "Week 1",
+    href: "https://www.espn.com/search/_/q/Sadiq%20scores%20on%20his%20first%20NFL%20series.%20Thieneman%20takes%20a%20game%20ball.",
     featured: true,
     title: "Sadiq scores on his first NFL series. Thieneman takes a game ball.",
     dek: "Two first-round Ducks from the 2026 draft announced themselves on Sunday. The Jets tight end punched in a rushing score before the game was five minutes old.",
@@ -894,6 +895,7 @@ FLOCK.news = [
   {
     id: "n2",
     tag: "Quarterbacks",
+    href: "https://www.espn.com/search/_/q/Herbert's%20Chargers%20drop%20a%20stunner.%20Nix%20walks%20into%20a%20Kansas%20City%20buzzsaw.",
     featured: true,
     title: "Herbert's Chargers drop a stunner. Nix walks into a Kansas City buzzsaw.",
     dek: "The two Oregon starters on the slate both lost. Herbert went 17-of-27 for 209 and a score; Nix was sacked into a 10–31 hole in Denver.",
@@ -904,6 +906,7 @@ FLOCK.news = [
   {
     id: "n3",
     tag: "Rookies",
+    href: "https://www.espn.com/search/_/q/Boettcher%20posts%20seven%20tackles%20in%20his%20Colts%20debut.",
     featured: false,
     title: "Boettcher posts seven tackles in his Colts debut.",
     dek: "The fourth-round linebacker looked like a three-year starter on day one. Indianapolis has a Duck in the middle of the defense.",
@@ -914,6 +917,7 @@ FLOCK.news = [
   {
     id: "n4",
     tag: "Fantasy",
+    href: "https://www.espn.com/search/_/q/Bucky%20Irving%20is%20the%20desk's%20RB1%20until%20further%20notice.",
     featured: false,
     title: "Bucky Irving is the desk's RB1 until further notice.",
     dek: "A receiving touchdown and the lead back role in Tampa keep Irving in every starting lineup. Franklin and Sadiq are the streaming questions.",
@@ -924,6 +928,7 @@ FLOCK.news = [
   {
     id: "n5",
     tag: "Pipeline",
+    href: "https://www.espn.com/search/_/q/36%20Ducks%20on%2053-man%20rosters.%20Oregon%20sits%208th%20nationally.",
     featured: false,
     title: "36 Ducks on 53-man rosters. Oregon sits 8th nationally.",
     dek: "Only the usual blue bloods — Ohio State, Alabama, Georgia, LSU, Notre Dame, Texas, Michigan — have more active alumni. Florida is tied.",
@@ -934,6 +939,7 @@ FLOCK.news = [
   {
     id: "n6",
     tag: "O-Line",
+    href: "https://www.espn.com/search/_/q/The%20factory%20is%20still%20open:%20Sewell,%20Conerly,%20Powers-Johnson%20start%20Week%201.",
     featured: false,
     title: "The factory is still open: Sewell, Conerly, Powers-Johnson start Week 1.",
     dek: "Three Oregon tackles/interior linemen opened as Week 1 starters. Pregnon and Harkey made the 53 as rookies.",
@@ -944,6 +950,7 @@ FLOCK.news = [
   {
     id: "n7",
     tag: "Secondary",
+    href: "https://www.espn.com/search/_/q/Gonzalez,%20Lenoir,%20Holland,%20Williams%20—%20the%20Duck%20secondary%20tree%20is%20blooming.",
     featured: false,
     title: "Gonzalez, Lenoir, Holland, Williams — the Duck secondary tree is blooming.",
     dek: "Four Oregon defensive backs opened as starters. Add Thieneman and the 2026 class and the pipeline is a DB factory now, too.",
@@ -954,6 +961,7 @@ FLOCK.news = [
   {
     id: "n8",
     tag: "Injury",
+    href: "https://www.espn.com/search/_/q/Dillon%20Gabriel%20opens%20the%20year%20on%20IR%20in%20Cleveland.",
     featured: false,
     title: "Dillon Gabriel opens the year on IR in Cleveland.",
     dek: "The former Duck quarterback will not be available for the Browns' early slate. Mariota remains the healthy veteran backup in Washington.",
