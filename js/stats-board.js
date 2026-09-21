@@ -11,6 +11,24 @@
     const m = String((p.week1 && p.week1.result) || "").match(/[WL]\s+\d+[\u2013\-]\d+/);
     return m ? m[0] : "\u2014";
   }
+  function isDefPos(pos) { return IDP.indexOf(pos) >= 0; }
+  function statLine(p) {
+    const w = p.week1 || {};
+    if (p.pos === "QB") return (w.pass && w.pass !== "\u2014") ? w.pass : "\u2014";
+    if (p.pos === "RB") {
+      const rush = (w.rush && w.rush !== "\u2014") ? w.rush : "";
+      const rec = (w.recLine && w.recLine !== "\u2014") ? w.recLine : "";
+      return [rush, rec].filter(Boolean).join(" \u00b7 ") || "\u2014";
+    }
+    if (p.pos === "WR" || p.pos === "TE") return (w.recLine && w.recLine !== "\u2014") ? w.recLine : ((w.pass && w.pass !== "\u2014") ? w.pass : "\u2014");
+    if (p.pos === "K") return (w.kick && w.kick !== "\u2014") ? w.kick : "\u2014";
+    if (isDefPos(p.pos)) {
+      const def = (w.def && w.def !== "\u2014") ? w.def : "";
+      const st = w.st ? "ST " + w.st : "";
+      return [def, st].filter(Boolean).join(" \u00b7 ") || "\u2014";
+    }
+    return "\u2014";
+  }
   function parseBox(p) {
     const w = p.week1 || {};
     const s = p.season || {};
@@ -77,6 +95,16 @@
     const nfl = list.filter(function (p) { return (p.league || "NFL") !== "CFL"; });
     const cfl = list.filter(function (p) { return (p.league || "NFL") === "CFL"; });
     let html = "";
+    const weekRows = nfl.slice().sort(function (a, b) {
+      const av = isDefPos(a.pos) ? 0 : (a.week1 && a.week1.ppr) || 0;
+      const bv = isDefPos(b.pos) ? 0 : (b.week1 && b.week1.ppr) || 0;
+      return bv - av;
+    });
+    html += table("Week board", ["Rank","Player","Pos","Pro team","Result","Line","PPR"],
+      weekRows.map(function (p, i) {
+        const ppr = isDefPos(p.pos) ? teamScore(p) + "*" : ((p.week1 && p.week1.ppr != null) ? p.week1.ppr : "\u2014");
+        return "<tr><td>" + (i + 1) + "</td><td><a href=\"player.html?id=" + p.id + "\">" + p.name + "</a></td><td>" + p.pos + "</td><td>" + p.team + "</td><td>" + ((p.week1 && p.week1.result) || "\u2014") + "</td><td>" + statLine(p) + "</td><td>" + ppr + "</td></tr>";
+      }).join(""));
     const passers = nfl.filter(function (p) { return p.pos === "QB"; });
     html += table("Passing", ["Player","Pos","Team","GP","CMP","ATT","CMP%","YDS","AVG","TD","INT","PPR"],
       passers.sort(function (a,b) { return (b.week1.ppr||0)-(a.week1.ppr||0); }).map(function (p) {
