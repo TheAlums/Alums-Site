@@ -1,6 +1,7 @@
 (function () {
   const IDP = ["DL","DE","DT","EDGE","LB","OLB","ILB","DB","CB","S"];
   const OFF = ["QB","RB","WR","TE"];
+  const OL = ["OT","OL","G","C","OG","OC"];
   function $(sel) { return document.querySelector(sel); }
   function players() {
     const sid = (window.FLOCK && FLOCK.meta && FLOCK.meta.schoolId) || "oregon";
@@ -14,13 +15,14 @@
   function isDefPos(pos) { return IDP.indexOf(pos) >= 0; }
   function statLine(p) {
     const w = p.week1 || {};
+    if (OL.indexOf(p.pos) >= 0) return w.role || "\u2014";
     if (p.pos === "QB") return (w.pass && w.pass !== "\u2014") ? w.pass : "\u2014";
     if (p.pos === "RB") {
       const rush = (w.rush && w.rush !== "\u2014") ? w.rush : "";
       const rec = (w.recLine && w.recLine !== "\u2014") ? w.recLine : "";
       return [rush, rec].filter(Boolean).join(" \u00b7 ") || "\u2014";
     }
-    if (p.pos === "WR" || p.pos === "TE") return (w.recLine && w.recLine !== "\u2014") ? w.recLine : ((w.pass && w.pass !== "\u2014") ? w.pass : "\u2014");
+    if (p.pos === "WR" || p.pos === "TE") return (w.recLine && w.recLine !== "\u2014") ? w.recLine : "\u2014";
     if (p.pos === "K") return (w.kick && w.kick !== "\u2014") ? w.kick : "\u2014";
     if (isDefPos(p.pos)) {
       const def = (w.def && w.def !== "\u2014") ? w.def : "";
@@ -39,7 +41,7 @@
     const ints = pass.match(/(\d+)\s*INT/i);
     const rush = String(w.rush || "");
     const rm = rush.match(/(\d+)\s*[\u2013-]\s*(\d+)/);
-    const recLine = String(w.recLine || w.note || "");
+    const recLine = String(w.recLine || "");
     const recm = recLine.match(/(\d+)\s*rec/i);
     const passer = p.pos === "QB";
     return {
@@ -121,10 +123,9 @@
         return "<tr>" + nameCell(p) + "<td>1</td><td>" + dash(b.ratt) + "</td><td>" + dash(b.ryds) + "</td><td>" + avg(b.ryds,b.ratt) + "</td><td>" + dash(b.rtd) + "</td><td>" + (p.week1.ppr||"\u2014") + "</td></tr>";
       }).join(""));
     const recs = nfl.filter(function (p) { return p.pos === "WR" || p.pos === "TE"; });
-    html += table("Receiving", ["Player","Pos","Team","GP","REC","YDS","AVG","TD","PPR"],
+    html += table("Receiving", ["Player","Pos","Team","GP","TGT","REC","YDS","TD","PPR"],
       recs.sort(function (a,b) { return (b.week1.ppr||0)-(a.week1.ppr||0); }).map(function (p) {
-        const b = parseBox(p);
-        return "<tr>" + nameCell(p) + "<td>1</td><td>" + dash(b.rec) + "</td><td>" + dash(b.recy) + "</td><td>" + avg(b.recy,b.rec) + "</td><td>" + dash(b.rectd) + "</td><td>" + (p.week1.ppr||"\u2014") + "</td></tr>";
+        return "<tr>" + nameCell(p) + "<td>1</td><td>" + dash((p.week1||{}).tgt) + "</td><td>" + dash((p.week1||{}).rec) + "</td><td>" + dash((p.week1||{}).recYds) + "</td><td>" + dash((p.week1||{}).recTD) + "</td><td>" + (p.week1.ppr||"\u2014") + "</td></tr>";
       }).join(""));
     const fans = nfl.filter(function (p) { return p.fantasyRelevant && OFF.indexOf(p.pos) >= 0; });
     html += table("Fantasy", ["Player","Pos","Team","Wk PPR","Proj","ADP","Grade"],
