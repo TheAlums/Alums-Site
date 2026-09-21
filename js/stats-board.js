@@ -15,7 +15,7 @@
   function isDefPos(pos) { return IDP.indexOf(pos) >= 0; }
   function statLine(p) {
     const w = p.week1 || {};
-    if (OL.indexOf(p.pos) >= 0) return w.role || "\u2014";
+    if (OL.indexOf(p.pos) >= 0) return w.olLine || "\u2014";
     if (p.pos === "QB") return (w.pass && w.pass !== "\u2014") ? w.pass : "\u2014";
     if (p.pos === "RB") {
       const rush = (w.rush && w.rush !== "\u2014") ? w.rush : "";
