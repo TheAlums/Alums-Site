@@ -48,6 +48,8 @@ td a { color: #FEE123; font-weight: 600; }
 footer { border-top: 1px solid #FEE123; padding: 36px 0 48px; font-size: 13px; }
 .seal-wrap { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; }
 .seal-wrap img { width: 44px; height: 44px; object-fit: contain; }
+.seal-wrap.lg { width: 72px; height: 72px; margin-bottom: 10px; }
+.seal-wrap.lg img, .tile-seal { width: 72px; height: 72px; object-fit: contain; }
 .chip { font-size: 11px; padding: 6px 10px; border-radius: 999px; background: #111; border: 1px solid #FEE123; color: #F7F3E8; }
 .chip.gold { background: #FEE123; color: #111; }
 .ad-wrap { padding: 16px 0; }
