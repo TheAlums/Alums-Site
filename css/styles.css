@@ -17,16 +17,18 @@ button { font-family: inherit; cursor: pointer; }
 h1, h2, h3 { font-family: "Libre Caslon Text", serif; font-weight: 700; }
 .hero { padding: 36px 0; }
 .hero h1 { font-size: clamp(40px, 5.5vw, 68px); text-transform: uppercase; line-height: 0.95; margin: 0; }
-.hero-kicker { color: #FEE123; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.25; }
-.hero.compact .hero-brand { display: grid; grid-template-columns: auto auto 1.2fr 1fr auto; align-items: center; gap: 18px 22px; }
-.hero.compact .hero-seal { width: 110px; height: 110px; }
-.hero.compact .lede { margin: 0; max-width: 36ch; font-size: 16px; }
-.hero.compact .hero-stats { display: flex; flex-direction: column; gap: 14px; margin: 0; }
+.hero-seal { width: 88px; height: 88px; border-radius: 50%; object-fit: contain; display: block; flex-shrink: 0; }
+.hero.compact .hero-brand { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+.hero.compact .hero-title { display: flex; align-items: center; gap: 18px; }
+.hero.compact .hero-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; width: 100%; }
+.hero.compact .lede { margin: 0; max-width: 46ch; font-size: 16px; }
+.hero.compact .hero-stats { display: flex; flex-direction: row; gap: 28px; margin: 0; }
+.hero.compact .stat b { font-size: 33.3px; }
+.hero.compact .stat span { font-size: 13.3px; }
 .hero.slim { padding: 20px 0; }
 .hero.slim .hero-title { display: flex; align-items: center; gap: 16px; }
 .hero.slim h1 { font-size: 40px; }
 .hero.slim .hero-seal { width: 72px; height: 72px; }
-.hero-seal { width: 110px; height: 110px; border-radius: 50%; object-fit: contain; display: block; flex-shrink: 0; }
 .stat b { display: block; font-family: "Libre Caslon Text", serif; font-size: 32px; color: #FEE123; }
 .stat span { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
 .section { padding: 40px 0; }
@@ -77,10 +79,7 @@ body.channel .hero, body.channel .ticker { background: #103725; color: #F7F3E8; 
 body.channel .section, body.channel footer { background: #111; color: #F7F3E8; }
 body.channel h1, body.channel h2, body.channel h3 { color: #F7F3E8; }
 body.channel .section-head p, body.channel th { color: #FEE123; }
-@media (max-width: 900px) {
-  .hero.compact .hero-brand { grid-template-columns: auto 1fr; }
-  .hero.compact .hero-kicker { display: none; }
-  .hero.compact .lede, .hero.compact .hero-stats { grid-column: 1 / -1; }
-  .hero.compact .hero-stats { flex-direction: row; }
+@media (max-width: 800px) {
+  .hero.compact .hero-row { flex-direction: column; }
   .shop-grid, .grid-3, .grid-2, .schools-grid { grid-template-columns: 1fr !important; }
 }
