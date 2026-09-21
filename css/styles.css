@@ -20,11 +20,12 @@ h1, h2, h3 { font-family: "Libre Caslon Text", serif; font-weight: 700; }
 .hero-seal { width: 88px; height: 88px; border-radius: 50%; object-fit: contain; display: block; flex-shrink: 0; }
 .hero.compact .hero-brand { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
 .hero.compact .hero-title { display: flex; align-items: center; gap: 18px; }
-.hero.compact .hero-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; width: 100%; }
+.hero.compact .hero-row { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; width: 100%; }
 .hero.compact .lede { margin: 0; max-width: 46ch; font-size: 16px; }
 .hero.compact .hero-stats { display: flex; flex-direction: row; gap: 28px; margin: 0; }
-.hero.compact .stat b { font-size: 33.3px; }
-.hero.compact .stat span { font-size: 13.3px; }
+.hero.compact .stat { line-height: 1.05; }
+.hero.compact .stat b { font-size: 33.3px; line-height: 1; margin: 0; }
+.hero.compact .stat span { display: block; margin-top: 2px; line-height: 1.15; font-size: 13.3px; }
 .hero.slim { padding: 20px 0; }
 .hero.slim .hero-title { display: flex; align-items: center; gap: 16px; }
 .hero.slim h1 { font-size: 40px; }
@@ -80,6 +81,5 @@ body.channel .section, body.channel footer { background: #111; color: #F7F3E8; }
 body.channel h1, body.channel h2, body.channel h3 { color: #F7F3E8; }
 body.channel .section-head p, body.channel th { color: #FEE123; }
 @media (max-width: 800px) {
-  .hero.compact .hero-row { flex-direction: column; }
   .shop-grid, .grid-3, .grid-2, .schools-grid { grid-template-columns: 1fr !important; }
 }
