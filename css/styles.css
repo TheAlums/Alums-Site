@@ -8,9 +8,16 @@ button { font-family: inherit; cursor: pointer; }
 .nav { background: #111111; border-bottom: 1px solid #FEE123; }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; padding: 8px 0; }
 .brand { display: flex; align-items: center; gap: 12px; font-family: "Libre Caslon Text", serif; font-size: 18px; font-weight: 700; color: #F7F3E8; }
-.nav-links { display: flex; gap: 4px; flex-wrap: wrap; }
+.nav-links { display: flex; gap: 4px; flex-wrap: wrap; align-items: center; }
 .nav-links a { padding: 8px 12px; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #E8D9A0; font-weight: 600; border-radius: 8px; }
 .nav-links a.active, .nav-links a:hover { background: #FEE123; color: #111111; }
+.nav-drop { position: relative; }
+.nav-drop-btn { padding: 8px 12px; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #E8D9A0; font-weight: 600; background: transparent; border: 0; border-radius: 8px; }
+.nav-drop-btn:hover, .nav-drop:hover .nav-drop-btn, .nav-drop:focus-within .nav-drop-btn { background: #FEE123; color: #111; }
+.nav-drop-menu { display: none; position: absolute; right: 0; top: 100%; min-width: 220px; background: #111; border: 1px solid #FEE123; border-radius: 10px; padding: 8px; z-index: 40; }
+.nav-drop:hover .nav-drop-menu, .nav-drop:focus-within .nav-drop-menu { display: block; }
+.nav-drop-menu a { display: block; color: #F7F3E8; text-transform: none; letter-spacing: 0; font-size: 14px; border-radius: 6px; }
+.nav-drop-menu a:hover { background: #FEE123; color: #111; }
 .ticker { background: #103725; color: #F7F3E8; overflow: hidden; }
 .ticker-track { display: flex; gap: 40px; padding: 10px 0; white-space: nowrap; animation: tick 130s linear infinite; width: max-content; }
 @keyframes tick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
