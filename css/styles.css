@@ -18,15 +18,13 @@ h1, h2, h3 { font-family: "Libre Caslon Text", serif; font-weight: 700; }
 .hero { padding: 36px 0; }
 .hero h1 { font-size: clamp(40px, 5.5vw, 68px); text-transform: uppercase; line-height: 0.95; margin: 0; }
 .hero-seal { width: 88px; height: 88px; border-radius: 50%; object-fit: contain; display: block; flex-shrink: 0; }
-.hero-seal.mono { width: 88px; height: 88px; border-radius: 50%; display: grid; place-items: center; font-family: "Libre Caslon Text", serif; font-size: 36px; background: #111; color: #FEE123; border: 2px solid #FEE123; }
 .hero.compact .hero-brand { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
 .hero.compact .hero-title { display: flex; align-items: center; gap: 18px; }
 .hero.compact .hero-row { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; width: 100%; }
 .hero.compact .lede { margin: 0; max-width: 46ch; font-size: 16px; }
 .hero.compact .hero-stats { display: flex; flex-direction: row; gap: 28px; margin: 0; }
-.hero.compact .stat { line-height: 1.05; }
-.hero.compact .stat b { font-size: 33.3px; line-height: 1; margin: 0; }
-.hero.compact .stat span { display: block; margin-top: 2px; line-height: 1.15; font-size: 13.3px; }
+.hero.compact .stat b { font-size: 33.3px; line-height: 1; }
+.hero.compact .stat span { display: block; margin-top: 2px; font-size: 13.3px; }
 .hero.slim { padding: 20px 0; }
 .hero.slim .hero-title { display: flex; align-items: center; gap: 16px; }
 .hero.slim h1 { font-size: 40px; }
@@ -36,17 +34,12 @@ h1, h2, h3 { font-family: "Libre Caslon Text", serif; font-weight: 700; }
 .section { padding: 40px 0; }
 .section-head { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
 .section-head h2 { font-size: 28px; }
-.stat-block { margin: 28px 0; }
 .grid-2 { display: grid !important; grid-template-columns: 1.4fr 1fr !important; gap: 22px; }
 .grid-3 { display: grid !important; grid-template-columns: repeat(3, minmax(0,1fr)) !important; gap: 18px; }
-.shop-grid { display: grid !important; grid-template-columns: repeat(3, minmax(0,1fr)) !important; gap: 16px; }
-.schools-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
+.shop-grid, .schools-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
 .card, .product, .player-card, .school-tile { background: #1a1a1a; border: 1px solid #FEE123; border-radius: 14px; }
 .product, .player-card, .school-tile, .card.pad { padding: 18px; }
 .more, .price, .ppr { color: #FEE123; }
-.filters { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 22px; }
-.filter, .search { background: #1a1a1a; border: 1px solid #FEE123; color: #F7F3E8; border-radius: 999px; padding: 8px 14px; }
-.filter.active { background: #FEE123; color: #111; font-weight: 700; }
 .table-wrap { display: block; width: 100%; overflow-x: auto; border: 1px solid #FEE123; border-radius: 14px; }
 table { width: max-content; min-width: 100%; border-collapse: collapse; font-size: 13px; }
 th { font-size: 11px; text-transform: uppercase; color: #FEE123; background: #111; padding: 10px 8px; text-align: left; }
@@ -57,6 +50,11 @@ footer { border-top: 1px solid #FEE123; padding: 36px 0 48px; font-size: 13px; }
 .seal-wrap img { width: 44px; height: 44px; object-fit: contain; }
 .chip { font-size: 11px; padding: 6px 10px; border-radius: 999px; background: #111; border: 1px solid #FEE123; color: #F7F3E8; }
 .chip.gold { background: #FEE123; color: #111; }
+.ad-wrap { padding: 16px 0; }
+.ad.house { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; min-height: 90px; padding: 16px 22px; border: 1px solid #FEE123; background: #111; color: #F7F3E8; }
+.ad.house small { letter-spacing: 0.1em; text-transform: uppercase; font-size: 10px; color: #FEE123; width: 100%; }
+.ad.house b { font-family: "Libre Caslon Text", serif; font-size: 18px; font-weight: 700; flex: 1; }
+.ad-cta { background: #FEE123; color: #111; font-weight: 700; padding: 8px 14px; border-radius: 8px; font-size: 13px; }
 body.network { background: #F7F3E8; color: #111; }
 body.network .nav { background: #111; }
 body.network .brand, body.network .nav-links a { color: #F7F3E8; }
