@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Alums — College players after they leave</title>
-  <meta name="description" content="A desk for college trees. Oregon ProDucks first. Other schools next." />
+  <title>The Alums</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Libre+Caslon+Display&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=19" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css?v=27" />
 </head>
 <body class="network">
   <header class="nav">
@@ -17,91 +16,41 @@
       <nav class="nav-links">
         <a href="index.html" class="active">Network</a>
         <a href="producks/index.html">ProDucks</a>
-        <a href="producks/shop.html">Shop</a>
-        <a href="producks/about.html">The Idea</a>
+        <a href="protide/index.html">ProTide</a>
+        <a href="probucks/index.html">ProBucks</a>
+        <a href="prodawgs/index.html">ProDawgs</a>
+        <a href="prolions/index.html">ProLions</a>
       </nav>
-      <div class="nav-meta">Multi-school desk · Oregon live</div>
     </div>
   </header>
-
   <section class="hero">
     <div class="wrap">
       <div class="kicker">College players after they leave</div>
       <h1>The Alums</h1>
-      <p class="lede">
-        Bleacher Report for a college tree. One network, a channel per school.
-        Version one is Oregon — stats, news, fantasy, draft measurables, NFL and CFL.
-      </p>
+      <p class="lede">One network. A channel per school. Oregon is the deep desk; Tide, Bucks, Dawgs, and Lions are open with sample boards.</p>
     </div>
   </section>
-
-  <div class="wrap">
-    <aside class="ad leader">
-      <small>Advertisement</small>
-      <b>Network leaderboard · 728×90</b>
-    </aside>
-  </div>
-
   <section class="section">
     <div class="wrap">
-      <div class="section-head">
-        <div>
-          <h2>School PPR</h2>
-          <p>Week score = top 5 skill-position alumni (QB, RB, WR, TE). No defense. CFL stays off this board.</p>
-        </div>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Channel</th>
-              <th>School</th>
-              <th>Skill PPR</th>
-              <th>Top five</th>
-            </tr>
-          </thead>
-          <tbody id="school-rank"></tbody>
-        </table>
-      </div>
+      <div class="section-head"><div><h2>School PPR</h2><p>Top 5 skill alumni. No defense. CFL off this board.</p></div></div>
+      <div class="table-wrap"><table><thead><tr><th>#</th><th>Channel</th><th>School</th><th>Skill PPR</th><th>Top five</th></tr></thead><tbody id="school-rank"></tbody></table></div>
     </div>
   </section>
-
   <section class="section" style="padding-top:0">
     <div class="wrap">
-      <div class="section-head">
-        <div>
-          <h2>Pick a school</h2>
-          <p>ProDucks is live. Empty tiles are the roadmap, not vaporware pages.</p>
-        </div>
-      </div>
+      <div class="section-head"><div><h2>Pick a school</h2></div></div>
       <div class="schools-grid">
-        <a class="school-tile live" href="producks/index.html"><span class="seal-wrap lg"><img class="tile-seal" src="img/producks-seal.png" alt="" /></span>
-          <span class="chip gold">Live</span>
-          <h3>ProDucks</h3>
-          <p>Oregon football alumni — NFL, CFL, draft pipeline. 36 on 53-man rosters.</p>
-        </a>
-        <div class="school-tile">
-          <span class="seal-wrap lg"><img class="tile-seal" src="img/protide-seal.png" alt="" /></span>
-          <span class="soon">Next</span>
-          <h3>ProTide</h3>
-          <p>Alabama. Same engine, different skin.</p>
-        </div>
-        <div class="school-tile">
-          <span class="soon">Next</span>
-          <h3>Dawgs</h3>
-          <p>Georgia. Shared player table, school filter.</p>
-        </div>
+        <a class="school-tile live" href="producks/index.html"><span class="chip gold">Live</span><h3>ProDucks</h3><p>Oregon</p></a>
+        <a class="school-tile live" href="protide/index.html"><span class="chip gold">Live</span><h3>ProTide</h3><p>Alabama</p></a>
+        <a class="school-tile live" href="probucks/index.html"><span class="chip gold">Live</span><h3>ProBucks</h3><p>Ohio State</p></a>
+        <a class="school-tile live" href="prodawgs/index.html"><span class="chip gold">Live</span><h3>ProDawgs</h3><p>Georgia</p></a>
+        <a class="school-tile live" href="prolions/index.html"><span class="chip gold">Live</span><h3>ProLions</h3><p>Penn State</p></a>
       </div>
     </div>
   </section>
-
-  <footer>
-    <div class="wrap">
-      <p>© 2026 The Alums · Not affiliated with the University of Oregon, the NFL, the CFL, or Alum hotels.</p>
-    </div>
-  </footer>
+  <footer><div class="wrap"><p>© 2026 The Alums</p></div></footer>
   <script src="js/data.js"></script>
+  <script src="js/channels.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
