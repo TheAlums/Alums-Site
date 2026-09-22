@@ -1,21 +1,64 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>ProLions</title>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../css/styles.css?v=30" /></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ProLions \u00b7 The Alums</title>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css?v=34" />
+</head>
 <body class="channel lions">
-<header class="nav"><div class="wrap nav-inner">
-<a class="brand" href="../index.html"><span class="seal-wrap"><img class="seal" src="../img/alums-seal-cream.png" alt="The Alums" /></span> THE&nbsp;ALUMS</a>
-<nav class="nav-links"><a href="index.html" class="active">Home</a><a href="roster.html">Players</a><a href="stats.html">Stats</a><a href="news.html">News</a><a href="draft.html">Draft</a><a href="shop.html">Shop</a></nav>
-</div></header>
-<div class="ticker"><div class="ticker-track" id="ticker-track"></div></div>
-<section class="hero compact"><div class="wrap hero-brand">
-<div class="hero-title"><img class="hero-seal" src="../img/prolions-seal.png" alt="ProLions" /><h1>ProLions</h1></div>
-<div class="hero-row"><p class="lede">Sunday numbers, the week’s stories, the draft board, and Lion gear — one desk for ProLions.</p>
-<div class="hero-stats"><div class="stat"><b>47</b><span>On NFL rosters</span></div><div class="stat"><b>—</b><span>Sample desk</span></div><div class="stat"><b>1</b><span>Week live</span></div></div></div>
-</div></section>
-<section class="section"><div class="wrap"><div class="section-head"><div><h2>Week board</h2><p>Penn State alumni sample.</p></div><a class="more" href="stats.html">Full stats →</a></div>
-<div class="table-wrap"><table><thead><tr><th>#</th><th>Player</th><th>Pos</th><th>Team</th><th>Result</th><th>Line</th><th>PPR / score</th></tr></thead><tbody id="home-performers"></tbody></table></div>
-</div></section>
-<footer><div class="wrap"><p>© 2026 The Alums</p></div></footer>
-<script src="../js/data.js"></script><script src="../js/channels.js"></script><script src="../js/app.js"></script>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="../index.html"><span class="seal-wrap"><img class="seal" src="../img/alums-seal-cream.png" alt="The Alums" /></span> THE&nbsp;ALUMS</a>
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="roster.html">Players</a>
+        <a href="stats.html">Stats</a>
+        <a href="news.html">News</a>
+        <a href="draft.html">Draft</a>
+        <a href="shop.html">Shop</a>
+      </nav>
+    </div>
+  </header>
+  <div class="ticker"><div class="ticker-track" id="ticker-track"></div></div>
+  <section class="hero compact">
+    <div class="wrap hero-brand">
+      <div class="hero-title">
+        <img class="hero-seal" src="../img/prolions-seal.png" alt="ProLions" />
+        <h1>ProLions</h1>
+      </div>
+      <div class="hero-row">
+        <p class="lede">Sunday numbers, the week\u2019s stories, the draft board \u2014 one desk for ProLions. Shop coming soon.</p>
+        <div class="hero-stats">
+          <div class="stat"><b>47</b><span>On NFL rosters</span></div>
+          <div class="stat"><b>25</b><span>NFL teams</span></div>
+          <div class="stat"><b>2</b><span>Weeks in the book</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>Week 2 board</h2>
+          <p>Result is W/L, opponent, score. Line is the stat line. Defense PPR is the club score*.</p>
+        </div>
+        <a class="more" href="stats.html">Full stats \u2192</a>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Rank</th><th>Player</th><th>Pos</th><th>Pro team</th><th>Result</th><th>Line</th><th>PPR</th></tr></thead>
+          <tbody id="home-performers"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  <footer><div class="wrap"><p>\u00a9 2026 The Alums</p></div></footer>
+  <script src="../js/data.js"></script>
+  <script src="../js/channels.js"></script>
+  <script src="../js/week2.js"></script>
+  <script src="../js/alumni.js"></script>
+  <script src="../js/app.js"></script>
 </body></html>
