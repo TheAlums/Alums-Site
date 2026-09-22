@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Alums \u2014 College players after they leave</title>
-  <meta name="description" content="A desk for each college tree in the NFL and CFL. Oregon ProDucks is the deep board. Alabama, Ohio State, Georgia, and Penn State are open." />
+  <title>The Alums \u2014 Whose alumni won Sunday?</title>
+  <meta name="description" content="Week scoreboard for college trees in the NFL. Oregon, Alabama, Ohio State, Georgia, Penn State." />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=33" />
+  <link rel="stylesheet" href="css/styles.css?v=34" />
 </head>
 <body class="network">
   <header class="nav">
@@ -30,16 +30,11 @@
 
   <section class="hero">
     <div class="wrap">
-      <p style="letter-spacing:.12em;text-transform:uppercase;font-size:12px;color:#FEE123;margin-bottom:10px">2026 NFL \u00b7 Week 2 posted</p>
-      <h1>The Alums</h1>
-      <p class="lede" style="max-width:52ch;margin-top:16px;font-size:18px;line-height:1.45">
-        One desk per school for the players who left campus and stayed in the league.
-        Sunday lines, PPR for skill positions, news that links out, and a draft board
-        when the next class is measured.
-      </p>
-      <p style="margin-top:14px;max-width:52ch;color:#E8D9A0">
-        Oregon is the full tree \u2014 36 Ducks on 53-man rosters across 24 NFL clubs.
-        Alabama, Ohio State, Georgia, and Penn State desks are open and growing.
+      <p style="letter-spacing:.12em;text-transform:uppercase;font-size:12px;color:#FEE123;margin-bottom:10px">2026 NFL \u00b7 Week 2</p>
+      <h1>Whose alumni won Sunday?</h1>
+      <p class="lede" style="max-width:54ch;margin-top:16px;font-size:18px;line-height:1.45">
+        Five college trees. One week board. Top five skill alumni per school set the cup.
+        Then we stack the best QB, RB, WR, and TE across the desks.
       </p>
     </div>
   </section>
@@ -48,8 +43,8 @@
     <div class="wrap">
       <div class="section-head">
         <div>
-          <h2>Week 2 school board</h2>
-          <p>Score = top five skill alumni (QB, RB, WR, TE). Defense does not score PPR. CFL stays off this table.</p>
+          <h2>The cup</h2>
+          <p>Score = top five skill alumni (QB, RB, WR, TE). Defense does not score. CFL stays off this table.</p>
         </div>
       </div>
       <div class="table-wrap">
@@ -60,7 +55,37 @@
           <tbody id="school-rank"></tbody>
         </table>
       </div>
-      <p style="margin-top:12px;font-size:13px">Oregon Week 2 notes: Nix 22/31 for 288 in a 20\u201313 win. Irving 17\u201389 in a Bucs loss. Herbert 15/27, two interceptions in a 14\u201326 home loss. Buckner a sack on Sunday night.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>Position wars</h2>
+          <p>Best alum at each skill spot this week. One name per school. Highest PPR wears the crown.</p>
+        </div>
+      </div>
+      <div id="pos-wars" class="grid-2"></div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>Sunday kings</h2>
+          <p>Highest single-game PPR among all five desks, regardless of school.</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>#</th><th>Player</th><th>Pos</th><th>School</th><th>Club</th><th>PPR</th></tr>
+          </thead>
+          <tbody id="sunday-kings"></tbody>
+        </table>
+      </div>
     </div>
   </section>
 
@@ -69,7 +94,7 @@
       <div class="section-head">
         <div>
           <h2>The desks</h2>
-          <p>Pick a tree. Each channel keeps its own colors, roster, and Sunday board.</p>
+          <p>Pick a tree after the argument.</p>
         </div>
       </div>
       <div class="schools-grid">
@@ -77,56 +102,32 @@
           <span class="seal-wrap lg"><img class="tile-seal" src="img/producks-seal.png" alt="" /></span>
           <span class="chip gold">Deep desk</span>
           <h3>ProDucks</h3>
-          <p>Oregon. 36 on 53s. Week 2 board live. NFL and CFL.</p>
+          <p>Oregon. 36 on 53s.</p>
         </a>
         <a class="school-tile live" href="protide/index.html">
           <span class="seal-wrap lg"><img class="tile-seal" src="img/protide-seal.png" alt="" /></span>
           <span class="chip gold">Open</span>
           <h3>ProTide</h3>
-          <p>Alabama. Largest active NFL alumni count in the league conversation.</p>
+          <p>Alabama.</p>
         </a>
         <a class="school-tile live" href="probucks/index.html">
           <span class="seal-wrap lg"><img class="tile-seal" src="img/probucks-seal.png" alt="" /></span>
           <span class="chip gold">Open</span>
           <h3>ProBucks</h3>
-          <p>Ohio State. Big Ten Sunday volume. Harrison Jr. and the current class.</p>
+          <p>Ohio State.</p>
         </a>
         <a class="school-tile live" href="prodawgs/index.html">
           <span class="seal-wrap lg"><img class="tile-seal" src="img/prodawgs-seal.png" alt="" /></span>
           <span class="chip gold">Open</span>
           <h3>ProDawgs</h3>
-          <p>Georgia. Draft factory. Same engine as Oregon, red masthead.</p>
+          <p>Georgia.</p>
         </a>
         <a class="school-tile live" href="prolions/index.html">
           <span class="seal-wrap lg"><img class="tile-seal" src="img/prolions-seal.png" alt="" /></span>
           <span class="chip gold">Open</span>
           <h3>ProLions</h3>
-          <p>Penn State. Barkley, Parsons, and a dense mid-Atlantic alumni watch.</p>
+          <p>Penn State.</p>
         </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="padding-top:0">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <h2>How the desk works</h2>
-        </div>
-      </div>
-      <div class="grid-3">
-        <article class="school-tile">
-          <h3>Sunday numbers</h3>
-          <p>Passing, rushing, receiving, and PPR for skill players. Defenders show snaps and the club score, not a fake PPR grade.</p>
-        </article>
-        <article class="school-tile">
-          <h3>News that leaves</h3>
-          <p>Headlines link out to the original story. We do not host the article. Photos follow the same rule as a news search result.</p>
-        </article>
-        <article class="school-tile">
-          <h3>Draft later</h3>
-          <p>When a class is measured, the school page gets heights, weights, and workout marks. Shop is coming soon.</p>
-        </article>
       </div>
     </div>
   </section>
@@ -134,7 +135,7 @@
   <footer>
     <div class="wrap">
       <p>The Alums is an independent desk. Not affiliated with any university, the NFL, the CFL, or Alum hotels.</p>
-      <p style="margin-top:8px">Tips and corrections: <a href="mailto:info@thealums.com">info@thealums.com</a></p>
+      <p style="margin-top:8px">Tips: <a href="mailto:info@thealums.com">info@thealums.com</a></p>
       <p style="margin-top:8px">\u00a9 2026 The Alums</p>
     </div>
   </footer>
@@ -142,6 +143,6 @@
   <script src="js/channels.js"></script>
   <script src="js/week2.js"></script>
   <script src="js/app.js"></script>
-  <script src="js/ads.js"></script>
+  <script src="js/rivalry.js"></script>
 </body>
 </html>
