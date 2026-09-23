@@ -7,6 +7,7 @@
     const sid = (window.FLOCK && FLOCK.meta && FLOCK.meta.schoolId) || "oregon";
     return FLOCK.players.filter(function (p) { return (p.school || "oregon") === sid; });
   }
+  function snapped(p) { return window.FLOCK && FLOCK.hasSnap ? FLOCK.hasSnap(p) : true; }
   function teamScore(p) {
     if (p.week1 && p.week1.teamScore) return p.week1.teamScore;
     const m = String((p.week1 && p.week1.result) || "").match(/[WL]\s+\d+[\u2013\-]\d+/);
@@ -15,6 +16,7 @@
   function isDefPos(pos) { return IDP.indexOf(pos) >= 0; }
   function statLine(p) {
     const w = p.week1 || {};
+    if (!snapped(p)) return "\u2014";
     if (OL.indexOf(p.pos) >= 0) return w.olLine || "\u2014";
     if (p.pos === "QB") return (w.pass && w.pass !== "\u2014") ? w.pass : "\u2014";
     if (p.pos === "RB") {
@@ -94,7 +96,7 @@
     if (!root || !window.FLOCK) return;
     const filter = pos();
     const list = players().filter(function (p) { return posMatch(p, filter); });
-    const nfl = list.filter(function (p) { return (p.league || "NFL") !== "CFL"; });
+    const nfl = list.filter(function (p) { return (p.league || "NFL") !== "CFL" && snapped(p); });
     const cfl = list.filter(function (p) { return (p.league || "NFL") === "CFL"; });
     let html = "";
     const weekRows = nfl.slice().sort(function (a, b) {
@@ -139,22 +141,12 @@
         const s = p.season || {};
         return "<tr>" + nameCell(p) + "<td>" + (p.week1.result||"\u2014") + "</td><td>" + dash(s.tackles) + "</td><td>" + dash(s.sacks) + "</td><td>" + teamScore(p) + "*</td></tr>";
       }).join(""));
-    const st = nfl.filter(function (p) { return p.pos === "K" || (p.week1 && (p.week1.st || p.week1.prAtt)); });
-    html += table("Special teams", ["Player","Pos","Team","PR att","PR avg","PR long","PR TD","PPR"],
-      st.map(function (p) {
-        const w = p.week1 || {};
-        return "<tr>" + nameCell(p) + "<td>" + dash(w.prAtt) + "</td><td>" + dash(w.prAvg) + "</td><td>" + dash(w.prLong) + "</td><td>" + dash(w.prTD) + "</td><td>" + (w.ppr||"\u2014") + "</td></tr>";
-      }).join(""));
-    html += table("CFL", ["Player","Pos","Team","League","Result","Note"],
-      cfl.map(function (p) {
-        return "<tr>" + nameCell(p) + "<td>" + (p.league||"CFL") + "</td><td>" + ((p.week1&&p.week1.result)||"\u2014") + "</td><td>" + ((p.week1&&p.week1.note)||"\u2014") + "</td></tr>";
-      }).join(""));
-    root.innerHTML = html || "<p class=\"footnote\">No rows for this position.</p>";
+    root.innerHTML = html || "<p class=\"footnote\">No snapped players for this filter.</p>";
   }
   function boot() {
     const el = $("#pos-filters");
     if (!el) return;
-    const opts = [["all","All"],["QB","QB"],["RB","RB"],["WR","WR"],["TE","TE"],["DEF","Defense"],["ST","ST"],["CFL","CFL"]];
+    const opts = [["all","All"],["QB","QB"],["RB","RB"],["WR","WR"],["TE","TE"],["DEF","Defense"],["ST","ST"]];
     el.innerHTML = opts.map(function (x, i) {
       return "<button class=\"filter" + (i === 0 ? " active" : "") + "\" data-pos=\"" + x[0] + "\">" + x[1] + "</button>";
     }).join("");
