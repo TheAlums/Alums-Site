@@ -18,6 +18,11 @@
     if (!/\d/.test(s)) return false;
     return !/limited|mixed|depth|started|personnel|comeback|quiet|rotation/i.test(s);
   }
+  function copy(obj) {
+    var out = {};
+    Object.keys(obj || {}).forEach(function (k) { out[k] = obj[k]; });
+    return out;
+  }
   var OL = ["OT", "OL", "G", "C", "OG", "OC"];
   var w = {
     herbert: { result: "L 14\u201326 vs LV", pass: "15/27, 192 yds, 1 TD, 2 INT", rush: "3\u20132", recLine: "\u2014", snaps: 1, ppr: 9.9 },
@@ -29,7 +34,7 @@
     buckner: { result: "L 30\u201333 OT at KC", def: "5 tackles, 1 sack", snaps: 1, teamScore: "L 30\u201333 OT" },
     juwan: { result: "W 24\u201317 at BAL", recLine: "\u2014", snaps: 0, ppr: "\u2014" },
     tez: { result: "L 23\u201319 vs CLE", recLine: "\u2014", snaps: 0, ppr: "\u2014" },
-    ferguson: { result: "W 28\u20136 vs NYG", recLine: recLine(9, 6, 54, 1), snaps: 1, ppr: 17.4 },
+    ferguson: { result: "W 28\u20136 vs NYG", recLine: recLine(9, 6, 54, 1), snaps: 1, tgt: 9, rec: 6, recYds: 54, recTD: 1, ppr: 17.4 },
     james: { result: "W 35\u201313 vs MIA", rush: "\u2014", snaps: 0, ppr: "\u2014" }
   };
   function keyFor(p) {
@@ -38,37 +43,42 @@
     if (/ferguson/.test(n)) return "ferguson";
     return p.id;
   }
+  function finishWeek(box, pos) {
+    box = box || {};
+    if (OL.indexOf(pos) >= 0) {
+      box.ppr = "\u2014";
+      box.pass = "\u2014";
+      box.rush = "\u2014";
+      box.recLine = "\u2014";
+      box.note = "";
+      if (!box.olLine) box.olLine = olLine(box.snaps, box.penalties);
+    }
+    ["pass", "rush", "recLine", "def", "kick"].forEach(function (k) {
+      if (box[k] && !isStat(String(box[k])) && String(box[k]) !== "\u2014") box[k] = "\u2014";
+    });
+    box.note = "";
+    if (box.result && /^DNP\b/i.test(String(box.result))) box.snaps = 0;
+    if (box.snaps == null) {
+      var played = ["pass", "rush", "recLine", "def", "olLine"].some(function (k) {
+        return isStat(String(box[k] || ""));
+      });
+      box.snaps = played ? 1 : 0;
+    }
+    if (box.result && !/^[WL]\b|^Mon\b|^Sun\b|^Thu\b|^DNP\b|^\u2014$/.test(String(box.result))) {
+      box.result = "\u2014";
+    }
+    return box;
+  }
   if (FLOCK.players) {
     FLOCK.players.forEach(function (p) {
-      p.week1 = p.week1 || {};
+      p.weeks = p.weeks || {};
+      if (!p.weeks[1]) p.weeks[1] = finishWeek(copy(p.week1 || {}), p.pos);
       var key = keyFor(p);
-      if (w[key]) {
-        Object.keys(w[key]).forEach(function (k) { p.week1[k] = w[key][k]; });
-        if (p.fantasy && typeof w[key].ppr === "number") p.fantasy.week1PPR = w[key].ppr;
-      }
-      if (OL.indexOf(p.pos) >= 0) {
-        p.week1.ppr = "\u2014";
-        p.week1.pass = "\u2014";
-        p.week1.rush = "\u2014";
-        p.week1.recLine = "\u2014";
-        p.week1.note = "";
-        if (!p.week1.olLine) p.week1.olLine = olLine(p.week1.snaps, p.week1.penalties);
-      }
-      ["pass", "rush", "recLine", "def", "kick"].forEach(function (k) {
-        if (p.week1[k] && !isStat(String(p.week1[k])) && String(p.week1[k]) !== "\u2014") p.week1[k] = "\u2014";
-      });
-      p.week1.note = "";
-      if (p.week1.result && /^DNP\b/i.test(String(p.week1.result))) p.week1.snaps = 0;
-      if (p.roster && p.roster !== "active" && p.week1.snaps == null) p.week1.snaps = 0;
-      if (p.week1.snaps == null) {
-        var played = ["pass", "rush", "recLine", "def", "olLine"].some(function (k) {
-          return isStat(String(p.week1[k] || ""));
-        });
-        p.week1.snaps = played ? 1 : 0;
-      }
-      if (p.week1.result && !/^[WL]\b|^Mon\b|^Sun\b|^Thu\b|^DNP\b|^\u2014$/.test(String(p.week1.result))) {
-        p.week1.result = "\u2014";
-      }
+      var w2 = w[key] ? copy(w[key]) : { result: "\u2014", snaps: 0, ppr: "\u2014" };
+      if (p.roster && p.roster !== "active" && w2.snaps == null) w2.snaps = 0;
+      p.weeks[2] = finishWeek(w2, p.pos);
+      p.week1 = p.weeks[2];
+      if (p.fantasy && typeof p.weeks[2].ppr === "number") p.fantasy.week1PPR = p.weeks[2].ppr;
     });
   }
 })();
