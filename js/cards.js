@@ -8,7 +8,7 @@
     if (/practice/.test(s)) return "Practice squad";
     if (/backup|depth|rookie|limited/.test(s)) return "Rotation";
     if (/rotation/.test(s)) return "Rotation";
-    return p.roster === "active" ? "Rotation" : (p.statusLabel || "Rotation");
+    return p.roster === "active" ? "Rotation" : (p.statusLabel || p.status || "Rotation");
   }
   function ppr(p) {
     if (window.FLOCK && FLOCK.hasSnap && !FLOCK.hasSnap(p)) return "\u2014";
@@ -21,6 +21,12 @@
     if (y == null || y === "") return "";
     return " \u00b7 " + y + " yr" + (y === 1 ? "" : "s");
   }
+  function schoolChip(p) {
+    var map = { oregon: "Oregon", alabama: "Alabama", ohiostate: "Ohio State", georgia: "Georgia", pennstate: "Penn State" };
+    var label = map[p.school] || "College";
+    if (p.yearsAtOregon && p.yearsAtOregon !== "\u2014") return label + " " + p.yearsAtOregon;
+    return label;
+  }
   function card(p) {
     var week = (window.FLOCK && FLOCK.meta && FLOCK.meta.week) || 2;
     return '<a class="player-card" href="player.html?id=' + p.id + '">' +
@@ -29,7 +35,7 @@
       '<div class="chips">' +
         '<span class="chip gold">' + role(p) + '</span>' +
         '<span class="chip">' + (p.draft || "\u2014") + '</span>' +
-        '<span class="chip">Oregon ' + (p.yearsAtOregon || "") + '</span>' +
+        '<span class="chip">' + schoolChip(p) + '</span>' +
       '</div>' +
       '<div class="pc-week">Week ' + week + ' PPR: ' + ppr(p) + '</div>' +
     '</a>';
