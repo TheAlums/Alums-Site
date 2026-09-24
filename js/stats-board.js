@@ -1,6 +1,5 @@
 (function () {
   const IDP = ["DL","DE","DT","EDGE","LB","OLB","ILB","DB","CB","S"];
-  const OFF = ["QB","RB","WR","TE"];
   const OL = ["OT","OL","G","C","OG","OC"];
   function $(sel) { return document.querySelector(sel); }
   function players() {
@@ -14,6 +13,11 @@
     return m ? m[0] : "\u2014";
   }
   function isDefPos(pos) { return IDP.indexOf(pos) >= 0; }
+  function pprCell(p) {
+    if (isDefPos(p.pos)) return teamScore(p) + "*";
+    if (p.week1 && p.week1.ppr != null && p.week1.ppr !== "") return p.week1.ppr;
+    return "\u2014";
+  }
   function statLine(p) {
     const w = p.week1 || {};
     if (!snapped(p)) return "\u2014";
@@ -97,7 +101,6 @@
     const filter = pos();
     const list = players().filter(function (p) { return posMatch(p, filter); });
     const nfl = list.filter(function (p) { return (p.league || "NFL") !== "CFL" && snapped(p); });
-    const cfl = list.filter(function (p) { return (p.league || "NFL") === "CFL"; });
     let html = "";
     const weekRows = nfl.slice().sort(function (a, b) {
       const av = isDefPos(a.pos) ? 0 : (a.week1 && a.week1.ppr) || 0;
@@ -106,14 +109,13 @@
     });
     html += table("Week board", ["Rank","Player","Pos","Pro team","Result","Line","PPR"],
       weekRows.map(function (p, i) {
-        const ppr = isDefPos(p.pos) ? teamScore(p) + "*" : ((p.week1 && p.week1.ppr != null) ? p.week1.ppr : "\u2014");
-        return "<tr><td>" + (i + 1) + "</td><td><a href=\"player.html?id=" + p.id + "\">" + p.name + "</a></td><td>" + p.pos + "</td><td>" + p.team + "</td><td>" + ((p.week1 && p.week1.result) || "\u2014") + "</td><td>" + statLine(p) + "</td><td>" + ppr + "</td></tr>";
+        return "<tr><td>" + (i + 1) + "</td><td><a href=\"player.html?id=" + p.id + "\">" + p.name + "</a></td><td>" + p.pos + "</td><td>" + p.team + "</td><td>" + ((p.week1 && p.week1.result) || "\u2014") + "</td><td>" + statLine(p) + "</td><td>" + pprCell(p) + "</td></tr>";
       }).join(""));
     const passers = nfl.filter(function (p) { return p.pos === "QB"; });
     html += table("Passing", ["Player","Pos","Team","GP","CMP","ATT","CMP%","YDS","AVG","TD","INT","PPR"],
       passers.sort(function (a,b) { return (b.week1.ppr||0)-(a.week1.ppr||0); }).map(function (p) {
         const b = parseBox(p);
-        return "<tr>" + nameCell(p) + "<td>1</td><td>" + dash(b.cmp) + "</td><td>" + dash(b.att) + "</td><td>" + pct(b.cmp,b.att) + "</td><td>" + dash(b.pyds) + "</td><td>" + avg(b.pyds,b.att) + "</td><td>" + dash(b.ptd) + "</td><td>" + dash(b.pint) + "</td><td>" + (p.week1.ppr||"\u2014") + "</td></tr>";
+        return "<tr>" + nameCell(p) + "<td>1</td><td>" + dash(b.cmp) + "</td><td>" + dash(b.att) + "</td><td>" + pct(b.cmp,b.att) + "</td><td>" + dash(b.pyds) + "</td><td>" + avg(b.pyds,b.att) + "</td><td>" + dash(b.ptd) + "</td><td>" + dash(b.pint) + "</td><td>" + pprCell(p) + "</td></tr>";
       }).join(""));
     const rushers = nfl.filter(function (p) {
       const b = parseBox(p);
@@ -122,26 +124,21 @@
     html += table("Rushing", ["Player","Pos","Team","GP","ATT","YDS","AVG","TD","PPR"],
       rushers.sort(function (a,b) { return (b.week1.ppr||0)-(a.week1.ppr||0); }).map(function (p) {
         const b = parseBox(p);
-        return "<tr>" + nameCell(p) + "<td>1</td><td>" + dash(b.ratt) + "</td><td>" + dash(b.ryds) + "</td><td>" + avg(b.ryds,b.ratt) + "</td><td>" + dash(b.rtd) + "</td><td>" + (p.week1.ppr||"\u2014") + "</td></tr>";
+        return "<tr>" + nameCell(p) + "<td>1</td><td>" + dash(b.ratt) + "</td><td>" + dash(b.ryds) + "</td><td>" + avg(b.ryds,b.ratt) + "</td><td>" + dash(b.rtd) + "</td><td>" + pprCell(p) + "</td></tr>";
       }).join(""));
     const recs = nfl.filter(function (p) { return p.pos === "WR" || p.pos === "TE"; });
     html += table("Receiving", ["Player","Pos","Team","GP","TGT","REC","YDS","TD","PPR"],
       recs.sort(function (a,b) { return (b.week1.ppr||0)-(a.week1.ppr||0); }).map(function (p) {
-        return "<tr>" + nameCell(p) + "<td>1</td><td>" + dash((p.week1||{}).tgt) + "</td><td>" + dash((p.week1||{}).rec) + "</td><td>" + dash((p.week1||{}).recYds) + "</td><td>" + dash((p.week1||{}).recTD) + "</td><td>" + (p.week1.ppr||"\u2014") + "</td></tr>";
-      }).join(""));
-    const fans = nfl.filter(function (p) { return p.fantasyRelevant && OFF.indexOf(p.pos) >= 0; });
-    html += table("Fantasy", ["Player","Pos","Team","Wk PPR","Proj","ADP","Grade"],
-      fans.sort(function (a,b) { return (b.week1.ppr||0)-(a.week1.ppr||0); }).map(function (p) {
-        const f = p.fantasy || {};
-        return "<tr>" + nameCell(p) + "<td>" + (f.week1PPR || p.week1.ppr || "\u2014") + "</td><td>" + (f.proj || "\u2014") + "</td><td>" + (f.adp || "\u2014") + "</td><td>" + (f.grade || "\u2014") + "</td></tr>";
+        return "<tr>" + nameCell(p) + "<td>1</td><td>" + dash((p.week1||{}).tgt) + "</td><td>" + dash((p.week1||{}).rec) + "</td><td>" + dash((p.week1||{}).recYds) + "</td><td>" + dash((p.week1||{}).recTD) + "</td><td>" + pprCell(p) + "</td></tr>";
       }).join(""));
     const defs = nfl.filter(function (p) { return IDP.indexOf(p.pos) >= 0; });
-    html += table("Defense", ["Player","Pos","Team","Result","Tackles","Sacks","Team score*"],
+    html += table("Defense", ["Player","Pos","Team","Result","Tackles","Sacks","PPR"],
       defs.map(function (p) {
         const s = p.season || {};
-        return "<tr>" + nameCell(p) + "<td>" + (p.week1.result||"\u2014") + "</td><td>" + dash(s.tackles) + "</td><td>" + dash(s.sacks) + "</td><td>" + teamScore(p) + "*</td></tr>";
+        return "<tr>" + nameCell(p) + "<td>" + ((p.week1 && p.week1.result) || "\u2014") + "</td><td>" + dash(s.tackles) + "</td><td>" + dash(s.sacks) + "</td><td>" + pprCell(p) + "</td></tr>";
       }).join(""));
-    root.innerHTML = html || "<p class=\"footnote\">No snapped players for this filter.</p>";
+    const footnote = defs.length ? "<p class=\"footnote\">* Defense PPR uses the player's NFL team defense score, not an individual IDP grade.</p>" : "";
+    root.innerHTML = (html || "<p class=\"footnote\">No snapped players for this filter.</p>") + footnote;
   }
   function boot() {
     const el = $("#pos-filters");
