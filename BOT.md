@@ -22,7 +22,7 @@ If the deploy screen will not take a custom wrangler file, paste `worker/boxbot.
 
 `js/box-feed.js` asks that URL after the page loads. If the bot is down, the hand sheet in `js/week2.js` stays on screen. Nothing goes blank.
 
-Cron runs at 6:00am Pacific (13:00 UTC) on Friday, Monday, and Tuesday.
+Cron runs at 4:00am Pacific (11:00 UTC) on Friday, Monday, and Tuesday.
 - Friday: Thursday night games
 - Monday: Sunday slate
 - Tuesday: Monday night leftovers
