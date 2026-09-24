@@ -41,6 +41,10 @@ h1, h2, h3 { font-family: "Libre Caslon Text", serif; font-weight: 700; }
 .section { padding: 40px 0; }
 .section-head { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
 .section-head h2 { font-size: 28px; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; }
+.filter { background: transparent; border: 1px solid #FEE123; color: #F7F3E8; padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; }
+.filter.active, .filter:hover { background: #FEE123; color: #111; }
+body.network .filter { color: #F7F3E8; }
 .grid-2 { display: grid !important; grid-template-columns: 1.4fr 1fr !important; gap: 22px; }
 .grid-3 { display: grid !important; grid-template-columns: repeat(3, minmax(0,1fr)) !important; gap: 18px; }
 .shop-grid, .schools-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
