@@ -46,6 +46,12 @@ h1, h2, h3 { font-family: "Libre Caslon Text", serif; font-weight: 700; }
 .shop-grid, .schools-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
 .card, .product, .player-card, .school-tile { background: #1a1a1a; border: 1px solid #FEE123; border-radius: 14px; }
 .product, .player-card, .school-tile, .card.pad { padding: 18px; }
+.player-card .avatar { display: none; }
+.player-card .pc-name { font-family: "Libre Caslon Text", serif; font-size: 22px; font-weight: 700; color: #F7F3E8; line-height: 1.15; margin-bottom: 4px; }
+.player-card .pc-meta { font-size: 14px; color: #E8D9A0; margin-bottom: 12px; }
+.player-card .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.player-card .pc-week { font-size: 14px; color: #F7F3E8; }
+.player-card .ppr { display: none; }
 .more, .price, .ppr { color: #FEE123; }
 .table-wrap { display: block; width: 100%; overflow-x: auto; border: 1px solid #FEE123; border-radius: 14px; }
 table { width: max-content; min-width: 100%; border-collapse: collapse; font-size: 13px; }
