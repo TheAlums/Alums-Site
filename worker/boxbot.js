@@ -1,13 +1,17 @@
 /**
  * The Alums box bot
- * GET /api/week/2  — pull ESPN week boxes, match dictionary names
+ * GET /api/week/3  — pull ESPN week boxes, match dictionary names
  * GET /api/health
  */
 const SEASON = 2026;
 const SCOREBOARD =
-  "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard";
+  "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard";
 const SUMMARY =
-  "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary";
+  "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/summary";
+const HEADERS = {
+  accept: "application/json",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+};
 
 const ROSTER = [
   ["herbert", "Justin Herbert"],
@@ -82,14 +86,14 @@ function cors(data, status) {
     headers: {
       "content-type": "application/json; charset=utf-8",
       "access-control-allow-origin": "*",
-      "cache-control": "public, max-age=300"
+      "cache-control": "public, max-age=60"
     }
   });
 }
 
 async function weekGames(week) {
   const url = SCOREBOARD + "?week=" + week + "&seasontype=2&dates=" + SEASON;
-  const res = await fetch(url, { headers: { accept: "application/json" } });
+  const res = await fetch(url, { headers: HEADERS });
   if (!res.ok) throw new Error("scoreboard " + res.status);
   const json = await res.json();
   return (json.events || []).map(function (ev) {
@@ -121,22 +125,6 @@ function takeStat(map, keys) {
     if (map[keys[i]] != null && map[keys[i]] !== "") return map[keys[i]];
   }
   return 0;
-}
-
-function flattenAthlete(ath) {
-  const stats = {};
-  (ath.stats || []).forEach(function (s) {
-    if (s && s.name) stats[s.name] = s.value;
-  });
-  (ath.statistics || []).forEach(function (cat) {
-    (cat.stats || cat.athletes || []).forEach(function () {});
-  });
-  return {
-    name: ath.athlete && (ath.athlete.displayName || ath.athlete.fullName),
-    team: ath.team && ath.team.abbreviation,
-    stats: stats,
-    raw: ath
-  };
 }
 
 function parseBoxPlayers(summary) {
@@ -220,7 +208,7 @@ async function buildWeek(week) {
   for (let i = 0; i < games.length; i++) {
     const g = games[i];
     try {
-      const res = await fetch(SUMMARY + "?event=" + g.id, { headers: { accept: "application/json" } });
+      const res = await fetch(SUMMARY + "?event=" + g.id, { headers: HEADERS });
       if (!res.ok) continue;
       const sum = await res.json();
       parseBoxPlayers(sum).forEach(function (row) {
@@ -260,6 +248,6 @@ export default {
         return cors({ error: String(err && err.message || err) }, 502);
       }
     }
-    return cors({ error: "try GET /api/week/2" }, 404);
+    return cors({ error: "try GET /api/week/3" }, 404);
   }
 };
