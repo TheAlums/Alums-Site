@@ -1,9 +1,10 @@
 (function () {
   const SKILL = ["QB", "RB", "WR", "TE"];
+  const WEEKS = [1, 2, 3];
   function weekBox(p) {
-    var n = (window.FLOCK && FLOCK.viewWeek) || 2;
+    var n = (window.FLOCK && FLOCK.viewWeek) || 3;
     if (p.weeks && p.weeks[n]) return p.weeks[n];
-    return p.week1 || {};
+    return n === 3 ? {} : (p.week1 || {});
   }
   function ppr(p) {
     var n = Number(weekBox(p).ppr);
@@ -81,8 +82,9 @@
   function bootToggle() {
     const bar = document.querySelector("#week-toggle");
     if (!bar) return;
-    const current = FLOCK.viewWeek || 2;
-    bar.innerHTML = [1, 2].map(function (n) {
+    FLOCK.viewWeek = FLOCK.viewWeek || 3;
+    const current = FLOCK.viewWeek;
+    bar.innerHTML = WEEKS.map(function (n) {
       return "<button class=\"filter" + (n === current ? " active" : "") + "\" data-week=\"" + n + "\">Week " + n + "</button>";
     }).join("");
     bar.onclick = function (e) {
@@ -90,11 +92,13 @@
       if (!btn) return;
       bar.querySelectorAll(".filter").forEach(function (b) { b.classList.remove("active"); });
       btn.classList.add("active");
-      if (FLOCK.setViewWeek) FLOCK.setViewWeek(btn.dataset.week);
-      else { FLOCK.viewWeek = Number(btn.dataset.week); draw(); }
+      FLOCK.viewWeek = Number(btn.dataset.week);
+      if (FLOCK.pullBoxFeed) FLOCK.pullBoxFeed(FLOCK.viewWeek);
+      draw();
     };
   }
   window.addEventListener("load", function () {
+    FLOCK.viewWeek = FLOCK.viewWeek || 3;
     bootToggle();
     draw();
   });
