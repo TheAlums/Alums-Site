@@ -3,8 +3,8 @@
   const WEEKS = [1, 2, 3];
   function weekBox(p) {
     var n = (window.FLOCK && FLOCK.viewWeek) || 3;
-    if (p.weeks && p.weeks[n]) return p.weeks[n];
-    return n === 3 ? {} : (p.week1 || {});
+    if (p && p.weeks && p.weeks[n]) return p.weeks[n];
+    return n === 3 ? {} : ((p && p.week1) || {});
   }
   function ppr(p) {
     var n = Number(weekBox(p).ppr);
@@ -32,17 +32,26 @@
     return Object.keys(bySchool).map(function (sid) { return bySchool[sid]; })
       .sort(function (a, b) { return ppr(b) - ppr(a); });
   }
+  function bestByPosForSchool(sid) {
+    var pool = skillPool().filter(function (p) { return (p.school || "oregon") === sid; });
+    return SKILL.map(function (pos) {
+      var rows = pool.filter(function (p) { return p.pos === pos; }).sort(function (a, b) { return ppr(b) - ppr(a); });
+      return rows[0] || { pos: pos, name: "-", pprMissing: true, weeks: {} };
+    });
+  }
   function renderCup() {
     const el = document.querySelector("#school-rank");
     if (!el || !FLOCK.schools) return;
     const ranked = FLOCK.schools.map(function (s) {
-      const rows = skillPool().filter(function (p) { return (p.school || "oregon") === s.id; });
-      const top = rows.slice().sort(function (a, b) { return ppr(b) - ppr(a); }).slice(0, s.topN || 5);
-      const total = Math.round(top.reduce(function (sum, p) { return sum + ppr(p); }, 0) * 10) / 10;
+      const top = bestByPosForSchool(s.id);
+      const total = Math.round(top.reduce(function (sum, p) { return sum + (p.pprMissing ? 0 : ppr(p)); }, 0) * 10) / 10;
       return Object.assign({}, s, { total: total, top: top });
     }).sort(function (a, b) { return b.total - a.total; });
     el.innerHTML = ranked.map(function (s, i) {
-      const names = s.top.map(function (p) { return p.name + " " + (weekBox(p).ppr != null ? weekBox(p).ppr : "\u2014"); }).join(" \u00b7 ") || "\u2014";
+      const names = s.top.map(function (p) {
+        var score = p.pprMissing ? "-" : (weekBox(p).ppr != null ? weekBox(p).ppr : "-");
+        return p.pos + " " + (p.name || "-") + " " + score;
+      }).join(" / ");
       return "<tr><td>" + (i + 1) + "</td><td><a href=\"" + s.href + "\">" + s.channel + "</a></td><td>" + s.name + "</td><td>" + s.total.toFixed(1) + "</td><td>" + names + "</td></tr>";
     }).join("");
   }
@@ -56,10 +65,10 @@
       const list = rows.map(function (p, i) {
         return "<tr><td>" + (i + 1) + "</td><td>" + p.name + "</td><td>" +
           schoolName(p.school || "oregon") + "</td><td>" + p.team + "</td><td>" +
-          (weekBox(p).ppr != null ? weekBox(p).ppr : "\u2014") + "</td><td>" + (i === 0 ? "Crown" : "") + "</td></tr>";
+          (weekBox(p).ppr != null ? weekBox(p).ppr : "-") + "</td><td>" + (i === 0 ? "Crown" : "") + "</td></tr>";
       }).join("");
       return "<article class=\"school-tile\"><h3>" + pos + "</h3><p style=\"margin:6px 0 12px\">" +
-        crown.name + " \u00b7 " + schoolName(crown.school || "oregon") + "</p>" +
+        crown.name + " - " + schoolName(crown.school || "oregon") + "</p>" +
         "<div class=\"table-wrap\"><table><thead><tr><th>#</th><th>Player</th><th>School</th><th>Club</th><th>PPR</th><th></th></tr></thead><tbody>" +
         list + "</tbody></table></div></article>";
     }).join("");
@@ -71,7 +80,7 @@
     el.innerHTML = rows.map(function (p, i) {
       return "<tr><td>" + (i + 1) + "</td><td>" + p.name + "</td><td>" + p.pos + "</td><td><a href=\"" +
         schoolHref(p.school || "oregon") + "\">" + schoolName(p.school || "oregon") +
-        "</a></td><td>" + p.team + "</td><td>" + (weekBox(p).ppr != null ? weekBox(p).ppr : "\u2014") + "</td></tr>";
+        "</a></td><td>" + p.team + "</td><td>" + (weekBox(p).ppr != null ? weekBox(p).ppr : "-") + "</td></tr>";
     }).join("");
   }
   function draw() {
