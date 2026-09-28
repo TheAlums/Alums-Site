@@ -12,6 +12,7 @@
     irving: { result: "L 16-23 vs MIN", rush: "15 att, 46 yds", recLine: "2 rec, 12 yds, 0 TD", snaps: 1, ppr: 7.8 },
     franklin: { result: "W 30-26 vs LAR", recLine: "1 rec, 21 yds, 0 TD", snaps: 1, ppr: 3.1 },
     ferguson: { result: "L 26-30 at DEN", recLine: "1 rec, 9 yds, 0 TD", snaps: 1, ppr: 1.9 },
+    juwan: { result: "L 27-35 vs LV", recLine: "8 rec, 53 yds, 2 TD", snaps: 1, ppr: 25.3 },
     waddle: { result: "W 30-26 vs LAR", rush: "1 att, 14 yds", recLine: "2 rec, 10 yds, 0 TD", snaps: 1, ppr: 4.4 },
     buckner: { result: "W 19-17 vs HOU", def: "1.5 sack", snaps: 1 },
     holland: { result: "W 12-7 vs TEN", def: "played", snaps: 1 },
@@ -47,6 +48,7 @@
       var box = w3[p.id];
       if (!box && /smith-njigba|jsn/i.test(p.name || "")) box = w3.jsn;
       if (!box && /evan williams/i.test(p.name || "")) box = w3.evanwilliams;
+      if (!box && /juwan johnson/i.test(p.name || "")) box = w3.juwan;
       if (box) {
         p.weeks[3] = box;
       } else if (!p.weeks[3]) {
