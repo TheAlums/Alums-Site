@@ -1,10 +1,10 @@
 (function () {
   const SKILL = ["QB", "RB", "WR", "TE"];
-  const WEEKS = [1, 2, 3];
+  const WEEKS = [1, 2, 3, 4, 5];
   function weekBox(p) {
-    var n = (window.FLOCK && FLOCK.viewWeek) || 3;
+    var n = (window.FLOCK && FLOCK.viewWeek) || 5;
     if (p && p.weeks && p.weeks[n]) return p.weeks[n];
-    return n === 3 ? {} : ((p && p.week1) || {});
+    return {};
   }
   function ppr(p) {
     var n = Number(weekBox(p).ppr);
@@ -91,7 +91,7 @@
   function bootToggle() {
     const bar = document.querySelector("#week-toggle");
     if (!bar) return;
-    FLOCK.viewWeek = FLOCK.viewWeek || 3;
+    FLOCK.viewWeek = FLOCK.viewWeek || 5;
     const current = FLOCK.viewWeek;
     bar.innerHTML = WEEKS.map(function (n) {
       return "<button class=\"filter" + (n === current ? " active" : "") + "\" data-week=\"" + n + "\">Week " + n + "</button>";
@@ -107,7 +107,7 @@
     };
   }
   window.addEventListener("load", function () {
-    FLOCK.viewWeek = FLOCK.viewWeek || 3;
+    FLOCK.viewWeek = FLOCK.viewWeek || 5;
     bootToggle();
     draw();
   });
