@@ -4,7 +4,7 @@
   FLOCK.applyBoxFeed = function (payload) {
     if (!payload || !payload.players || !FLOCK.players) return 0;
     var n = 0;
-    var week = Number(payload.week) || FLOCK.viewWeek || 3;
+    var week = Number(payload.week) || FLOCK.viewWeek || 5;
     FLOCK.players.forEach(function (p) {
       var box = payload.players[p.id];
       if (!box) return;
@@ -21,7 +21,7 @@
     return n;
   };
   FLOCK.pullBoxFeed = function (week) {
-    week = week || FLOCK.viewWeek || 3;
+    week = week || FLOCK.viewWeek || 5;
     var base = (FLOCK.meta && FLOCK.meta.boxFeed) || DEFAULT;
     return fetch(base + week, { cache: "no-store" })
       .then(function (r) { return r.ok ? r.json() : null; })
@@ -32,6 +32,6 @@
       .catch(function () { return 0; });
   };
   window.addEventListener("load", function () {
-    setTimeout(function () { FLOCK.pullBoxFeed(FLOCK.viewWeek || 3); }, 400);
+    setTimeout(function () { FLOCK.pullBoxFeed(FLOCK.viewWeek || 5); }, 400);
   });
 })();
