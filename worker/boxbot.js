@@ -57,7 +57,9 @@ const ROSTER = [
   ["warren", "Tyler Warren"],
   ["acarter", "Abdul Carter"],
   ["jbrisker", "Jaquan Brisker"],
-  ["evanwilliams", "Evan Williams"]
+  ["evanwilliams", "Evan Williams"],
+  ["juwan", "Juwan Johnson"],
+  ["sadiq", "Kenyon Sadiq"]
 ];
 
 const NAME_TO_ID = {};
