@@ -13,6 +13,9 @@
     FLOCK.meta.week = 10;
     FLOCK.meta.lastUpdated = "November 15, 2026";
   }
+  /* Provisional until LAC at BAL (event 401873065) is stamped; delete this flag when it is. */
+  FLOCK.weekStatus = FLOCK.weekStatus || {};
+  FLOCK.weekStatus[10] = { provisional: true, pending: ["401873065"], note: "Chargers at Ravens (MNF) not yet stamped" };
   var w10 = {
     acarter: { result: "L 21-24 vs WSH", def: "3 tackles, 1 TFL", tackles: 3, sacks: 0, snaps: 1, espnId: "4725996", event: "401873052" },
     bassa: { result: "W 35-13 at ATL", def: "2 tackles", tackles: 2, sacks: 0, snaps: 1, espnId: "4602389", event: "401873058" },
