@@ -23,7 +23,7 @@
     row({ id: "bassa", name: "Jeffrey Bassa", pos: "LB", team: "KC", teamName: "Kansas City Chiefs", jersey: 31, yearsAtOregon: "2021-24", roster: "active", statusLabel: "53-man" }),
     row({ id: "benson", name: "Malik Benson", pos: "WR", team: "LV", teamName: "Las Vegas Raiders", jersey: 19, yearsAtOregon: "2025", roster: "active", statusLabel: "53-man" }),
     row({ id: "boettcher", name: "Bryce Boettcher", pos: "LB", team: "IND", teamName: "Indianapolis Colts", jersey: 50, yearsAtOregon: "2021-25", roster: "active", statusLabel: "53-man" }),
-    row({ id: "buckner", name: "DeForest Buckner", pos: "DL", team: "IND", teamName: "Indianapolis Colts", jersey: 99, yearsAtOregon: "2012-15", roster: "active", statusLabel: "53-man" }),
+    row({ id: "buckner", name: "DeForest Buckner", pos: "DL", team: "SF", teamName: "San Francisco 49ers", jersey: 99, yearsAtOregon: "2012-15", roster: "active", statusLabel: "53-man" }),
     row({ id: "burch", name: "Jordan Burch", pos: "OLB", team: "ARI", teamName: "Arizona Cardinals", jersey: 52, yearsAtOregon: "2020-24", roster: "active", statusLabel: "53-man" }),
     row({ id: "caldwell", name: "Jamaree Caldwell", pos: "DL", team: "LAC", teamName: "Los Angeles Chargers", jersey: 99, yearsAtOregon: "2022-24", roster: "active", statusLabel: "53-man" }),
     row({ id: "canady", name: "Jadon Canady", pos: "DB", team: "KC", teamName: "Kansas City Chiefs", jersey: 22, yearsAtOregon: "2025", roster: "active", statusLabel: "53-man" }),

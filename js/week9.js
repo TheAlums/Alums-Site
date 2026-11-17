@@ -6,7 +6,7 @@
     FLOCK.meta.lastUpdated = "November 9, 2026";
   }
   var w9 = {
-    juwan: { result: "W 23-22 vs CLE", recLine: "2 rec, 34 yds, 1 TD", snaps: 1, ppr: 15.4 },
+    juwan: { result: "W 23-22 vs CLE", recLine: "2 rec, 34 yds, 1 TD", snaps: 1, ppr: 11.4 }, /* ESPN event 401873039: 2 rec, 34 yds, 1 TD, 2 tgt -> 2 + 3.4 + 6 = 11.4 */
     sadiq: { result: "L 12-35 at KC", recLine: "4 rec, 49 yds, 0 TD", snaps: 1, ppr: 8.9 },
     herbert: { result: "L 22-44 vs HOU", pass: "13/23, 193 yds, 1 TD, 1 INT", rush: "1 att, 7 yds", snaps: 1, ppr: 10.4 },
     nix: { result: "W 26-21 at CAR", pass: "25/37, 237 yds, 2 TD, 1 INT", rush: "5 att, 2 yds", snaps: 1, ppr: 15.5 },
@@ -21,7 +21,7 @@
     olave: { result: "W 23-22 vs CLE", recLine: "7 rec, 98 yds, 0 TD", snaps: 1, ppr: 16.8 },
     jsn: { result: "W 17-3 vs ARI", recLine: "7 rec, 51 yds, 0 TD", snaps: 1, ppr: 12.1 },
     warren: { result: "L 23-27 vs DAL", recLine: "4 rec, 44 yds, 0 TD", snaps: 1, ppr: 8.4 },
-    buckner: { result: "L 23-27 vs DAL", def: "1 tackle", snaps: 1 },
+    buckner: { result: "W 38-17 vs LV", team: "SF", def: "1 tackle", snaps: 1 }, /* ESPN event 401873047: SF box, totalTackles 1 */
     thibodeaux: { result: "W 19-11 at PHI", def: "4 tackles", snaps: 1 },
     holland: { result: "W 19-11 at PHI", def: "4 tackles", snaps: 1 },
     gonzalez: { result: "L 27-45 vs GB", def: "10 tackles", snaps: 1 },

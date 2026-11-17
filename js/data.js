@@ -421,8 +421,8 @@ FLOCK.players = [
     id: "buckner",
     name: "DeForest Buckner",
     pos: "DL",
-    team: "IND",
-    teamName: "Indianapolis Colts",
+    team: "SF", /* ESPN boxes: IND through Week 7, SF from Week 9 (events 401873047, 401873063) */
+    teamName: "San Francisco 49ers",
     league: "NFL",
     school: "oregon",
     years: 11,
