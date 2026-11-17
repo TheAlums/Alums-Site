@@ -1,0 +1,5291 @@
+{
+ "schema": "thealums.alumni/v1",
+ "asOf": "2026-11-16",
+ "description": "Canonical alumni list for thealums.com and the news bot. Merged from js/data.js, js/alumni.js, js/dictionary.js and worker/boxbot.js ROSTER on 2026-11-16. Team/espnId come from 2026 ESPN summary boxes (weeks 1-10, final games) when a player appeared in one.",
+ "sources": {
+  "espnScoreboard": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?seasontype=2&week=<N>&dates=2026",
+  "espnSummary": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=<event>",
+  "dictionary": {
+   "school": "oregon",
+   "source": "GoDucks NFL #ProDucks",
+   "sourceUrl": "https://goducks.com/sports/2021/10/29/ducks-in-the-nfl",
+   "asOf": "2026-09-22"
+  }
+ },
+ "notes": {
+  "uid": "espn:<ESPN athlete id> when the player has appeared in a 2026 ESPN box; otherwise site:<site key>. id is the site key used by js/weekN.js.",
+  "site.profile": "Display fields carried over from data.js/alumni.js. week1/season/fantasy inside it are the launch hand seed, NOT box-verified. Never quote them as stats; use js/weekN.js box lines."
+ },
+ "brands": {
+  "oregon": "ProDucks",
+  "alabama": "ProTide",
+  "ohiostate": "ProBucks",
+  "georgia": "ProDawgs",
+  "pennstate": "ProLions"
+ },
+ "counts": {
+  "total": 84,
+  "byBrand": {
+   "ProDucks": 52,
+   "ProTide": 7,
+   "ProDawgs": 9,
+   "ProBucks": 8,
+   "ProLions": 8
+  }
+ },
+ "players": [
+  {
+   "uid": "espn:4038941",
+   "id": "herbert",
+   "espnId": "4038941",
+   "name": "Justin Herbert",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "LAC",
+   "teamName": "Los Angeles Chargers",
+   "teamSource": "ESPN box week 9 (event 401873046)",
+   "pos": "QB",
+   "jersey": 10,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Justin Herbert",
+   "lastBox": {
+    "week": 9,
+    "espnTeam": "LAC",
+    "event": "401873046"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "data": 0,
+     "dictionary": 19,
+     "boxbotRoster": 0
+    },
+    "dictionaryRow": {
+     "pos": "QB",
+     "jersey": 10,
+     "yearsAtOregon": "2016-19",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 7,
+     "draft": "2020 · R1 #6",
+     "yearsAtOregon": "2016–2019",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "bio": "The face of the modern Oregon pipeline. Herbert left Eugene as a dual-threat Heisman finalist and has become one of the NFL's most complete quarterbacks — a 6-foot-6 processor with a cannon and surprising mobility.",
+     "week1": {
+      "result": "L 14–26 vs ARI",
+      "pass": "17/27, 209 yds, 1 TD, 1 INT",
+      "rush": "5–29",
+      "ppr": 13.3,
+      "note": "Middling afternoon in a Chargers upset loss."
+     },
+     "season": {
+      "passYds": 209,
+      "passTD": 1,
+      "int": 1,
+      "rushYds": 29,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 0,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 13.3,
+      "proj": 19,
+      "adp": "QB8",
+      "grade": "A-"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4426338",
+   "id": "nix",
+   "espnId": "4426338",
+   "name": "Bo Nix",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "DEN",
+   "teamName": "Denver Broncos",
+   "teamSource": "ESPN box week 9 (event 401873041)",
+   "pos": "QB",
+   "jersey": 10,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Bo Nix",
+   "lastBox": {
+    "week": 9,
+    "espnTeam": "DEN",
+    "event": "401873041"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "data": 1,
+     "dictionary": 28,
+     "boxbotRoster": 1
+    },
+    "dictionaryRow": {
+     "pos": "QB",
+     "jersey": 10,
+     "yearsAtOregon": "2022-23",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 3,
+     "draft": "2024 · R1 #12",
+     "yearsAtOregon": "2022–2023",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "bio": "Transferred from Auburn and remade himself in Eugene. Nix led Oregon to the College Football Playoff and has settled in as Denver's starter — a high-volume passer with enough legs to stay fantasy-relevant.",
+     "week1": {
+      "result": "L 10–31 vs KC",
+      "pass": "17/28, 176 yds, 1 TD, 2 INT",
+      "rush": "3–18",
+      "ppr": 8.8,
+      "note": "Tough road opener against Kansas City."
+     },
+     "season": {
+      "passYds": 176,
+      "passTD": 1,
+      "int": 2,
+      "rushYds": 18,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 0,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 8.8,
+      "proj": 16.1,
+      "adp": "QB14",
+      "grade": "C-"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:2576980",
+   "id": "mariota",
+   "espnId": "2576980",
+   "name": "Marcus Mariota",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "WAS",
+   "teamName": "Washington Commanders",
+   "teamSource": "dictionary.js",
+   "pos": "QB",
+   "jersey": 8,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Backup",
+   "boxbotRoster": true,
+   "boxbotName": "Marcus Mariota",
+   "lastBox": {
+    "week": 4,
+    "espnTeam": "WSH",
+    "event": "401872965"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "data": 2,
+     "dictionary": 26,
+     "boxbotRoster": 2
+    },
+    "dictionaryRow": {
+     "pos": "QB",
+     "jersey": 8,
+     "yearsAtOregon": "2011-14",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 12,
+     "draft": "2015 · R1 #2",
+     "yearsAtOregon": "2011–2014",
+     "status": "Backup",
+     "featured": false,
+     "fantasyRelevant": false,
+     "bio": "Heisman winner, program icon, and still one of the most trusted backup quarterbacks in the league. Mariota remains the elder statesman of the Oregon QB tree.",
+     "week1": {
+      "result": "Did not play",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 0,
+      "note": "Emergency QB behind Jayden Daniels."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 0,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 0,
+      "proj": 0,
+      "adp": "UDFA",
+      "grade": "Sit"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4596448",
+   "id": "irving",
+   "espnId": "4596448",
+   "name": "Bucky Irving",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "TB",
+   "teamName": "Tampa Bay Buccaneers",
+   "teamSource": "ESPN box week 9 (event 401873050)",
+   "pos": "RB",
+   "jersey": 7,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Bucky Irving",
+   "lastBox": {
+    "week": 9,
+    "espnTeam": "TB",
+    "event": "401873050"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "data": 3,
+     "dictionary": 21,
+     "boxbotRoster": 3
+    },
+    "dictionaryRow": {
+     "pos": "RB",
+     "jersey": 7,
+     "yearsAtOregon": "2022-23",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 3,
+     "draft": "2024 · R4 #125",
+     "yearsAtOregon": "2022–2023",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "bio": "A compact, decisive runner who turned a mid-round draft slot into a featured role in Tampa. Irving is the most valuable Oregon skill player in fantasy formats right now.",
+     "week1": {
+      "result": "L @ CIN",
+      "pass": "—",
+      "rush": "~16 touches, receiving TD",
+      "ppr": 12.5,
+      "note": "Primary back; mixed box with a receiving score."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 37,
+      "rushTD": 0,
+      "rec": 4,
+      "recYds": 8,
+      "recTD": 1,
+      "tackles": 0,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 12.5,
+      "proj": 13.5,
+      "adp": "RB22",
+      "grade": "B"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4685397",
+   "id": "james",
+   "espnId": "4685397",
+   "name": "Jordan James",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "SF",
+   "teamName": "San Francisco 49ers",
+   "teamSource": "ESPN box week 10 (event 401873063)",
+   "pos": "RB",
+   "jersey": 3,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Rotation",
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "SF",
+    "event": "401873063"
+   },
+   "conflicts": [
+    {
+     "field": "jersey",
+     "values": {
+      "data": 3,
+      "dictionary": 29
+     }
+    }
+   ],
+   "site": {
+    "views": {
+     "data": 4,
+     "dictionary": 22
+    },
+    "dictionaryRow": {
+     "pos": "RB",
+     "jersey": 29,
+     "yearsAtOregon": "2022-24",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 2,
+     "draft": "2025 · R5",
+     "yearsAtOregon": "2021–2024",
+     "status": "Rotation",
+     "featured": false,
+     "fantasyRelevant": true,
+     "bio": "Power runner out of the Oregon backfield now in a crowded San Francisco room. Depth-chart climber with weekly dart-throw appeal if injuries hit.",
+     "week1": {
+      "result": "Limited snaps",
+      "pass": "—",
+      "rush": "Depth",
+      "ppr": 1.2,
+      "note": "Behind the 49ers' established committee."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 8,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 0,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 1.2,
+      "proj": 3.4,
+      "adp": "Waiver",
+      "grade": "Sit"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4431280",
+   "id": "franklin",
+   "espnId": "4431280",
+   "name": "Troy Franklin",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "DEN",
+   "teamName": "Denver Broncos",
+   "teamSource": "ESPN box week 9 (event 401873041)",
+   "pos": "WR",
+   "jersey": 11,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Rotation",
+   "boxbotRoster": true,
+   "boxbotName": "Troy Franklin",
+   "lastBox": {
+    "week": 9,
+    "espnTeam": "DEN",
+    "event": "401873041"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "data": 5,
+     "dictionary": 15,
+     "boxbotRoster": 4
+    },
+    "dictionaryRow": {
+     "pos": "WR",
+     "jersey": 11,
+     "yearsAtOregon": "2021-23",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 3,
+     "draft": "2024 · R4 #102",
+     "yearsAtOregon": "2021–2023",
+     "status": "Rotation",
+     "featured": true,
+     "fantasyRelevant": true,
+     "bio": "Deep threat who stretched the field for Nix in Eugene and is still hunting a consistent target share in Denver. Big-play profile, week-to-week volatility.",
+     "week1": {
+      "result": "L 10–31 vs KC",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 4.1,
+      "note": "Quiet in a stalled Broncos passing game."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 2,
+      "recYds": 21,
+      "recTD": 0,
+      "tackles": 0,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 4.1,
+      "proj": 8.6,
+      "adp": "WR5/flex",
+      "grade": "C"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4608810",
+   "id": "tez",
+   "espnId": "4608810",
+   "name": "Tez Johnson",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "TB",
+   "teamName": "Tampa Bay Buccaneers",
+   "teamSource": "ESPN box week 9 (event 401873050)",
+   "pos": "WR",
+   "jersey": 15,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Rotation",
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": {
+    "week": 9,
+    "espnTeam": "TB",
+    "event": "401873050"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "data": 6,
+     "dictionary": 24
+    },
+    "dictionaryRow": {
+     "pos": "WR",
+     "jersey": 15,
+     "yearsAtOregon": "2023-24",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 2,
+     "draft": "2025 · UDFA / mid",
+     "yearsAtOregon": "2023–2024",
+     "status": "Rotation",
+     "featured": false,
+     "fantasyRelevant": true,
+     "bio": "Shifty slot and return option. Flash plays and a highlight-reel celebration style — the kind of Duck who shows up on every Sunday slate even when the box score is modest.",
+     "week1": {
+      "result": "Special teams + offense",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 3.8,
+      "note": "Mixed offensive/return snaps."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 2,
+      "recYds": 18,
+      "recTD": 0,
+      "tackles": 0,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 3.8,
+      "proj": 5.2,
+      "adp": "Waiver",
+      "grade": "Sit"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:5150247",
+   "id": "benson",
+   "espnId": "5150247",
+   "name": "Malik Benson",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "LV",
+   "teamName": "Las Vegas Raiders",
+   "teamSource": "dictionary.js",
+   "pos": "WR",
+   "jersey": 19,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Rookie",
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": {
+    "week": 7,
+    "espnTeam": "LV",
+    "event": "401873021"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "data": 7,
+     "dictionary": 3
+    },
+    "dictionaryRow": {
+     "pos": "WR",
+     "jersey": 19,
+     "yearsAtOregon": "2025",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 1,
+     "draft": "2026 · R6 #195",
+     "yearsAtOregon": "2025",
+     "status": "Rookie",
+     "featured": false,
+     "fantasyRelevant": false,
+     "bio": "Transfer-portal receiver who led Oregon in receiving yards in 2025. Developmental piece in Las Vegas after a sixth-round selection.",
+     "week1": {
+      "result": "Limited",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 0,
+      "note": "Rookie getting his feet wet."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 0,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 0,
+      "proj": 1.5,
+      "adp": "UDFA",
+      "grade": "Sit"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:5083315",
+   "id": "sadiq",
+   "espnId": "5083315",
+   "name": "Kenyon Sadiq",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "NYJ",
+   "teamName": "New York Jets",
+   "teamSource": "ESPN box week 10 (event 401873054)",
+   "pos": "TE",
+   "jersey": 16,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Kenyon Sadiq",
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "NYJ",
+    "event": "401873054"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "data": 8,
+     "dictionary": 31,
+     "boxbotRoster": 45
+    },
+    "dictionaryRow": {
+     "pos": "TE",
+     "jersey": 16,
+     "yearsAtOregon": "2023-25",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 1,
+     "draft": "2026 · R1 #16",
+     "yearsAtOregon": "2023–2025",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "bio": "First-round tight end who announced himself immediately — a rushing touchdown in the first five minutes of his NFL career. Big Ten TE of the Year in 2025. The rookie to watch.",
+     "week1": {
+      "result": "W 23–10 @ TEN",
+      "pass": "3 rec, 21 yds",
+      "rush": "1–3, 1 TD",
+      "ppr": 11.4,
+      "note": "Rushing TD on his first NFL series."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 3,
+      "rushTD": 1,
+      "rec": 3,
+      "recYds": 21,
+      "recTD": 0,
+      "tackles": 0,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 11.4,
+      "proj": 8.2,
+      "adp": "TE streamer",
+      "grade": "B+"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:3929645",
+   "id": "juwan",
+   "espnId": "3929645",
+   "name": "Juwan Johnson",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "NO",
+   "teamName": "New Orleans Saints",
+   "teamSource": "ESPN box week 10 (event 401873055)",
+   "pos": "TE",
+   "jersey": 83,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Juwan Johnson",
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "NO",
+    "event": "401873055"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "data": 9,
+     "dictionary": 23,
+     "boxbotRoster": 44
+    },
+    "dictionaryRow": {
+     "pos": "TE",
+     "jersey": 83,
+     "yearsAtOregon": "2019",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 7,
+     "draft": "2020 · UDFA",
+     "yearsAtOregon": "2015–2018",
+     "status": "Starter",
+     "featured": false,
+     "fantasyRelevant": true,
+     "bio": "Converted receiver who became a Saints tight end staple. Reliable red-zone target and one of the longer-tenured Ducks still producing on offense.",
+     "week1": {
+      "result": "Starter snaps",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 6.4,
+      "note": "In the Saints two-TE look."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 3,
+      "recYds": 34,
+      "recTD": 0,
+      "tackles": 0,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 6.4,
+      "proj": 7.8,
+      "adp": "TE2",
+      "grade": "C+"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4570037",
+   "id": "ferguson",
+   "espnId": "4570037",
+   "name": "Terrance Ferguson",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "LAR",
+   "teamName": "Los Angeles Rams",
+   "teamSource": "dictionary.js",
+   "pos": "TE",
+   "jersey": 18,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Rotation",
+   "boxbotRoster": true,
+   "boxbotName": "Terrance Ferguson",
+   "lastBox": {
+    "week": 3,
+    "espnTeam": "LAR",
+    "event": "401872962"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "data": 10,
+     "dictionary": 13,
+     "boxbotRoster": 5
+    },
+    "dictionaryRow": {
+     "pos": "TE",
+     "jersey": 18,
+     "yearsAtOregon": "2021-24",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 2,
+     "draft": "2025 · R2 #46",
+     "yearsAtOregon": "2021–2024",
+     "status": "Rotation",
+     "featured": false,
+     "fantasyRelevant": true,
+     "bio": "Athletic mismatch tight end drafted to grow in Sean McVay's offense. Year-two leap candidate.",
+     "week1": {
+      "result": "Rotational",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 2.6,
+      "note": "Mixed into 12 personnel."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 1,
+      "recYds": 16,
+      "recTD": 0,
+      "tackles": 0,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 2.6,
+      "proj": 4.1,
+      "adp": "Waiver",
+      "grade": "Sit"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:3052096",
+   "id": "mundt",
+   "espnId": "3052096",
+   "name": "Johnny Mundt",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "PHI",
+   "teamName": "Philadelphia Eagles",
+   "teamSource": "dictionary.js",
+   "pos": "TE",
+   "jersey": 82,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Depth",
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": {
+    "week": 6,
+    "espnTeam": "PHI",
+    "event": "401872998"
+   },
+   "conflicts": [
+    {
+     "field": "jersey",
+     "values": {
+      "data": 82,
+      "dictionary": 83
+     }
+    }
+   ],
+   "site": {
+    "views": {
+     "data": 11,
+     "dictionary": 27
+    },
+    "dictionaryRow": {
+     "pos": "TE",
+     "jersey": 83,
+     "yearsAtOregon": "2013-16",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 9,
+     "draft": "2017 · UDFA",
+     "yearsAtOregon": "2013–2016",
+     "status": "Depth",
+     "featured": false,
+     "fantasyRelevant": false,
+     "bio": "Blocking specialist and special-teams veteran. One of the quieter, longer Oregon careers in the league.",
+     "week1": {
+      "result": "ST / 12 personnel",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 0,
+      "note": "Blocking role."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 0,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 0,
+      "proj": 0.4,
+      "adp": "—",
+      "grade": "Sit"
+     }
+    }
+   }
+  },
+  {
+   "uid": "site:sewell",
+   "id": "sewell",
+   "espnId": null,
+   "name": "Penei Sewell",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "DET",
+   "teamName": "Detroit Lions",
+   "teamSource": "dictionary.js",
+   "pos": "OT",
+   "jersey": 58,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Penei Sewell",
+   "lastBox": null,
+   "conflicts": [
+    {
+     "field": "pos",
+     "values": {
+      "data": "OT",
+      "dictionary": "OL"
+     }
+    }
+   ],
+   "site": {
+    "views": {
+     "data": 12,
+     "dictionary": 32,
+     "boxbotRoster": 6
+    },
+    "dictionaryRow": {
+     "pos": "OL",
+     "jersey": 58,
+     "yearsAtOregon": "2018-20",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 6,
+     "draft": "2021 · R1 #7",
+     "yearsAtOregon": "2018–2020",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": false,
+     "bio": "Consensus top-three tackle in football. Left-side anchor in Detroit and the gold standard for Oregon offensive linemen. All-Pro caliber every season.",
+     "week1": {
+      "result": "Started at LT",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 0,
+      "note": "Full-game starter. No flags of note."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 0,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 0,
+      "proj": 0,
+      "adp": "IDP only",
+      "grade": "—"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4875295",
+   "id": "jpj",
+   "espnId": "4875295",
+   "name": "Jackson Powers-Johnson",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "LV",
+   "teamName": "Las Vegas Raiders",
+   "teamSource": "dictionary.js",
+   "pos": "OL",
+   "jersey": 58,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Starter",
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": {
+    "week": 1,
+    "espnTeam": "LV",
+    "event": "401872928"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "data": 13,
+     "dictionary": 29
+    },
+    "dictionaryRow": {
+     "pos": "OL",
+     "jersey": 58,
+     "yearsAtOregon": "2021-23",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 3,
+     "draft": "2024 · R2 #44",
+     "yearsAtOregon": "2021–2023",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": false,
+     "bio": "Rimington-level interior lineman who can play guard or center. Already a Raiders building block on the interior.",
+     "week1": {
+      "result": "Started",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 0,
+      "note": "Interior starter."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 0,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 0,
+      "proj": 0,
+      "adp": "—",
+      "grade": "—"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4685120",
+   "id": "bass",
+   "espnId": "4685120",
+   "name": "T.J. Bass",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "DAL",
+   "teamName": "Dallas Cowboys",
+   "teamSource": "ESPN box week 10 (event 401873063)",
+   "pos": "OL",
+   "jersey": 66,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Rotation",
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "DAL",
+    "event": "401873063"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "data": 14,
+     "dictionary": 1
+    },
+    "dictionaryRow": {
+     "pos": "OL",
+     "jersey": 66,
+     "yearsAtOregon": "2020-22",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 4,
+     "draft": "2023 · UDFA",
+     "yearsAtOregon": "2018–2022",
+     "status": "Rotation",
+     "featured": false,
+     "fantasyRelevant": false,
+     "bio": "Undrafted success story. Versatile interior/tackle depth who has carved out a real NFL role in Dallas.",
+     "week1": {
+      "result": "ST snaps",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 0,
+      "note": "Four special-teams snaps reported."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 0,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 0,
+      "proj": 0,
+      "adp": "—",
+      "grade": "—"
+     }
+    }
+   }
+  },
+  {
+   "uid": "site:forsyth",
+   "id": "forsyth",
+   "espnId": null,
+   "name": "Alex Forsyth",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "DEN",
+   "teamName": "Denver Broncos",
+   "teamSource": "dictionary.js",
+   "pos": "OL",
+   "jersey": 54,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Rotation",
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": null,
+   "conflicts": [],
+   "site": {
+    "views": {
+     "data": 15,
+     "dictionary": 14
+    },
+    "dictionaryRow": {
+     "pos": "OL",
+     "jersey": 54,
+     "yearsAtOregon": "2017-22",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 4,
+     "draft": "2023 · R7",
+     "yearsAtOregon": "2018–2022",
+     "status": "Rotation",
+     "featured": false,
+     "fantasyRelevant": false,
+     "bio": "Center/guard who stayed in the same city as Nix. Reliable depth with starting experience.",
+     "week1": {
+      "result": "Active",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 0,
+      "note": "Interior depth."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 0,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 0,
+      "proj": 0,
+      "adp": "—",
+      "grade": "—"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4685326",
+   "id": "conerly",
+   "espnId": "4685326",
+   "name": "Josh Conerly Jr.",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "WAS",
+   "teamName": "Washington Commanders",
+   "teamSource": "dictionary.js",
+   "pos": "OL",
+   "jersey": 76,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Starter",
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": {
+    "week": 4,
+    "espnTeam": "WSH",
+    "event": "401872965"
+   },
+   "conflicts": [
+    {
+     "field": "jersey",
+     "values": {
+      "data": 76,
+      "dictionary": 72
+     }
+    }
+   ],
+   "site": {
+    "views": {
+     "data": 16,
+     "dictionary": 9
+    },
+    "dictionaryRow": {
+     "pos": "OL",
+     "jersey": 72,
+     "yearsAtOregon": "2022-24",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 2,
+     "draft": "2025 · R1",
+     "yearsAtOregon": "2022–2024",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": false,
+     "bio": "First-round tackle out of the 2025 class. Immediate starter in Washington's rebuilt line — the next Sewell-track Duck.",
+     "week1": {
+      "result": "Started",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 0,
+      "note": "Full-game starter at tackle."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 0,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 0,
+      "proj": 0,
+      "adp": "—",
+      "grade": "—"
+     }
+    }
+   }
+  },
+  {
+   "uid": "site:pregnon",
+   "id": "pregnon",
+   "espnId": null,
+   "name": "Emmanuel Pregnon",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "JAC",
+   "teamName": "Jacksonville Jaguars",
+   "teamSource": "dictionary.js",
+   "pos": "OL",
+   "jersey": 75,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Rookie",
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": null,
+   "conflicts": [],
+   "site": {
+    "views": {
+     "data": 17,
+     "dictionary": 30
+    },
+    "dictionaryRow": {
+     "pos": "OL",
+     "jersey": 75,
+     "yearsAtOregon": "2025",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 1,
+     "draft": "2026 · R3 #88",
+     "yearsAtOregon": "2024–2025",
+     "status": "Rookie",
+     "featured": false,
+     "fantasyRelevant": false,
+     "bio": "Third-round guard from the 2026 draft. Physical interior prospect who made Jacksonville's 53 as a rookie.",
+     "week1": {
+      "result": "Active",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 0,
+      "note": "Rookie interior snaps."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 0,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 0,
+      "proj": 0,
+      "adp": "—",
+      "grade": "—"
+     }
+    }
+   }
+  },
+  {
+   "uid": "site:cornelius",
+   "id": "cornelius",
+   "espnId": null,
+   "name": "Ajani Cornelius",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "DAL",
+   "teamName": "Dallas Cowboys",
+   "teamSource": "dictionary.js",
+   "pos": "OL",
+   "jersey": 65,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Depth",
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": null,
+   "conflicts": [],
+   "site": {
+    "views": {
+     "data": 18,
+     "dictionary": 10
+    },
+    "dictionaryRow": {
+     "pos": "OL",
+     "jersey": 65,
+     "yearsAtOregon": "2020-24",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 2,
+     "draft": "2025 · R6",
+     "yearsAtOregon": "2023–2024",
+     "status": "Depth",
+     "featured": false,
+     "fantasyRelevant": false,
+     "bio": "Tackle/guard swing who followed the Oregon OL factory into Dallas.",
+     "week1": {
+      "result": "Inactive / depth",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 0,
+      "note": "Depth chart."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 0,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 0,
+      "proj": 0,
+      "adp": "—",
+      "grade": "—"
+     }
+    }
+   }
+  },
+  {
+   "uid": "site:harkey",
+   "id": "harkey",
+   "espnId": null,
+   "name": "Alex Harkey",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "LAC",
+   "teamName": "Los Angeles Chargers",
+   "teamSource": "dictionary.js",
+   "pos": "OL",
+   "jersey": 68,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Rookie",
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": null,
+   "conflicts": [
+    {
+     "field": "jersey",
+     "values": {
+      "data": 68,
+      "dictionary": 73
+     }
+    }
+   ],
+   "site": {
+    "views": {
+     "data": 19,
+     "dictionary": 17
+    },
+    "dictionaryRow": {
+     "pos": "OL",
+     "jersey": 73,
+     "yearsAtOregon": "2025",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 1,
+     "draft": "2026 · R6 #206",
+     "yearsAtOregon": "2023–2025",
+     "status": "Rookie",
+     "featured": false,
+     "fantasyRelevant": false,
+     "bio": "Sixth-round interior lineman joining Herbert in Los Angeles.",
+     "week1": {
+      "result": "Active",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 0,
+      "note": "Rookie OL."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 0,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 0,
+      "proj": 0,
+      "adp": "—",
+      "grade": "—"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:2971282",
+   "id": "buckner",
+   "espnId": "2971282",
+   "name": "DeForest Buckner",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "SF",
+   "teamName": "San Francisco 49ers",
+   "teamSource": "ESPN box week 10 (event 401873063)",
+   "pos": "DL",
+   "jersey": 99,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "DeForest Buckner",
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "SF",
+    "event": "401873063"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "data": 20,
+     "dictionary": 5,
+     "boxbotRoster": 7
+    },
+    "dictionaryRow": {
+     "pos": "DL",
+     "jersey": 99,
+     "yearsAtOregon": "2012-15",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 11,
+     "draft": "2016 · R1 #7",
+     "yearsAtOregon": "2012–2015",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "bio": "Still a wrecking-ball three-technique more than a decade in. The senior voice of the Duck defensive line tree.",
+     "week1": {
+      "result": "Started",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 8.5,
+      "note": "Interior disruption, IDP staple."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 5,
+      "sacks": 0.5
+     },
+     "fantasy": {
+      "week1PPR": 8.5,
+      "proj": 9.2,
+      "adp": "IDP DL1",
+      "grade": "Start"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:2971275",
+   "id": "armstead",
+   "espnId": "2971275",
+   "name": "Arik Armstead",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "JAC",
+   "teamName": "Jacksonville Jaguars",
+   "teamSource": "ESPN box week 9 (event 401873037)",
+   "pos": "DL",
+   "jersey": 91,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Starter",
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": {
+    "week": 9,
+    "espnTeam": "JAX",
+    "event": "401873037"
+   },
+   "conflicts": [
+    {
+     "field": "pos",
+     "values": {
+      "data": "DL",
+      "dictionary": "DT"
+     }
+    }
+   ],
+   "site": {
+    "views": {
+     "data": 21,
+     "dictionary": 0
+    },
+    "dictionaryRow": {
+     "pos": "DT",
+     "jersey": 91,
+     "yearsAtOregon": "2012-14",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 12,
+     "draft": "2015 · R1 #17",
+     "yearsAtOregon": "2012–2014",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "bio": "Twelve-year veteran still starting on the interior. Sacramento-to-Eugene-to-the-league path that defined a generation of Duck linemen.",
+     "week1": {
+      "result": "Started",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 6,
+      "note": "Veteran snaps."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 3,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 6,
+      "proj": 7.1,
+      "adp": "IDP",
+      "grade": "Flex"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4426326",
+   "id": "thibodeaux",
+   "espnId": "4426326",
+   "name": "Kayvon Thibodeaux",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "NYG",
+   "teamName": "New York Giants",
+   "teamSource": "ESPN box week 10 (event 401873052)",
+   "pos": "OLB",
+   "jersey": 5,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Kayvon Thibodeaux",
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "NYG",
+    "event": "401873052"
+   },
+   "conflicts": [
+    {
+     "field": "pos",
+     "values": {
+      "data": "OLB",
+      "dictionary": "DE"
+     }
+    }
+   ],
+   "site": {
+    "views": {
+     "data": 22,
+     "dictionary": 33,
+     "boxbotRoster": 11
+    },
+    "dictionaryRow": {
+     "pos": "DE",
+     "jersey": 5,
+     "yearsAtOregon": "2019-21",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 5,
+     "draft": "2022 · R1 #5",
+     "yearsAtOregon": "2019–2021",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "bio": "Edge rusher with first-round pedigree and a flair for the moment. Still hunting a true breakout year in New York.",
+     "week1": {
+      "result": "Started",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 7.5,
+      "note": "Edge snaps, pressure without a sack."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 4,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 7.5,
+      "proj": 10.4,
+      "adp": "IDP EDGE",
+      "grade": "Start"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4682980",
+   "id": "harmon",
+   "espnId": "4682980",
+   "name": "Derrick Harmon",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "PIT",
+   "teamName": "Pittsburgh Steelers",
+   "teamSource": "ESPN box week 10 (event 401873064)",
+   "pos": "DL",
+   "jersey": 99,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Starter",
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "PIT",
+    "event": "401873064"
+   },
+   "conflicts": [
+    {
+     "field": "pos",
+     "values": {
+      "data": "DL",
+      "dictionary": "DT"
+     }
+    }
+   ],
+   "site": {
+    "views": {
+     "data": 23,
+     "dictionary": 18
+    },
+    "dictionaryRow": {
+     "pos": "DT",
+     "jersey": 99,
+     "yearsAtOregon": "2024",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 2,
+     "draft": "2025 · R1 #22",
+     "yearsAtOregon": "2023–2024",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "bio": "First-round interior defender now in Pittsburgh's always-physical front. Year-two starter with IDP upside.",
+     "week1": {
+      "result": "Started",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 5.5,
+      "note": "Steelers rotation."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 3,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 5.5,
+      "proj": 8,
+      "adp": "IDP",
+      "grade": "Flex"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4427090",
+   "id": "dorlus",
+   "espnId": "4427090",
+   "name": "Brandon Dorlus",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "ATL",
+   "teamName": "Atlanta Falcons",
+   "teamSource": "ESPN box week 10 (event 401873058)",
+   "pos": "DL",
+   "jersey": 92,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Rotation",
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "ATL",
+    "event": "401873058"
+   },
+   "conflicts": [
+    {
+     "field": "jersey",
+     "values": {
+      "data": 92,
+      "dictionary": 54
+     }
+    }
+   ],
+   "site": {
+    "views": {
+     "data": 24,
+     "dictionary": 11
+    },
+    "dictionaryRow": {
+     "pos": "DL",
+     "jersey": 54,
+     "yearsAtOregon": "2019-23",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 3,
+     "draft": "2024 · R4",
+     "yearsAtOregon": "2019–2023",
+     "status": "Rotation",
+     "featured": false,
+     "fantasyRelevant": false,
+     "bio": "Long-armed interior/edge hybrid. Rotational piece in Atlanta.",
+     "week1": {
+      "result": "Rotation",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 3,
+      "note": "Sub-package snaps."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 2,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 3,
+      "proj": 4,
+      "adp": "—",
+      "grade": "Sit"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:5089178",
+   "id": "caldwell",
+   "espnId": "5089178",
+   "name": "Jamaree Caldwell",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "LAC",
+   "teamName": "Los Angeles Chargers",
+   "teamSource": "ESPN box week 9 (event 401873046)",
+   "pos": "DL",
+   "jersey": 90,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Rotation",
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": {
+    "week": 9,
+    "espnTeam": "LAC",
+    "event": "401873046"
+   },
+   "conflicts": [
+    {
+     "field": "jersey",
+     "values": {
+      "data": 90,
+      "dictionary": 99
+     }
+    }
+   ],
+   "site": {
+    "views": {
+     "data": 25,
+     "dictionary": 7
+    },
+    "dictionaryRow": {
+     "pos": "DL",
+     "jersey": 99,
+     "yearsAtOregon": "2022-24",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 2,
+     "draft": "2025 · R3",
+     "yearsAtOregon": "2024",
+     "status": "Rotation",
+     "featured": false,
+     "fantasyRelevant": false,
+     "bio": "Transfer nose who joined Herbert's Chargers after one year in Eugene.",
+     "week1": {
+      "result": "Rotation",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 2.5,
+      "note": "Interior rotation."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 2,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 2.5,
+      "proj": 3.5,
+      "adp": "—",
+      "grade": "Sit"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4428996",
+   "id": "burch",
+   "espnId": "4428996",
+   "name": "Jordan Burch",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "ARI",
+   "teamName": "Arizona Cardinals",
+   "teamSource": "ESPN box week 9 (event 401873048)",
+   "pos": "OLB",
+   "jersey": 3,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Rotation",
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": {
+    "week": 9,
+    "espnTeam": "ARI",
+    "event": "401873048"
+   },
+   "conflicts": [
+    {
+     "field": "jersey",
+     "values": {
+      "data": 3,
+      "dictionary": 52
+     }
+    }
+   ],
+   "site": {
+    "views": {
+     "data": 26,
+     "dictionary": 6
+    },
+    "dictionaryRow": {
+     "pos": "OLB",
+     "jersey": 52,
+     "yearsAtOregon": "2020-24",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 2,
+     "draft": "2025 · R3",
+     "yearsAtOregon": "2023–2024",
+     "status": "Rotation",
+     "featured": false,
+     "fantasyRelevant": false,
+     "bio": "Long edge who transferred in and left as a mid-round pick. Developing pass-rush piece in Arizona.",
+     "week1": {
+      "result": "Rotation",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 2,
+      "note": "Sub-package edge."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 1,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 2,
+      "proj": 3.2,
+      "adp": "—",
+      "grade": "Sit"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4038946",
+   "id": "dye",
+   "espnId": "4038946",
+   "name": "Troy Dye",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "LAC",
+   "teamName": "Los Angeles Chargers",
+   "teamSource": "ESPN box week 8 (event 401873032)",
+   "pos": "LB",
+   "jersey": 43,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Starter",
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": {
+    "week": 8,
+    "espnTeam": "LAC",
+    "event": "401873032"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "data": 27,
+     "dictionary": 12
+    },
+    "dictionaryRow": {
+     "pos": "LB",
+     "jersey": 43,
+     "yearsAtOregon": "2016-19",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 7,
+     "draft": "2020 · R4",
+     "yearsAtOregon": "2016–2019",
+     "status": "Starter",
+     "featured": false,
+     "fantasyRelevant": true,
+     "bio": "Tackling machine from the Herbert-era defense. Special-teams ace who has grown into a regular defensive role.",
+     "week1": {
+      "result": "Started / ST",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 9,
+      "note": "Marquee tackling day flagged in Oregon's ProDucks recap."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 8,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 9,
+      "proj": 7.5,
+      "adp": "IDP LB",
+      "grade": "Start"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4602389",
+   "id": "bassa",
+   "espnId": "4602389",
+   "name": "Jeffrey Bassa",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "KC",
+   "teamName": "Kansas City Chiefs",
+   "teamSource": "ESPN box week 10 (event 401873058)",
+   "pos": "LB",
+   "jersey": 31,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Rotation",
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "KC",
+    "event": "401873058"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "data": 28,
+     "dictionary": 2
+    },
+    "dictionaryRow": {
+     "pos": "LB",
+     "jersey": 31,
+     "yearsAtOregon": "2021-24",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 2,
+     "draft": "2025 · R5",
+     "yearsAtOregon": "2021–2024",
+     "status": "Rotation",
+     "featured": false,
+     "fantasyRelevant": false,
+     "bio": "Physical linebacker now in Kansas City's always-loaded front seven.",
+     "week1": {
+      "result": "ST + defense",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 3.5,
+      "note": "Special teams and sub-package."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 3,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 3.5,
+      "proj": 4,
+      "adp": "—",
+      "grade": "Sit"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:5088571",
+   "id": "boettcher",
+   "espnId": "5088571",
+   "name": "Bryce Boettcher",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "IND",
+   "teamName": "Indianapolis Colts",
+   "teamSource": "ESPN box week 10 (event 401873059)",
+   "pos": "LB",
+   "jersey": 50,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Rookie",
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "IND",
+    "event": "401873059"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "data": 29,
+     "dictionary": 4
+    },
+    "dictionaryRow": {
+     "pos": "LB",
+     "jersey": 50,
+     "yearsAtOregon": "2021-25",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 1,
+     "draft": "2026 · R4 #135",
+     "yearsAtOregon": "2021–2025",
+     "status": "Rookie",
+     "featured": true,
+     "fantasyRelevant": true,
+     "bio": "Local product and tackling machine. Seven tackles in his NFL debut — instant impact as a rookie linebacker in Indianapolis.",
+     "week1": {
+      "result": "L 23–41 vs BAL",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 10.5,
+      "note": "Seven tackles in debut."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 7,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 10.5,
+      "proj": 6.8,
+      "adp": "IDP sleeper",
+      "grade": "Start"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4686772",
+   "id": "gonzalez",
+   "espnId": "4686772",
+   "name": "Christian Gonzalez",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "NE",
+   "teamName": "New England Patriots",
+   "teamSource": "ESPN box week 10 (event 401873053)",
+   "pos": "CB",
+   "jersey": 0,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Christian Gonzalez",
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "NE",
+    "event": "401873053"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "data": 30,
+     "dictionary": 16,
+     "boxbotRoster": 10
+    },
+    "dictionaryRow": {
+     "pos": "CB",
+     "jersey": 0,
+     "yearsAtOregon": "2022",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 4,
+     "draft": "2023 · R1 #17",
+     "yearsAtOregon": "2021–2022",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "bio": "Cover corner on a Super Bowl trajectory. One of the highest-paid-corner conversations in football after anchoring New England's defense.",
+     "week1": {
+      "result": "Started",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 6,
+      "note": "Locked the boundary."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 4,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 6,
+      "proj": 7.8,
+      "adp": "IDP DB",
+      "grade": "Start"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4373809",
+   "id": "holland",
+   "espnId": "4373809",
+   "name": "Jevon Holland",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "NYG",
+   "teamName": "New York Giants",
+   "teamSource": "ESPN box week 10 (event 401873052)",
+   "pos": "S",
+   "jersey": 8,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Jevon Holland",
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "NYG",
+    "event": "401873052"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "data": 31,
+     "dictionary": 20,
+     "boxbotRoster": 8
+    },
+    "dictionaryRow": {
+     "pos": "S",
+     "jersey": 8,
+     "yearsAtOregon": "2018-20",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 6,
+     "draft": "2021 · R2",
+     "yearsAtOregon": "2018–2020",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "bio": "Rangy free safety with ball skills. Now paired with Thibodeaux in New York — an all-Oregon defensive backfield look on some snaps.",
+     "week1": {
+      "result": "Started",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 11,
+      "note": "Marquee performance in Oregon's Week 1 recap."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 8,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 11,
+      "proj": 9.5,
+      "adp": "IDP S",
+      "grade": "Start"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4242488",
+   "id": "lenoir",
+   "espnId": "4242488",
+   "name": "Deommodore Lenoir",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "SF",
+   "teamName": "San Francisco 49ers",
+   "teamSource": "ESPN box week 10 (event 401873063)",
+   "pos": "CB",
+   "jersey": 2,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Starter",
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "SF",
+    "event": "401873063"
+   },
+   "conflicts": [
+    {
+     "field": "pos",
+     "values": {
+      "data": "CB",
+      "dictionary": "DB"
+     }
+    }
+   ],
+   "site": {
+    "views": {
+     "data": 32,
+     "dictionary": 25
+    },
+    "dictionaryRow": {
+     "pos": "DB",
+     "jersey": 2,
+     "yearsAtOregon": "2017-20",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 6,
+     "draft": "2021 · R5",
+     "yearsAtOregon": "2017–2020",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "bio": "Fifth-round steal who became a full-time starter in San Francisco's secondary. Physical, smart, and rarely off the field.",
+     "week1": {
+      "result": "Started",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 7,
+      "note": "Boundary starter."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 5,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 7,
+      "proj": 7.2,
+      "adp": "IDP",
+      "grade": "Start"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4954445",
+   "id": "thieneman",
+   "espnId": "4954445",
+   "name": "Dillon Thieneman",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "CHI",
+   "teamName": "Chicago Bears",
+   "teamSource": "ESPN box week 9 (event 401873050)",
+   "pos": "S",
+   "jersey": 31,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Dillon Thieneman",
+   "lastBox": {
+    "week": 9,
+    "espnTeam": "CHI",
+    "event": "401873050"
+   },
+   "conflicts": [
+    {
+     "field": "pos",
+     "values": {
+      "data": "S",
+      "dictionary": "DB"
+     }
+    }
+   ],
+   "site": {
+    "views": {
+     "data": 33,
+     "dictionary": 34,
+     "boxbotRoster": 9
+    },
+    "dictionaryRow": {
+     "pos": "DB",
+     "jersey": 31,
+     "yearsAtOregon": "2025",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 1,
+     "draft": "2026 · R1 #25",
+     "yearsAtOregon": "2025",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "bio": "First-round safety after one year in Eugene (via Purdue). Earned a game ball in his NFL debut — the defensive headline of Week 1 for the Flock.",
+     "week1": {
+      "result": "Started · game ball",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 14,
+      "note": "Game ball in debut. Best Duck defensive day of Week 1."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 9,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 14,
+      "proj": 8.5,
+      "adp": "IDP sleeper",
+      "grade": "Start"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4710706",
+   "id": "canady",
+   "espnId": "4710706",
+   "name": "Jadon Canady",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "KC",
+   "teamName": "Kansas City Chiefs",
+   "teamSource": "ESPN box week 10 (event 401873058)",
+   "pos": "DB",
+   "jersey": 29,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Rookie",
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "KC",
+    "event": "401873058"
+   },
+   "conflicts": [
+    {
+     "field": "jersey",
+     "values": {
+      "data": 29,
+      "dictionary": 22
+     }
+    }
+   ],
+   "site": {
+    "views": {
+     "data": 34,
+     "dictionary": 8
+    },
+    "dictionaryRow": {
+     "pos": "DB",
+     "jersey": 22,
+     "yearsAtOregon": "2025",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 1,
+     "draft": "2026 · R4 #109",
+     "yearsAtOregon": "2025",
+     "status": "Rookie",
+     "featured": false,
+     "fantasyRelevant": false,
+     "bio": "Ole Miss transfer who started 13 games for Oregon in 2025. Fourth-round pick into Kansas City's secondary.",
+     "week1": {
+      "result": "Active",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 1.5,
+      "note": "Rookie DB snaps."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 1,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 1.5,
+      "proj": 2,
+      "adp": "—",
+      "grade": "Sit"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4428863",
+   "id": "evanwilliams",
+   "espnId": "4428863",
+   "name": "Evan Williams",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "GB",
+   "teamName": "Green Bay Packers",
+   "teamSource": "ESPN box week 10 (event 401873060)",
+   "pos": "S",
+   "jersey": 33,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Evan Williams",
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "GB",
+    "event": "401873060"
+   },
+   "conflicts": [
+    {
+     "field": "pos",
+     "values": {
+      "data": "S",
+      "dictionary": "DB"
+     }
+    }
+   ],
+   "site": {
+    "views": {
+     "data": 35,
+     "dictionary": 35,
+     "boxbotRoster": 43
+    },
+    "dictionaryRow": {
+     "pos": "DB",
+     "jersey": 33,
+     "yearsAtOregon": "2023",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {
+     "years": 3,
+     "draft": "2024 · R4",
+     "yearsAtOregon": "2022–2023",
+     "status": "Starter",
+     "featured": false,
+     "fantasyRelevant": true,
+     "bio": "Physical safety who earned a starting job in Green Bay. Another mid-round Duck who outplayed his draft slot.",
+     "week1": {
+      "result": "Started",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 8,
+      "note": "Marquee Week 1 mention from Oregon Athletics."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 6,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 8,
+      "proj": 7.4,
+      "adp": "IDP",
+      "grade": "Flex"
+     }
+    }
+   }
+  },
+  {
+   "uid": "site:adams",
+   "id": "adams",
+   "espnId": null,
+   "name": "Vernon Adams Jr.",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "CFL",
+   "team": "BC",
+   "teamName": "BC Lions",
+   "teamSource": "data.js",
+   "pos": "QB",
+   "jersey": 8,
+   "rosterStatus": "unverified",
+   "rosterStatusSource": null,
+   "statusLabel": null,
+   "depthStatus": "CFL",
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": null,
+   "conflicts": [],
+   "site": {
+    "views": {
+     "data": 36
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 10,
+     "draft": "CFL free agent",
+     "yearsAtOregon": "2013–2015",
+     "status": "CFL",
+     "featured": false,
+     "fantasyRelevant": false,
+     "bio": "Oregon-to-CFL quarterback. Separate board from the NFL Sunday slate.",
+     "week1": {
+      "result": "CFL slate",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 0,
+      "note": "Tracked on the North of the Border chip."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 0,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 0,
+      "proj": 0,
+      "adp": "CFL",
+      "grade": "—"
+     }
+    }
+   }
+  },
+  {
+   "uid": "site:addison",
+   "id": "addison",
+   "espnId": null,
+   "name": "Bralon Addison",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "CFL",
+   "team": "SSK",
+   "teamName": "Saskatchewan Roughriders",
+   "teamSource": "data.js",
+   "pos": "WR",
+   "jersey": 0,
+   "rosterStatus": "unverified",
+   "rosterStatusSource": null,
+   "statusLabel": null,
+   "depthStatus": "CFL",
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": null,
+   "conflicts": [],
+   "site": {
+    "views": {
+     "data": 37
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 8,
+     "draft": "CFL",
+     "yearsAtOregon": "2013–2015",
+     "status": "CFL",
+     "featured": false,
+     "fantasyRelevant": false,
+     "bio": "Former Duck receiver in the CFL. Kept on a separate filter so the NFL board stays clean.",
+     "week1": {
+      "result": "CFL slate",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 0,
+      "note": "North of the Border."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 0,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 0,
+      "proj": 0,
+      "adp": "CFL",
+      "grade": "—"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4040715",
+   "id": "hurts",
+   "espnId": "4040715",
+   "name": "Jalen Hurts",
+   "school": "alabama",
+   "schoolName": "Alabama",
+   "brand": "ProTide",
+   "league": "NFL",
+   "team": "PHI",
+   "teamName": "Philadelphia Eagles",
+   "teamSource": "data.js",
+   "pos": "QB",
+   "jersey": 1,
+   "rosterStatus": "unverified",
+   "rosterStatusSource": null,
+   "statusLabel": null,
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Jalen Hurts",
+   "lastBox": {
+    "week": 5,
+    "espnTeam": "PHI",
+    "event": "401872981"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "data": 38,
+     "alumni": 0,
+     "boxbotRoster": 12
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 6,
+     "draft": "2020 · R2",
+     "yearsAtOregon": "—",
+     "status": "Starter",
+     "featured": false,
+     "fantasyRelevant": true,
+     "bio": "Preview row for ProTide until the Alabama channel is live.",
+     "week1": {
+      "result": "Preview",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 24.1,
+      "note": "Network board preview."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 0,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 24.1,
+      "proj": 22,
+      "adp": "QB1",
+      "grade": "A"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:3043078",
+   "id": "henry",
+   "espnId": "3043078",
+   "name": "Derrick Henry",
+   "school": "alabama",
+   "schoolName": "Alabama",
+   "brand": "ProTide",
+   "league": "NFL",
+   "team": "BAL",
+   "teamName": "Baltimore Ravens",
+   "teamSource": "ESPN box week 9 (event 401873037)",
+   "pos": "RB",
+   "jersey": 22,
+   "rosterStatus": "active",
+   "rosterStatusSource": "ESPN box week 9 (event 401873037)",
+   "statusLabel": null,
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Derrick Henry",
+   "lastBox": {
+    "week": 9,
+    "espnTeam": "BAL",
+    "event": "401873037"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "data": 39,
+     "alumni": 3,
+     "boxbotRoster": 15
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 10,
+     "draft": "2016 · R2",
+     "yearsAtOregon": "—",
+     "status": "Starter",
+     "featured": false,
+     "fantasyRelevant": true,
+     "bio": "Preview row for ProTide.",
+     "week1": {
+      "result": "Preview",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 18.4,
+      "note": "Network board preview."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 0,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 18.4,
+      "proj": 16,
+      "adp": "RB",
+      "grade": "A"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4372016",
+   "id": "waddle",
+   "espnId": "4372016",
+   "name": "Jaylen Waddle",
+   "school": "alabama",
+   "schoolName": "Alabama",
+   "brand": "ProTide",
+   "league": "NFL",
+   "team": "DEN",
+   "teamName": "Denver Broncos",
+   "teamSource": "ESPN box week 9 (event 401873041)",
+   "pos": "WR",
+   "jersey": 17,
+   "rosterStatus": "active",
+   "rosterStatusSource": "ESPN box week 9 (event 401873041)",
+   "statusLabel": null,
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Jaylen Waddle",
+   "lastBox": {
+    "week": 9,
+    "espnTeam": "DEN",
+    "event": "401873041"
+   },
+   "conflicts": [
+    {
+     "field": "team",
+     "values": {
+      "data": "MIA",
+      "alumni": "DEN"
+     }
+    },
+    {
+     "field": "teamName",
+     "values": {
+      "data": "Miami Dolphins",
+      "alumni": "Denver Broncos"
+     }
+    },
+    {
+     "field": "team",
+     "values": {
+      "site": "MIA",
+      "espnBox": "DEN"
+     },
+     "resolved": "espnBox",
+     "evidence": "week 9 event 401873041"
+    }
+   ],
+   "site": {
+    "views": {
+     "data": 40,
+     "alumni": 5,
+     "boxbotRoster": 17
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 5,
+     "draft": "2021 · R1",
+     "yearsAtOregon": "—",
+     "status": "Starter",
+     "featured": false,
+     "fantasyRelevant": true,
+     "bio": "Preview row for ProTide.",
+     "week1": {
+      "result": "Preview",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 14.2,
+      "note": "Network board preview."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 0,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 14.2,
+      "proj": 13,
+      "adp": "WR",
+      "grade": "B+"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4432665",
+   "id": "bowers",
+   "espnId": "4432665",
+   "name": "Brock Bowers",
+   "school": "georgia",
+   "schoolName": "Georgia",
+   "brand": "ProDawgs",
+   "league": "NFL",
+   "team": "LV",
+   "teamName": "Las Vegas Raiders",
+   "teamSource": "ESPN box week 10 (event 401873062)",
+   "pos": "TE",
+   "jersey": 89,
+   "rosterStatus": "active",
+   "rosterStatusSource": "ESPN box week 10 (event 401873062)",
+   "statusLabel": null,
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Brock Bowers",
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "LV",
+    "event": "401873062"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "data": 41,
+     "alumni": 19,
+     "boxbotRoster": 31
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 2,
+     "draft": "2024 · R1",
+     "yearsAtOregon": "—",
+     "status": "Starter",
+     "featured": false,
+     "fantasyRelevant": true,
+     "bio": "Preview row for Dawgs.",
+     "week1": {
+      "result": "Preview",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 16.8,
+      "note": "Network board preview."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 0,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 16.8,
+      "proj": 14,
+      "adp": "TE",
+      "grade": "A-"
+     }
+    }
+   }
+  },
+  {
+   "uid": "site:milton",
+   "id": "milton",
+   "espnId": null,
+   "name": "Kendall Milton",
+   "school": "georgia",
+   "schoolName": "Georgia",
+   "brand": "ProDawgs",
+   "league": "NFL",
+   "team": "PHI",
+   "teamName": "Philadelphia Eagles",
+   "teamSource": "data.js",
+   "pos": "RB",
+   "jersey": 36,
+   "rosterStatus": "unverified",
+   "rosterStatusSource": null,
+   "statusLabel": null,
+   "depthStatus": "Depth",
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": null,
+   "conflicts": [],
+   "site": {
+    "views": {
+     "data": 42
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 1,
+     "draft": "UDFA",
+     "yearsAtOregon": "—",
+     "status": "Depth",
+     "featured": false,
+     "fantasyRelevant": true,
+     "bio": "Preview row for Dawgs.",
+     "week1": {
+      "result": "Preview",
+      "pass": "—",
+      "rush": "—",
+      "ppr": 3.1,
+      "note": "Network board preview."
+     },
+     "season": {
+      "passYds": 0,
+      "passTD": 0,
+      "int": 0,
+      "rushYds": 0,
+      "rushTD": 0,
+      "rec": 0,
+      "recYds": 0,
+      "recTD": 0,
+      "tackles": 0,
+      "sacks": 0
+     },
+     "fantasy": {
+      "week1PPR": 3.1,
+      "proj": 2,
+      "adp": "—",
+      "grade": "Sit"
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4685720",
+   "id": "young",
+   "espnId": "4685720",
+   "name": "Bryce Young",
+   "school": "alabama",
+   "schoolName": "Alabama",
+   "brand": "ProTide",
+   "league": "NFL",
+   "team": "CAR",
+   "teamName": "Carolina Panthers",
+   "teamSource": "ESPN box week 10 (event 401873055)",
+   "pos": "QB",
+   "jersey": 9,
+   "rosterStatus": "active",
+   "rosterStatusSource": "ESPN box week 10 (event 401873055)",
+   "statusLabel": null,
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Bryce Young",
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "CAR",
+    "event": "401873055"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "alumni": 1,
+     "boxbotRoster": 13
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 4,
+     "draft": "2023 R1 #1",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "week1": {
+      "result": "W 34-3 at ATL",
+      "pass": "287 yds",
+      "rush": "-",
+      "recLine": "-",
+      "note": "",
+      "snaps": 1,
+      "ppr": 18.5
+     },
+     "fantasy": {
+      "week1PPR": 18.5,
+      "proj": 16.2
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4429795",
+   "id": "gibbs",
+   "espnId": "4429795",
+   "name": "Jahmyr Gibbs",
+   "school": "alabama",
+   "schoolName": "Alabama",
+   "brand": "ProTide",
+   "league": "NFL",
+   "team": "DET",
+   "teamName": "Detroit Lions",
+   "teamSource": "ESPN box week 10 (event 401873053)",
+   "pos": "RB",
+   "jersey": 0,
+   "rosterStatus": "active",
+   "rosterStatusSource": "ESPN box week 10 (event 401873053)",
+   "statusLabel": null,
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Jahmyr Gibbs",
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "DET",
+    "event": "401873053"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "alumni": 2,
+     "boxbotRoster": 14
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 4,
+     "draft": "2023 R1",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "week1": {
+      "result": "L 31-41 at BUF",
+      "pass": "-",
+      "rush": "16 att, 52 yds",
+      "recLine": "8 tgt, 6 rec, 61 yds, 1 TD",
+      "note": "",
+      "snaps": 1,
+      "ppr": 23.3
+     },
+     "fantasy": {
+      "week1PPR": 23.3,
+      "proj": 18.1
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4241478",
+   "id": "dsmith",
+   "espnId": "4241478",
+   "name": "DeVonta Smith",
+   "school": "alabama",
+   "schoolName": "Alabama",
+   "brand": "ProTide",
+   "league": "NFL",
+   "team": "PHI",
+   "teamName": "Philadelphia Eagles",
+   "teamSource": "alumni.js",
+   "pos": "WR",
+   "jersey": 6,
+   "rosterStatus": "unverified",
+   "rosterStatusSource": null,
+   "statusLabel": null,
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "DeVonta Smith",
+   "lastBox": {
+    "week": 6,
+    "espnTeam": "PHI",
+    "event": "401872998"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "alumni": 4,
+     "boxbotRoster": 16
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 6,
+     "draft": "2021 R1 #10",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "week1": {
+      "result": "W 24-20 at TEN",
+      "pass": "-",
+      "rush": "-",
+      "recLine": "13 tgt, 10 rec, 117 yds, 1 TD",
+      "note": "",
+      "snaps": 1,
+      "ppr": 27.7
+     },
+     "fantasy": {
+      "week1PPR": 27.7,
+      "proj": 14.8
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4426388",
+   "id": "jwilliams",
+   "espnId": "4426388",
+   "name": "Jameson Williams",
+   "school": "alabama",
+   "schoolName": "Alabama",
+   "brand": "ProTide",
+   "league": "NFL",
+   "team": "DET",
+   "teamName": "Detroit Lions",
+   "teamSource": "ESPN box week 10 (event 401873053)",
+   "pos": "WR",
+   "jersey": 9,
+   "rosterStatus": "active",
+   "rosterStatusSource": "ESPN box week 10 (event 401873053)",
+   "statusLabel": null,
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Jameson Williams",
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "DET",
+    "event": "401873053"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "alumni": 6,
+     "boxbotRoster": 18
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 5,
+     "draft": "2022 R1",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "week1": {
+      "result": "L 31-41 at BUF",
+      "pass": "-",
+      "rush": "-",
+      "recLine": "-",
+      "note": "",
+      "snaps": 1,
+      "ppr": 7.1
+     },
+     "fantasy": {
+      "week1PPR": 7.1,
+      "proj": 10.4
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4432577",
+   "id": "stroud",
+   "espnId": "4432577",
+   "name": "C.J. Stroud",
+   "school": "ohiostate",
+   "schoolName": "Ohio State",
+   "brand": "ProBucks",
+   "league": "NFL",
+   "team": "HOU",
+   "teamName": "Houston Texans",
+   "teamSource": "ESPN box week 10 (event 401873056)",
+   "pos": "QB",
+   "jersey": 7,
+   "rosterStatus": "active",
+   "rosterStatusSource": "ESPN box week 10 (event 401873056)",
+   "statusLabel": null,
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "C.J. Stroud",
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "HOU",
+    "event": "401873056"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "alumni": 7,
+     "boxbotRoster": 19
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 4,
+     "draft": "2023 R1 #2",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "week1": {
+      "result": "L 6-20 vs CIN",
+      "pass": "30/55, 353 yds, 0 TD, 0 INT",
+      "rush": "3 att, 29 yds",
+      "recLine": "-",
+      "note": "",
+      "snaps": 1,
+      "ppr": 17
+     },
+     "fantasy": {
+      "week1PPR": 17,
+      "proj": 17.6
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4361370",
+   "id": "olave",
+   "espnId": "4361370",
+   "name": "Chris Olave",
+   "school": "ohiostate",
+   "schoolName": "Ohio State",
+   "brand": "ProBucks",
+   "league": "NFL",
+   "team": "NO",
+   "teamName": "New Orleans Saints",
+   "teamSource": "ESPN box week 10 (event 401873055)",
+   "pos": "WR",
+   "jersey": 12,
+   "rosterStatus": "active",
+   "rosterStatusSource": "ESPN box week 10 (event 401873055)",
+   "statusLabel": null,
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Chris Olave",
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "NO",
+    "event": "401873055"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "alumni": 8,
+     "boxbotRoster": 20
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 5,
+     "draft": "2022 R1",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "week1": {
+      "result": "W 24-17 at BAL",
+      "pass": "-",
+      "rush": "-",
+      "recLine": "10 tgt, 8 rec, 86 yds, 1 TD",
+      "note": "",
+      "snaps": 1,
+      "tgt": 10,
+      "rec": 8,
+      "recYds": 86,
+      "recTD": 1,
+      "ppr": 22.6
+     },
+     "fantasy": {
+      "week1PPR": 22.6,
+      "proj": 13.9
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4569618",
+   "id": "gwilson",
+   "espnId": "4569618",
+   "name": "Garrett Wilson",
+   "school": "ohiostate",
+   "schoolName": "Ohio State",
+   "brand": "ProBucks",
+   "league": "NFL",
+   "team": "NYJ",
+   "teamName": "New York Jets",
+   "teamSource": "ESPN box week 10 (event 401873054)",
+   "pos": "WR",
+   "jersey": 5,
+   "rosterStatus": "active",
+   "rosterStatusSource": "ESPN box week 10 (event 401873054)",
+   "statusLabel": null,
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Garrett Wilson",
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "NYJ",
+    "event": "401873054"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "alumni": 9,
+     "boxbotRoster": 21
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 5,
+     "draft": "2022 R1 #10",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "week1": {
+      "result": "L 17-20 OT vs GB",
+      "pass": "-",
+      "rush": "-",
+      "recLine": "7 tgt, 5 rec, 57 yds, 1 TD",
+      "note": "",
+      "snaps": 1,
+      "ppr": 16.7
+     },
+     "fantasy": {
+      "week1PPR": 16.7,
+      "proj": 13.1
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4430878",
+   "id": "jsn",
+   "espnId": "4430878",
+   "name": "Jaxon Smith-Njigba",
+   "school": "ohiostate",
+   "schoolName": "Ohio State",
+   "brand": "ProBucks",
+   "league": "NFL",
+   "team": "SEA",
+   "teamName": "Seattle Seahawks",
+   "teamSource": "ESPN box week 10 (event 401873062)",
+   "pos": "WR",
+   "jersey": 11,
+   "rosterStatus": "active",
+   "rosterStatusSource": "ESPN box week 10 (event 401873062)",
+   "statusLabel": null,
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Jaxon Smith-Njigba",
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "SEA",
+    "event": "401873062"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "alumni": 10,
+     "boxbotRoster": 22
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 4,
+     "draft": "2023 R1 #20",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "week1": {
+      "result": "W 31-7 at ARI",
+      "pass": "-",
+      "rush": "-",
+      "recLine": "155 yds",
+      "note": "",
+      "snaps": 1,
+      "recYds": 155,
+      "ppr": 21.5
+     },
+     "fantasy": {
+      "week1PPR": 21.5,
+      "proj": 15.6
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:3121422",
+   "id": "mclaurin",
+   "espnId": "3121422",
+   "name": "Terry McLaurin",
+   "school": "ohiostate",
+   "schoolName": "Ohio State",
+   "brand": "ProBucks",
+   "league": "NFL",
+   "team": "WAS",
+   "teamName": "Washington Commanders",
+   "teamSource": "alumni.js",
+   "pos": "WR",
+   "jersey": 17,
+   "rosterStatus": "unverified",
+   "rosterStatusSource": null,
+   "statusLabel": null,
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Terry McLaurin",
+   "lastBox": {
+    "week": 6,
+    "espnTeam": "WSH",
+    "event": "401873008"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "alumni": 11,
+     "boxbotRoster": 23
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 8,
+     "draft": "2019 R3",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "week1": {
+      "result": "L 20-37 at DAL",
+      "pass": "-",
+      "rush": "-",
+      "recLine": "9 tgt, 2 rec, 50 yds, 0 TD",
+      "note": "",
+      "snaps": 1,
+      "ppr": 7
+     },
+     "fantasy": {
+      "week1PPR": 7,
+      "proj": 12
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4685702",
+   "id": "judkins",
+   "espnId": "4685702",
+   "name": "Quinshon Judkins",
+   "school": "ohiostate",
+   "schoolName": "Ohio State",
+   "brand": "ProBucks",
+   "league": "NFL",
+   "team": "CLE",
+   "teamName": "Cleveland Browns",
+   "teamSource": "ESPN box week 10 (event 401873056)",
+   "pos": "RB",
+   "jersey": 10,
+   "rosterStatus": "active",
+   "rosterStatusSource": "ESPN box week 10 (event 401873056)",
+   "statusLabel": null,
+   "depthStatus": "Rotation",
+   "boxbotRoster": true,
+   "boxbotName": "Quinshon Judkins",
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "CLE",
+    "event": "401873056"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "alumni": 12,
+     "boxbotRoster": 24
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 2,
+     "draft": "2025",
+     "status": "Rotation",
+     "featured": false,
+     "fantasyRelevant": true,
+     "week1": {
+      "result": "W 23-19 at TB",
+      "pass": "-",
+      "rush": "12 att, 21 yds",
+      "recLine": "5 tgt, 5 rec, 27 yds, 0 TD",
+      "note": "",
+      "snaps": 1,
+      "ppr": 9.8
+     },
+     "fantasy": {
+      "week1PPR": 9.8,
+      "proj": 8.2
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4432710",
+   "id": "henderson",
+   "espnId": "4432710",
+   "name": "TreVeyon Henderson",
+   "school": "ohiostate",
+   "schoolName": "Ohio State",
+   "brand": "ProBucks",
+   "league": "NFL",
+   "team": "NE",
+   "teamName": "New England Patriots",
+   "teamSource": "alumni.js",
+   "pos": "RB",
+   "jersey": 32,
+   "rosterStatus": "unverified",
+   "rosterStatusSource": null,
+   "statusLabel": null,
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "TreVeyon Henderson",
+   "lastBox": {
+    "week": 7,
+    "espnTeam": "NE",
+    "event": "401873010"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "alumni": 13,
+     "boxbotRoster": 25
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 2,
+     "draft": "2025",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "week1": {
+      "result": "W 20-3 vs PIT",
+      "pass": "-",
+      "rush": "16 att, 76 yds, 1 TD",
+      "recLine": "-",
+      "note": "",
+      "snaps": 1,
+      "ppr": 13.6
+     },
+     "fantasy": {
+      "week1PPR": 13.6,
+      "proj": 11
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4567750",
+   "id": "egbuka",
+   "espnId": "4567750",
+   "name": "Emeka Egbuka",
+   "school": "ohiostate",
+   "schoolName": "Ohio State",
+   "brand": "ProBucks",
+   "league": "NFL",
+   "team": "TB",
+   "teamName": "Tampa Bay Buccaneers",
+   "teamSource": "ESPN box week 9 (event 401873050)",
+   "pos": "WR",
+   "jersey": 9,
+   "rosterStatus": "active",
+   "rosterStatusSource": "ESPN box week 9 (event 401873050)",
+   "statusLabel": null,
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Emeka Egbuka",
+   "lastBox": {
+    "week": 9,
+    "espnTeam": "TB",
+    "event": "401873050"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "alumni": 14,
+     "boxbotRoster": 26
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 2,
+     "draft": "2025",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "week1": {
+      "result": "L 19-23 vs CLE",
+      "pass": "-",
+      "rush": "-",
+      "recLine": "5 tgt, 3 rec, 16 yds, 1 TD",
+      "note": "",
+      "snaps": 1,
+      "ppr": 10.6
+     },
+     "fantasy": {
+      "week1PPR": 10.6,
+      "proj": 9.4
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:12483",
+   "id": "stafford",
+   "espnId": "12483",
+   "name": "Matthew Stafford",
+   "school": "georgia",
+   "schoolName": "Georgia",
+   "brand": "ProDawgs",
+   "league": "NFL",
+   "team": "LAR",
+   "teamName": "Los Angeles Rams",
+   "teamSource": "ESPN box week 10 (event 401873061)",
+   "pos": "QB",
+   "jersey": 9,
+   "rosterStatus": "active",
+   "rosterStatusSource": "ESPN box week 10 (event 401873061)",
+   "statusLabel": null,
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Matthew Stafford",
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "LAR",
+    "event": "401873061"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "alumni": 15,
+     "boxbotRoster": 27
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 18,
+     "draft": "2009 R1 #1",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "week1": {
+      "result": "W 28-6 vs NYG",
+      "pass": "22/31, 327 yds, 4 TD, 1 INT",
+      "rush": "-",
+      "recLine": "-",
+      "note": "",
+      "snaps": 1,
+      "ppr": 27.1
+     },
+     "fantasy": {
+      "week1PPR": 27.1,
+      "proj": 16.8
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4379399",
+   "id": "jcook",
+   "espnId": "4379399",
+   "name": "James Cook",
+   "school": "georgia",
+   "schoolName": "Georgia",
+   "brand": "ProDawgs",
+   "league": "NFL",
+   "team": "BUF",
+   "teamName": "Buffalo Bills",
+   "teamSource": "ESPN box week 10 (event 401873054)",
+   "pos": "RB",
+   "jersey": 4,
+   "rosterStatus": "active",
+   "rosterStatusSource": "ESPN box week 10 (event 401873054)",
+   "statusLabel": null,
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "James Cook",
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "BUF",
+    "event": "401873054"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "alumni": 16,
+     "boxbotRoster": 28
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 5,
+     "draft": "2022 R2",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "week1": {
+      "result": "W 41-31 vs DET",
+      "pass": "-",
+      "rush": "21 att, 135 yds, 1 TD",
+      "recLine": "-",
+      "note": "",
+      "snaps": 1,
+      "ppr": 19.5
+     },
+     "fantasy": {
+      "week1PPR": 19.5,
+      "proj": 15.4
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4259545",
+   "id": "swift",
+   "espnId": "4259545",
+   "name": "D'Andre Swift",
+   "school": "georgia",
+   "schoolName": "Georgia",
+   "brand": "ProDawgs",
+   "league": "NFL",
+   "team": "CHI",
+   "teamName": "Chicago Bears",
+   "teamSource": "ESPN box week 9 (event 401873050)",
+   "pos": "RB",
+   "jersey": 4,
+   "rosterStatus": "active",
+   "rosterStatusSource": "ESPN box week 9 (event 401873050)",
+   "statusLabel": null,
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "D'Andre Swift",
+   "lastBox": {
+    "week": 9,
+    "espnTeam": "CHI",
+    "event": "401873050"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "alumni": 17,
+     "boxbotRoster": 29
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 7,
+     "draft": "2020 R2",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "week1": {
+      "result": "L 3-9 vs MIN",
+      "pass": "-",
+      "rush": "16 att, 45 yds",
+      "recLine": "5 tgt, 5 rec, 54 yds, 0 TD",
+      "note": "",
+      "snaps": 1,
+      "ppr": 14.9
+     },
+     "fantasy": {
+      "week1PPR": 14.9,
+      "proj": 11.2
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4612826",
+   "id": "mcconkey",
+   "espnId": "4612826",
+   "name": "Ladd McConkey",
+   "school": "georgia",
+   "schoolName": "Georgia",
+   "brand": "ProDawgs",
+   "league": "NFL",
+   "team": "LAC",
+   "teamName": "Los Angeles Chargers",
+   "teamSource": "ESPN box week 8 (event 401873032)",
+   "pos": "WR",
+   "jersey": 15,
+   "rosterStatus": "active",
+   "rosterStatusSource": "ESPN box week 8 (event 401873032)",
+   "statusLabel": null,
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Ladd McConkey",
+   "lastBox": {
+    "week": 8,
+    "espnTeam": "LAC",
+    "event": "401873032"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "alumni": 18,
+     "boxbotRoster": 30
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 3,
+     "draft": "2024 R2",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "week1": {
+      "result": "L 14-26 vs LV",
+      "pass": "-",
+      "rush": "-",
+      "recLine": "3 tgt, 3 rec, 35 yds, 0 TD",
+      "note": "",
+      "snaps": 1,
+      "ppr": 6.5
+     },
+     "fantasy": {
+      "week1PPR": 6.5,
+      "proj": 12.6
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4870612",
+   "id": "zbranch",
+   "espnId": "4870612",
+   "name": "Zachariah Branch",
+   "school": "georgia",
+   "schoolName": "Georgia",
+   "brand": "ProDawgs",
+   "league": "NFL",
+   "team": "ATL",
+   "teamName": "Atlanta Falcons",
+   "teamSource": "ESPN box week 8 (event 401873025)",
+   "pos": "WR",
+   "jersey": 17,
+   "rosterStatus": "active",
+   "rosterStatusSource": "ESPN box week 8 (event 401873025)",
+   "statusLabel": null,
+   "depthStatus": "Rotation",
+   "boxbotRoster": true,
+   "boxbotName": "Zachariah Branch",
+   "lastBox": {
+    "week": 8,
+    "espnTeam": "ATL",
+    "event": "401873025"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "alumni": 20,
+     "boxbotRoster": 32
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 1,
+     "draft": "2026",
+     "status": "Rotation",
+     "featured": false,
+     "fantasyRelevant": true,
+     "week1": {
+      "result": "L 3-34 vs CAR",
+      "pass": "-",
+      "rush": "-",
+      "recLine": "2 tgt, 2 rec, 14 yds, 0 TD",
+      "note": "",
+      "snaps": 1,
+      "ppr": 3.4
+     },
+     "fantasy": {
+      "week1PPR": 3.4,
+      "proj": 4.1
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4426354",
+   "id": "pickens",
+   "espnId": "4426354",
+   "name": "George Pickens",
+   "school": "georgia",
+   "schoolName": "Georgia",
+   "brand": "ProDawgs",
+   "league": "NFL",
+   "team": "DAL",
+   "teamName": "Dallas Cowboys",
+   "teamSource": "ESPN box week 10 (event 401873063)",
+   "pos": "WR",
+   "jersey": 3,
+   "rosterStatus": "active",
+   "rosterStatusSource": "ESPN box week 10 (event 401873063)",
+   "statusLabel": null,
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "George Pickens",
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "DAL",
+    "event": "401873063"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "alumni": 21,
+     "boxbotRoster": 33
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 5,
+     "draft": "2022 R2",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "week1": {
+      "result": "W 37-20 vs WSH",
+      "pass": "-",
+      "rush": "-",
+      "recLine": "8 tgt, 6 rec, 40 yds, 0 TD",
+      "note": "",
+      "snaps": 1,
+      "ppr": 10
+     },
+     "fantasy": {
+      "week1PPR": 10,
+      "proj": 13
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:3915189",
+   "id": "roquan",
+   "espnId": "3915189",
+   "name": "Roquan Smith",
+   "school": "georgia",
+   "schoolName": "Georgia",
+   "brand": "ProDawgs",
+   "league": "NFL",
+   "team": "BAL",
+   "teamName": "Baltimore Ravens",
+   "teamSource": "ESPN box week 9 (event 401873037)",
+   "pos": "LB",
+   "jersey": 0,
+   "rosterStatus": "active",
+   "rosterStatusSource": "ESPN box week 9 (event 401873037)",
+   "statusLabel": null,
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Roquan Smith",
+   "lastBox": {
+    "week": 9,
+    "espnTeam": "BAL",
+    "event": "401873037"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "alumni": 22,
+     "boxbotRoster": 34
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 8,
+     "draft": "2018 R1",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": false,
+     "week1": {
+      "result": "L 17-24 vs NO",
+      "pass": "-",
+      "rush": "-",
+      "recLine": "-",
+      "note": "",
+      "snaps": 68,
+      "def": "8 tackles",
+      "tackles": 8
+     }
+    }
+   }
+  },
+  {
+   "uid": "site:allar",
+   "id": "allar",
+   "espnId": null,
+   "name": "Drew Allar",
+   "school": "pennstate",
+   "schoolName": "Penn State",
+   "brand": "ProLions",
+   "league": "NFL",
+   "team": "PIT",
+   "teamName": "Pittsburgh Steelers",
+   "teamSource": "alumni.js",
+   "pos": "QB",
+   "jersey": 16,
+   "rosterStatus": "unverified",
+   "rosterStatusSource": null,
+   "statusLabel": null,
+   "depthStatus": "Backup",
+   "boxbotRoster": true,
+   "boxbotName": "Drew Allar",
+   "lastBox": null,
+   "conflicts": [],
+   "site": {
+    "views": {
+     "alumni": 23,
+     "boxbotRoster": 39
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 1,
+     "draft": "2026",
+     "status": "Backup",
+     "featured": false,
+     "fantasyRelevant": true,
+     "week1": {
+      "result": "DNP",
+      "pass": "-",
+      "rush": "-",
+      "recLine": "-",
+      "note": "",
+      "snaps": 0,
+      "ppr": 0
+     },
+     "fantasy": {
+      "week1PPR": 0,
+      "proj": 0
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4685246",
+   "id": "kallen",
+   "espnId": "4685246",
+   "name": "Kaytron Allen",
+   "school": "pennstate",
+   "schoolName": "Penn State",
+   "brand": "ProLions",
+   "league": "NFL",
+   "team": "MIA",
+   "teamName": "Miami Dolphins",
+   "teamSource": "ESPN box week 10 (event 401873059)",
+   "pos": "RB",
+   "jersey": 26,
+   "rosterStatus": "active",
+   "rosterStatusSource": "ESPN box week 10 (event 401873059)",
+   "statusLabel": null,
+   "depthStatus": "Rotation",
+   "boxbotRoster": true,
+   "boxbotName": "Kaytron Allen",
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "MIA",
+    "event": "401873059"
+   },
+   "conflicts": [
+    {
+     "field": "team",
+     "values": {
+      "site": "WAS",
+      "espnBox": "MIA"
+     },
+     "resolved": "espnBox",
+     "evidence": "week 10 event 401873059"
+    }
+   ],
+   "site": {
+    "views": {
+     "alumni": 24,
+     "boxbotRoster": 37
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 1,
+     "draft": "2026 R6",
+     "status": "Rotation",
+     "featured": false,
+     "fantasyRelevant": true,
+     "week1": {
+      "result": "L 20-37 at DAL",
+      "pass": "-",
+      "rush": "5 att, 24 yds",
+      "recLine": "-",
+      "note": "",
+      "snaps": 1,
+      "ppr": 2.4
+     },
+     "fantasy": {
+      "week1PPR": 2.4,
+      "proj": 3.6
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4361411",
+   "id": "freiermuth",
+   "espnId": "4361411",
+   "name": "Pat Freiermuth",
+   "school": "pennstate",
+   "schoolName": "Penn State",
+   "brand": "ProLions",
+   "league": "NFL",
+   "team": "PIT",
+   "teamName": "Pittsburgh Steelers",
+   "teamSource": "ESPN box week 10 (event 401873064)",
+   "pos": "TE",
+   "jersey": 88,
+   "rosterStatus": "active",
+   "rosterStatusSource": "ESPN box week 10 (event 401873064)",
+   "statusLabel": null,
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Pat Freiermuth",
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "PIT",
+    "event": "401873064"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "alumni": 25,
+     "boxbotRoster": 36
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 6,
+     "draft": "2021 R2",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "week1": {
+      "result": "L 3-20 at NE",
+      "pass": "-",
+      "rush": "-",
+      "recLine": "4 tgt, 4 rec, 32 yds, 0 TD",
+      "note": "",
+      "snaps": 1,
+      "ppr": 7.2
+     },
+     "fantasy": {
+      "week1PPR": 7.2,
+      "proj": 8.8
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4685555",
+   "id": "singleton",
+   "espnId": "4685555",
+   "name": "Nicholas Singleton",
+   "school": "pennstate",
+   "schoolName": "Penn State",
+   "brand": "ProLions",
+   "league": "NFL",
+   "team": "TEN",
+   "teamName": "Tennessee Titans",
+   "teamSource": "alumni.js",
+   "pos": "RB",
+   "jersey": 35,
+   "rosterStatus": "unverified",
+   "rosterStatusSource": null,
+   "statusLabel": null,
+   "depthStatus": "Rotation",
+   "boxbotRoster": true,
+   "boxbotName": "Nicholas Singleton",
+   "lastBox": {
+    "week": 4,
+    "espnTeam": "TEN",
+    "event": "401872973"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "alumni": 26,
+     "boxbotRoster": 38
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 1,
+     "draft": "2026",
+     "status": "Rotation",
+     "featured": false,
+     "fantasyRelevant": true,
+     "week1": {
+      "result": "L 20-24 vs PHI",
+      "pass": "-",
+      "rush": "4 att, 10 yds",
+      "recLine": "-",
+      "note": "",
+      "snaps": 1,
+      "ppr": 1
+     },
+     "fantasy": {
+      "week1PPR": 1,
+      "proj": 4
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4431459",
+   "id": "warren",
+   "espnId": "4431459",
+   "name": "Tyler Warren",
+   "school": "pennstate",
+   "schoolName": "Penn State",
+   "brand": "ProLions",
+   "league": "NFL",
+   "team": "IND",
+   "teamName": "Indianapolis Colts",
+   "teamSource": "ESPN box week 10 (event 401873059)",
+   "pos": "TE",
+   "jersey": 85,
+   "rosterStatus": "active",
+   "rosterStatusSource": "ESPN box week 10 (event 401873059)",
+   "statusLabel": null,
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Tyler Warren",
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "IND",
+    "event": "401873059"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "alumni": 27,
+     "boxbotRoster": 40
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 2,
+     "draft": "2025 R1",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "week1": {
+      "result": "L 30-33 OT at KC",
+      "pass": "-",
+      "rush": "-",
+      "recLine": "6 tgt, 6 rec, 21 yds, 1 TD",
+      "note": "",
+      "snaps": 1,
+      "ppr": 14.1
+     },
+     "fantasy": {
+      "week1PPR": 14.1,
+      "proj": 11.5
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4725996",
+   "id": "acarter",
+   "espnId": "4725996",
+   "name": "Abdul Carter",
+   "school": "pennstate",
+   "schoolName": "Penn State",
+   "brand": "ProLions",
+   "league": "NFL",
+   "team": "NYG",
+   "teamName": "New York Giants",
+   "teamSource": "ESPN box week 10 (event 401873052)",
+   "pos": "OLB",
+   "jersey": 51,
+   "rosterStatus": "active",
+   "rosterStatusSource": "ESPN box week 10 (event 401873052)",
+   "statusLabel": null,
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Abdul Carter",
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "NYG",
+    "event": "401873052"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "alumni": 28,
+     "boxbotRoster": 41
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 2,
+     "draft": "2025 R1 #3",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": false,
+     "week1": {
+      "result": "L 6-28 at LAR",
+      "pass": "-",
+      "rush": "-",
+      "recLine": "-",
+      "note": "",
+      "snaps": 55,
+      "def": "3 tackles, 1 sack, 1 TFL",
+      "tackles": 3,
+      "sacks": 1
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4570044",
+   "id": "jbrisker",
+   "espnId": "4570044",
+   "name": "Jaquan Brisker",
+   "school": "pennstate",
+   "schoolName": "Penn State",
+   "brand": "ProLions",
+   "league": "NFL",
+   "team": "PIT",
+   "teamName": "Pittsburgh Steelers",
+   "teamSource": "ESPN box week 10 (event 401873064)",
+   "pos": "S",
+   "jersey": 9,
+   "rosterStatus": "active",
+   "rosterStatusSource": "ESPN box week 10 (event 401873064)",
+   "statusLabel": null,
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Jaquan Brisker",
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "PIT",
+    "event": "401873064"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "alumni": 29,
+     "boxbotRoster": 42
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 5,
+     "draft": "2022 R2",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": false,
+     "week1": {
+      "result": "L 3-20 at NE",
+      "pass": "-",
+      "rush": "-",
+      "recLine": "-",
+      "note": "",
+      "snaps": 54,
+      "def": "6 tackles",
+      "tackles": 6
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:3929630",
+   "id": "barkley",
+   "espnId": "3929630",
+   "name": "Saquon Barkley",
+   "school": "pennstate",
+   "schoolName": "Penn State",
+   "brand": "ProLions",
+   "league": "NFL",
+   "team": "PHI",
+   "teamName": "Philadelphia Eagles",
+   "teamSource": "ESPN box week 9 (event 401873044)",
+   "pos": "RB",
+   "jersey": 26,
+   "rosterStatus": "active",
+   "rosterStatusSource": "ESPN box week 9 (event 401873044)",
+   "statusLabel": null,
+   "depthStatus": "Starter",
+   "boxbotRoster": true,
+   "boxbotName": "Saquon Barkley",
+   "lastBox": {
+    "week": 9,
+    "espnTeam": "PHI",
+    "event": "401873044"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "alumni": 30,
+     "boxbotRoster": 35
+    },
+    "dictionaryRow": null,
+    "profile": {
+     "years": 9,
+     "draft": "2018 R1",
+     "status": "Starter",
+     "featured": true,
+     "fantasyRelevant": true,
+     "week1": {
+      "result": "W 24-20 at TEN",
+      "pass": "-",
+      "rush": "4 att, 9 yds",
+      "recLine": "2 tgt, 1 rec, 11 yds, 0 TD",
+      "note": "",
+      "snaps": 1,
+      "ppr": 3
+     },
+     "fantasy": {
+      "week1PPR": 3,
+      "proj": 16.4
+     }
+    }
+   }
+  },
+  {
+   "uid": "espn:4427479",
+   "id": "jamalhill",
+   "espnId": "4427479",
+   "name": "Jamal Hill",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "HOU",
+   "teamName": "Houston Texans",
+   "teamSource": "dictionary.js",
+   "pos": "LB",
+   "jersey": 56,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": null,
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": {
+    "week": 4,
+    "espnTeam": "HOU",
+    "event": "401872967"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "dictionary": 36
+    },
+    "dictionaryRow": {
+     "pos": "LB",
+     "jersey": 56,
+     "yearsAtOregon": "2019-23",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {}
+   }
+  },
+  {
+   "uid": "espn:4691043",
+   "id": "reed",
+   "espnId": "4691043",
+   "name": "Nikko Reed",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "NYG",
+   "teamName": "New York Giants",
+   "teamSource": "dictionary.js",
+   "pos": "DB",
+   "jersey": 35,
+   "rosterStatus": "active",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "53-man",
+   "depthStatus": null,
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": {
+    "week": 3,
+    "espnTeam": "NYG",
+    "event": "401872956"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "dictionary": 37
+    },
+    "dictionaryRow": {
+     "pos": "DB",
+     "jersey": 35,
+     "yearsAtOregon": "2023-24",
+     "roster": "active",
+     "statusLabel": "53-man"
+    },
+    "profile": {}
+   }
+  },
+  {
+   "uid": "espn:2971281",
+   "id": "brown",
+   "espnId": "2971281",
+   "name": "Pharaoh Brown",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "IND",
+   "teamName": "Indianapolis Colts",
+   "teamSource": "dictionary.js",
+   "pos": "TE",
+   "jersey": 49,
+   "rosterStatus": "practice",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "Practice squad",
+   "depthStatus": null,
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": {
+    "week": 6,
+    "espnTeam": "IND",
+    "event": "401873003"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "dictionary": 38
+    },
+    "dictionaryRow": {
+     "pos": "TE",
+     "jersey": 49,
+     "yearsAtOregon": "2012-16",
+     "roster": "practice",
+     "statusLabel": "Practice squad"
+    },
+    "profile": {}
+   }
+  },
+  {
+   "uid": "site:pherbert",
+   "id": "pherbert",
+   "espnId": null,
+   "name": "Patrick Herbert",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "LAC",
+   "teamName": "Los Angeles Chargers",
+   "teamSource": "dictionary.js",
+   "pos": "TE",
+   "jersey": 81,
+   "rosterStatus": "practice",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "Practice squad",
+   "depthStatus": null,
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": null,
+   "conflicts": [],
+   "site": {
+    "views": {
+     "dictionary": 39
+    },
+    "dictionaryRow": {
+     "pos": "TE",
+     "jersey": 81,
+     "yearsAtOregon": "2019-24",
+     "roster": "practice",
+     "statusLabel": "Practice squad"
+    },
+    "profile": {}
+   }
+  },
+  {
+   "uid": "site:sjones",
+   "id": "sjones",
+   "espnId": null,
+   "name": "Steven Jones",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "PIT",
+   "teamName": "Pittsburgh Steelers",
+   "teamSource": "dictionary.js",
+   "pos": "OL",
+   "jersey": 79,
+   "rosterStatus": "practice",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "Practice squad",
+   "depthStatus": null,
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": null,
+   "conflicts": [],
+   "site": {
+    "views": {
+     "dictionary": 40
+    },
+    "dictionaryRow": {
+     "pos": "OL",
+     "jersey": 79,
+     "yearsAtOregon": "2018-23",
+     "roster": "practice",
+     "statusLabel": "Practice squad"
+    },
+    "profile": {}
+   }
+  },
+  {
+   "uid": "site:muhammad",
+   "id": "muhammad",
+   "espnId": null,
+   "name": "Jabbar Muhammad",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "JAC",
+   "teamName": "Jacksonville Jaguars",
+   "teamSource": "dictionary.js",
+   "pos": "DB",
+   "jersey": 37,
+   "rosterStatus": "practice",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "Practice squad",
+   "depthStatus": null,
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": null,
+   "conflicts": [],
+   "site": {
+    "views": {
+     "dictionary": 41
+    },
+    "dictionaryRow": {
+     "pos": "DB",
+     "jersey": 37,
+     "yearsAtOregon": "2024",
+     "roster": "practice",
+     "statusLabel": "Practice squad"
+    },
+    "profile": {}
+   }
+  },
+  {
+   "uid": "site:throckmorton",
+   "id": "throckmorton",
+   "espnId": null,
+   "name": "Calvin Throckmorton",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "DEN",
+   "teamName": "Denver Broncos",
+   "teamSource": "dictionary.js",
+   "pos": "OL",
+   "jersey": 76,
+   "rosterStatus": "practice",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "Practice squad",
+   "depthStatus": null,
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": null,
+   "conflicts": [],
+   "site": {
+    "views": {
+     "dictionary": 42
+    },
+    "dictionaryRow": {
+     "pos": "OL",
+     "jersey": 76,
+     "yearsAtOregon": "2015-19",
+     "roster": "practice",
+     "statusLabel": "Practice squad"
+    },
+    "profile": {}
+   }
+  },
+  {
+   "uid": "site:whittington",
+   "id": "whittington",
+   "espnId": null,
+   "name": "Noah Whittington",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "HOU",
+   "teamName": "Houston Texans",
+   "teamSource": "dictionary.js",
+   "pos": "RB",
+   "jersey": 26,
+   "rosterStatus": "practice",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "Practice squad",
+   "depthStatus": null,
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": null,
+   "conflicts": [],
+   "site": {
+    "views": {
+     "dictionary": 43
+    },
+    "dictionaryRow": {
+     "pos": "RB",
+     "jersey": 26,
+     "yearsAtOregon": "2022-25",
+     "roster": "practice",
+     "statusLabel": "Practice squad"
+    },
+    "profile": {}
+   }
+  },
+  {
+   "uid": "site:basso",
+   "id": "basso",
+   "espnId": null,
+   "name": "Luke Basso",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "DEN",
+   "teamName": "Denver Broncos",
+   "teamSource": "dictionary.js",
+   "pos": "LS",
+   "jersey": "",
+   "rosterStatus": "practice",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "Practice squad",
+   "depthStatus": null,
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": null,
+   "conflicts": [],
+   "site": {
+    "views": {
+     "dictionary": 44
+    },
+    "dictionaryRow": {
+     "pos": "LS",
+     "jersey": "",
+     "yearsAtOregon": "2021-25",
+     "roster": "practice",
+     "statusLabel": "Practice squad"
+    },
+    "profile": {}
+   }
+  },
+  {
+   "uid": "site:gabriel",
+   "id": "gabriel",
+   "espnId": null,
+   "name": "Dillon Gabriel",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "CLE",
+   "teamName": "Cleveland Browns",
+   "teamSource": "dictionary.js",
+   "pos": "QB",
+   "jersey": 6,
+   "rosterStatus": "ir",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "Reserve/Injured",
+   "depthStatus": null,
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": null,
+   "conflicts": [],
+   "site": {
+    "views": {
+     "dictionary": 45
+    },
+    "dictionaryRow": {
+     "pos": "QB",
+     "jersey": 6,
+     "yearsAtOregon": "2024",
+     "roster": "ir",
+     "statusLabel": "Reserve/Injured"
+    },
+    "profile": {}
+   }
+  },
+  {
+   "uid": "site:taimani",
+   "id": "taimani",
+   "espnId": null,
+   "name": "Taki Taimani",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "MIN",
+   "teamName": "Minnesota Vikings",
+   "teamSource": "dictionary.js",
+   "pos": "DL",
+   "jersey": 94,
+   "rosterStatus": "ir",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "Reserve/Injured",
+   "depthStatus": null,
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": null,
+   "conflicts": [],
+   "site": {
+    "views": {
+     "dictionary": 46
+    },
+    "dictionaryRow": {
+     "pos": "DL",
+     "jersey": 94,
+     "yearsAtOregon": "2022-23",
+     "roster": "ir",
+     "statusLabel": "Reserve/Injured"
+    },
+    "profile": {}
+   }
+  },
+  {
+   "uid": "espn:4240677",
+   "id": "riley",
+   "espnId": "4240677",
+   "name": "Jordon Riley",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "GB",
+   "teamName": "Green Bay Packers",
+   "teamSource": "ESPN box week 10 (event 401873060)",
+   "pos": "DT",
+   "jersey": 97,
+   "rosterStatus": "pup",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "Reserve/PUP",
+   "depthStatus": null,
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": {
+    "week": 10,
+    "espnTeam": "GB",
+    "event": "401873060"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "dictionary": 47
+    },
+    "dictionaryRow": {
+     "pos": "DT",
+     "jersey": 97,
+     "yearsAtOregon": "2022",
+     "roster": "pup",
+     "statusLabel": "Reserve/PUP"
+    },
+    "profile": {}
+   }
+  },
+  {
+   "uid": "espn:4430822",
+   "id": "noahsewell",
+   "espnId": "4430822",
+   "name": "Noah Sewell",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "CHI",
+   "teamName": "Chicago Bears",
+   "teamSource": "ESPN box week 9 (event 401873050)",
+   "pos": "LB",
+   "jersey": 44,
+   "rosterStatus": "pup",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "Reserve/PUP",
+   "depthStatus": null,
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": {
+    "week": 9,
+    "espnTeam": "CHI",
+    "event": "401873050"
+   },
+   "conflicts": [],
+   "site": {
+    "views": {
+     "dictionary": 48
+    },
+    "dictionaryRow": {
+     "pos": "LB",
+     "jersey": 44,
+     "yearsAtOregon": "2020-22",
+     "roster": "pup",
+     "statusLabel": "Reserve/PUP"
+    },
+    "profile": {}
+   }
+  },
+  {
+   "uid": "site:world",
+   "id": "world",
+   "espnId": null,
+   "name": "Isaiah World",
+   "school": "oregon",
+   "schoolName": "Oregon",
+   "brand": "ProDucks",
+   "league": "NFL",
+   "team": "LAC",
+   "teamName": "Los Angeles Chargers",
+   "teamSource": "dictionary.js",
+   "pos": "OL",
+   "jersey": 67,
+   "rosterStatus": "pup",
+   "rosterStatusSource": "dictionary.js (GoDucks NFL #ProDucks, 2026-09-22)",
+   "statusLabel": "Reserve/PUP",
+   "depthStatus": null,
+   "boxbotRoster": false,
+   "boxbotName": null,
+   "lastBox": null,
+   "conflicts": [],
+   "site": {
+    "views": {
+     "dictionary": 49
+    },
+    "dictionaryRow": {
+     "pos": "OL",
+     "jersey": 67,
+     "yearsAtOregon": "2025",
+     "roster": "pup",
+     "statusLabel": "Reserve/PUP"
+    },
+    "profile": {}
+   }
+  }
+ ]
+}
