@@ -67,9 +67,12 @@ ROSTER.forEach(function (row) {
   NAME_TO_ID[norm(row[1])] = row[0];
 });
 
+/* Name key: lower-case, drop a trailing generational suffix (Jr., Sr., II, III, IV, V),
+   then strip punctuation/spaces. "James Cook III" and "James Cook" share one key. */
 function norm(s) {
   return String(s || "")
     .toLowerCase()
+    .replace(/[,\s]+(jr|sr|ii|iii|iv|v)\.?\s*$/, "")
     .replace(/[^a-z0-9]/g, "");
 }
 function num(v) {
@@ -179,19 +182,21 @@ function mergePlayer(bucket, row, game) {
     const rec = takeStat(m, ["rec", "receptions"]);
     const yds = takeStat(m, ["yds", "receivingyards"]);
     const td = takeStat(m, ["td", "receivingtouchdowns"]);
-    const tgt = takeStat(m, ["tgts", "targets"]);
-    b.tgt = num(tgt);
+    /* ESPN key is receivingTargets (lower-cased to receivingtargets by parseBoxPlayers). */
+    const hasTgt = ["tgts", "targets", "receivingtargets"].some(function (k) { return m[k] != null && m[k] !== ""; });
+    const tgt = hasTgt ? takeStat(m, ["tgts", "targets", "receivingtargets"]) : null;
+    b.tgt = hasTgt ? num(tgt) : null;
     b.rec = num(rec);
     b.recYds = num(yds);
     b.recTD = num(td);
-    b.recLine = (tgt || rec) + " tgt, " + rec + " rec, " + yds + " yds, " + td + " TD";
+    b.recLine = (hasTgt ? tgt : "-") + " tgt, " + rec + " rec, " + yds + " yds, " + td + " TD";
     b.ppr = (b.ppr || 0) + pprRushRec(0, 0, num(rec), num(yds), num(td));
   }
   if (cat.indexOf("defen") >= 0 || cat.indexOf("tackle") >= 0) {
-    const tot = takeStat(m, ["tot", "total", "tackles", "total tackles"]);
+    const tot = takeStat(m, ["tot", "total", "tackles", "total tackles", "totaltackles"]);
     const sacks = takeStat(m, ["sack", "sacks"]);
     const ints = takeStat(m, ["int", "interceptions"]);
-    const pd = takeStat(m, ["pd", "passes defended", "pdef"]);
+    const pd = takeStat(m, ["pd", "passes defended", "pdef", "passesdefended"]);
     const bits = [];
     if (tot) bits.push(tot + " tackles");
     if (num(sacks)) bits.push(sacks + " sack");
@@ -200,6 +205,14 @@ function mergePlayer(bucket, row, game) {
     b.def = bits.join(", ") || "played";
     b.tackles = num(tot);
     b.sacks = num(sacks);
+  }
+  /* ESPN puts INTs in their own "interceptions" category, not in "defensive". */
+  if (cat === "interceptions") {
+    const picks = takeStat(m, ["int", "interceptions"]);
+    if (num(picks)) {
+      b.ints = num(picks);
+      b.def = (b.def && b.def !== "played" ? b.def + ", " : "") + picks + " INT";
+    }
   }
 }
 
