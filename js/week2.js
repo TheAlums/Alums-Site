@@ -59,7 +59,7 @@
     stroud: { result: "L 6-20 vs CIN", pass: "30/55, 353 yds, 0 TD, 0 INT", rush: "3 att, 29 yds", snaps: 1, ppr: 17.0 },
     olave: { result: "W 24-17 at BAL", recLine: recLine(10, 8, 86, 1), tgt: 10, rec: 8, recYds: 86, recTD: 1, snaps: 1, ppr: 22.6 },
     gwilson: { result: "L 17-20 OT vs GB", recLine: recLine(7, 5, 57, 1), tgt: 7, rec: 5, recYds: 57, recTD: 1, snaps: 1, ppr: 16.7 },
-    jsn: { result: "W 31-7 at ARI", recLine: "155 yds", recYds: 155, snaps: 1, ppr: 21.5 },
+    jsn: { result: "W 31-7 at ARI", recLine: recLine(11, 9, 155, 3), tgt: 11, rec: 9, recYds: 155, recTD: 3, snaps: 1, ppr: 42.5 }, /* ESPN event 401872943: 11 tgt, 9 rec, 155 yds, 3 TD -> 9 + 15.5 + 18 = 42.5 */
     mclaurin: { result: "L 20-37 at DAL", recLine: recLine(9, 2, 50, 0), tgt: 9, rec: 2, recYds: 50, recTD: 0, snaps: 1, ppr: 7.0 },
     judkins: { result: "W 23-19 at TB", rush: "12 att, 21 yds", recLine: recLine(5, 5, 27, 0), tgt: 5, rec: 5, recYds: 27, recTD: 0, snaps: 1, ppr: 9.8 },
     henderson: { result: "W 20-3 vs PIT", rush: "16 att, 76 yds, 1 TD", snaps: 1, ppr: 13.6 },
