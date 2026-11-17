@@ -45,7 +45,6 @@
     stroud: { result: "L 24-27 at CLE", pass: "20/38, 211 yds, 3 TD, 1 INT", rush: "3 att, 20 yds", snaps: 1, ppr: 20.4, espnId: "4432577", event: "401873056" },
     thibodeaux: { result: "L 21-24 vs WSH", def: "8 tackles", tackles: 8, sacks: 0, snaps: 1, espnId: "4426326", event: "401873052" },
     warren: { result: "W 24-22 vs MIA", rush: "1 att, 3 yds", recLine: "3 tgt, 2 rec, 1 yds, 0 TD", snaps: 1, ppr: 2.4, espnId: "4431459", event: "401873059" },
-    williams: { result: "L 10-30 vs MIN", def: "8 tackles, 1 PD", tackles: 8, sacks: 0, snaps: 1, espnId: "4428863", event: "401873060" },
     young: { result: "W 20-17 at NO", pass: "17/30, 200 yds, 0 TD, 0 INT", rush: "1 att, 1 yds", snaps: 1, ppr: 8.1, espnId: "4685720", event: "401873055" }
   };
   function apply() {
@@ -56,7 +55,7 @@
       if (!box && /juwan johnson/i.test(p.name || "")) box = w10.juwan;
       if (!box && /kenyon sadiq/i.test(p.name || "")) box = w10.sadiq;
       if (!box && /smith-njigba/i.test(p.name || "")) box = w10.jsn;
-      if (!box && /evan williams/i.test(p.name || "")) box = w10.evanwilliams || w10.williams;
+      if (!box && /evan williams/i.test(p.name || "")) box = w10.evanwilliams;
       if (!box && /^james cook/i.test(p.name || "")) box = w10.jcook;
       if (box) {
         p.weeks[10] = box;

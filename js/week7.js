@@ -51,7 +51,6 @@
     thibodeaux: { result: "W 27-21 at HOU", def: "4 tackles", tackles: 4, sacks: 0, snaps: 1, espnId: "4426326", event: "401873016" },
     thieneman: { result: "W 30-24 vs NE", def: "8 tackles, 0.5 sack", tackles: 8, sacks: 0.5, snaps: 1, espnId: "4954445", event: "401873010" },
     waddle: { result: "W 30-16 at ARI", recLine: "7 tgt, 4 rec, 48 yds, 0 TD", snaps: 1, ppr: 8.8, espnId: "4372016", event: "401873019" },
-    williams: { result: "L 17-20 at DET", def: "9 tackles, 1 PD", tackles: 9, sacks: 0, snaps: 1, espnId: "4428863", event: "401873020" },
     young: { result: "L 13-43 vs TB", pass: "14/27, 163 yds, 1 TD, 2 INT", rush: "1 att, 9 yds", snaps: 1, ppr: 7.4, espnId: "4685720", event: "401873018" },
     zbranch: { result: "W 29-20 vs SF", rush: "1 att, 8 yds", recLine: "2 tgt, 1 rec, 9 yds, 0 TD", snaps: 1, ppr: 2.7, espnId: "4870612", event: "401873017" }
   };
@@ -63,7 +62,7 @@
       if (!box && /juwan johnson/i.test(p.name || "")) box = w7.juwan;
       if (!box && /kenyon sadiq/i.test(p.name || "")) box = w7.sadiq;
       if (!box && /smith-njigba/i.test(p.name || "")) box = w7.jsn;
-      if (!box && /evan williams/i.test(p.name || "")) box = w7.evanwilliams || w7.williams;
+      if (!box && /evan williams/i.test(p.name || "")) box = w7.evanwilliams;
       if (!box && /^james cook/i.test(p.name || "")) box = w7.jcook;
       if (box) {
         p.weeks[7] = box;
