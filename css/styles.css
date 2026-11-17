@@ -93,3 +93,9 @@ body.lions .hero, body.lions .ticker { background: #041E42 !important; }
 @media (max-width: 800px) {
   .shop-grid, .grid-3, .grid-2, .schools-grid { grid-template-columns: 1fr !important; }
 }
+
+/* This Season view (js/season.js) */
+[data-view][hidden] { display: none !important; }
+.season-boards { grid-template-columns: 1fr 1fr !important; }
+#season-weekly td.season-win { font-weight: 700; background: #FEE123; color: #111; }
+#season-weekly .spark { color: #111; vertical-align: middle; }

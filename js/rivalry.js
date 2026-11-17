@@ -88,19 +88,34 @@
     renderPosWars();
     renderKings();
   }
+  /* One active view at a time: a single week (cup, position wars, kings) or This Season (js/season.js). */
+  function setMode(mode) {
+    FLOCK.viewMode = mode === "season" ? "season" : "week";
+    document.querySelectorAll("[data-view]").forEach(function (sec) {
+      sec.hidden = sec.getAttribute("data-view") !== FLOCK.viewMode;
+    });
+    if (FLOCK.viewMode === "season" && FLOCK.renderSeason) FLOCK.renderSeason();
+  }
+  FLOCK.setViewMode = setMode;
   function bootToggle() {
     const bar = document.querySelector("#week-toggle");
     if (!bar) return;
     FLOCK.viewWeek = FLOCK.viewWeek || 10;
     const current = FLOCK.viewWeek;
+    const seasonOn = FLOCK.viewMode === "season";
     bar.innerHTML = WEEKS.map(function (n) {
-      return "<button class=\"filter" + (n === current ? " active" : "") + "\" data-week=\"" + n + "\">Week " + n + "</button>";
-    }).join("");
+      return "<button class=\"filter" + (!seasonOn && n === current ? " active" : "") + "\" data-week=\"" + n + "\">Week " + n + "</button>";
+    }).join("") + "<button class=\"filter" + (seasonOn ? " active" : "") + "\" data-week=\"season\">This Season</button>";
     bar.onclick = function (e) {
       const btn = e.target.closest(".filter");
       if (!btn) return;
       bar.querySelectorAll(".filter").forEach(function (b) { b.classList.remove("active"); });
       btn.classList.add("active");
+      if (btn.dataset.week === "season") {
+        setMode("season");
+        return;
+      }
+      setMode("week");
       FLOCK.viewWeek = Number(btn.dataset.week);
       if (FLOCK.setViewWeek) FLOCK.setViewWeek(FLOCK.viewWeek);
       if (FLOCK.pullBoxFeed) FLOCK.pullBoxFeed(FLOCK.viewWeek);
@@ -112,6 +127,7 @@
     /* re-run every week sheet so players added after the week files (alumni.js) get stamped too */
     if (FLOCK.setViewWeek) FLOCK.setViewWeek(FLOCK.viewWeek);
     bootToggle();
+    setMode(FLOCK.viewMode || "week");
     draw();
   });
   document.addEventListener("flock:week", draw);

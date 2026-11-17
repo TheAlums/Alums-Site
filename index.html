@@ -6,7 +6,7 @@
   <title>The Alums - Whose alumni won Sunday?</title>
   <meta name="description" content="Week scoreboard for college trees in the NFL. Oregon, Alabama, Ohio State, Georgia, Penn State." />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=41" />
+  <link rel="stylesheet" href="css/styles.css?v=44" />
 </head>
 <body class="network">
   <header class="nav">
@@ -37,7 +37,40 @@
       <div class="filters" id="week-toggle" style="margin-top:22px"></div>
     </div>
   </section>
-  <section class="section">
+  <section class="section" data-view="season" id="season" hidden>
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>This season</h2>
+          <p>Every week's cup score, added up. Two boards, two ways to win: most total points, and most weeks won.</p>
+        </div>
+      </div>
+      <div class="grid-2 season-boards">
+        <div>
+          <h3>Most season points</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>#</th><th>Channel</th><th>School</th><th>Season PPR</th></tr></thead>
+              <tbody id="season-points"></tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <h3>Most weeks won</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>#</th><th>Channel</th><th>School</th><th>Weeks won</th><th>Weeks</th></tr></thead>
+              <tbody id="season-wins"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <h3 style="margin-top:22px">Week by week</h3>
+      <div class="table-wrap"><table id="season-weekly"></table></div>
+      <p class="footnote" id="season-note"></p>
+    </div>
+  </section>
+  <section data-view="week" class="section">
     <div class="wrap">
       <div class="section-head">
         <div>
@@ -55,7 +88,7 @@
       </div>
     </div>
   </section>
-  <section class="section" style="padding-top:0">
+  <section data-view="week" class="section" style="padding-top:0">
     <div class="wrap">
       <div class="section-head">
         <div>
@@ -66,7 +99,7 @@
       <div id="pos-wars" class="grid-2"></div>
     </div>
   </section>
-  <section class="section" style="padding-top:0">
+  <section data-view="week" class="section" style="padding-top:0">
     <div class="wrap">
       <div class="section-head">
         <div>
@@ -118,6 +151,7 @@
   <script src="js/week10.js"></script>
   <script src="js/alumni.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/season.js"></script>
   <script src="js/rivalry.js"></script>
   <script src="js/box-feed.js"></script>
   <script src="js/tidy.js"></script>
