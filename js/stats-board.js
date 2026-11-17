@@ -167,7 +167,9 @@
   function boot() {
     const el = $("#pos-filters");
     if (!el) return;
-    const weeks = [1, 2];
+    /* re-run every week sheet so players added after the week files (alumni.js) get stamped */
+    if (FLOCK.setViewWeek) FLOCK.setViewWeek(selectedWeek);
+    const weeks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     const weekBar = document.createElement("div");
     weekBar.className = "filters week-filters";
     weekBar.id = "week-filters";
@@ -179,6 +181,7 @@
       const btn = e.target.closest(".filter");
       if (!btn) return;
       selectedWeek = Number(btn.dataset.week);
+      if (FLOCK.setViewWeek) FLOCK.setViewWeek(selectedWeek);
       weekBar.querySelectorAll(".filter").forEach(function (b) { b.classList.remove("active"); });
       btn.classList.add("active");
       draw();

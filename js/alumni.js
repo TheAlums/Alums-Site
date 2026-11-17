@@ -74,5 +74,7 @@
   extra.forEach(function (row) {
     if (!FLOCK.players.some(function (x) { return x.id === row.id; })) p(row);
   });
-  if (FLOCK.stampWeeks) FLOCK.stampWeeks();
+  /* re-run every loaded week sheet (not just weeks 1-2) so these players get weeks 3-10 too */
+  if (FLOCK.setViewWeek) FLOCK.setViewWeek(FLOCK.viewWeek);
+  else if (FLOCK.stampWeeks) FLOCK.stampWeeks();
 })();
