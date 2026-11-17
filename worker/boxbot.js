@@ -13,6 +13,7 @@ const HEADERS = {
   "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
 };
 
+/* BEGIN ROSTER (generated from data/alumni.json by scripts/build-alumni.mjs) */
 const ROSTER = [
   ["herbert", "Justin Herbert"],
   ["nix", "Bo Nix"],
@@ -61,6 +62,7 @@ const ROSTER = [
   ["juwan", "Juwan Johnson"],
   ["sadiq", "Kenyon Sadiq"]
 ];
+/* END ROSTER */
 
 const NAME_TO_ID = {};
 ROSTER.forEach(function (row) {
