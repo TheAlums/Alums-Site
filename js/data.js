@@ -718,7 +718,7 @@ FLOCK.players = [
     fantasy: { week1PPR: 1.5, proj: 2.0, adp: "—", grade: "Sit" }
   },
   {
-    id: "williams",
+    id: "evanwilliams",
     name: "Evan Williams",
     pos: "S",
     team: "GB",
@@ -956,7 +956,7 @@ FLOCK.news = [
     dek: "Four Oregon defensive backs opened as starters. Add Thieneman and the 2026 class and the pipeline is a DB factory now, too.",
     time: "Sep 12, 2026",
     author: "The Alums Desk",
-    playerIds: ["gonzalez", "lenoir", "holland", "williams", "thieneman"]
+    playerIds: ["gonzalez", "lenoir", "holland", "evanwilliams", "thieneman"]
   },
   {
     id: "n8",

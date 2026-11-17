@@ -57,7 +57,6 @@
     thieneman: { result: "L 7-31 at GB", def: "7 tackles, 1 TFL, 1 PD", tackles: 7, sacks: 0, snaps: 1, espnId: "4954445", event: "401872990" },
     waddle: { result: "W 23-17 at LAC", rush: "1 att, 9 yds", recLine: "5 tgt, 2 rec, 19 yds, 0 TD", snaps: 1, ppr: 4.8, espnId: "4372016", event: "401872989" },
     warren: { result: "L 22-34 at PIT", rush: "1 att, 1 yds, 1 TD", recLine: "9 tgt, 7 rec, 83 yds, 0 TD", snaps: 1, ppr: 21.4, espnId: "4431459", event: "401872985" },
-    williams: { result: "W 31-7 vs CHI", def: "12 tackles", tackles: 12, sacks: 0, snaps: 1, espnId: "4428863", event: "401872990" },
     zbranch: { result: "L 23-30 vs BAL", recLine: "2 tgt, 2 rec, 15 yds, 0 TD", snaps: 1, ppr: 3.5, espnId: "4870612", event: "401872993" }
   };
   function apply() {
@@ -68,7 +67,7 @@
       if (!box && /juwan johnson/i.test(p.name || "")) box = w5.juwan;
       if (!box && /kenyon sadiq/i.test(p.name || "")) box = w5.sadiq;
       if (!box && /smith-njigba/i.test(p.name || "")) box = w5.jsn;
-      if (!box && /evan williams/i.test(p.name || "")) box = w5.evanwilliams || w5.williams;
+      if (!box && /evan williams/i.test(p.name || "")) box = w5.evanwilliams;
       if (!box && /^james cook/i.test(p.name || "")) box = w5.jcook;
       if (box) {
         p.weeks[5] = box;
