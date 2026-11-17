@@ -50,5 +50,38 @@
     thibodeaux: { result: "L 21-24 vs WSH", def: "8 tackles", tackles: 8, sacks: 0, snaps: 1, espnId: "4426326", event: "401873052" },
     warren: { result: "W 24-22 vs MIA", rush: "1 att, 3 yds", recLine: "3 tgt, 2 rec, 1 yds, 0 TD", snaps: 1, ppr: 2.4, espnId: "4431459", event: "401873059" },
     williams: { result: "L 10-30 vs MIN", def: "8 tackles, 1 PD", tackles: 8, sacks: 0, snaps: 1, espnId: "4428863", event: "401873060" },
-    young: { result: "W 20-17 at NO", pass: "17/30, 200 yds, 0 TD, 0 INT", rush: "1 att, 1 yds", snaps: 1, ppr: 8.1, espnId: "4685720", event: "401873065" }
+    young: { result: "W 20-17 at NO", pass: "17/30, 200 yds, 0 TD, 0 INT", rush: "1 att, 1 yds", snaps: 1, ppr: 8.1, espnId: "4685720", event: "401873055" }
   };
+  function apply() {
+    if (!FLOCK.players) return;
+    FLOCK.players.forEach(function (p) {
+      p.weeks = p.weeks || {};
+      var box = w10[p.id];
+      if (!box && /juwan johnson/i.test(p.name || "")) box = w10.juwan;
+      if (!box && /kenyon sadiq/i.test(p.name || "")) box = w10.sadiq;
+      if (!box && /smith-njigba/i.test(p.name || "")) box = w10.jsn;
+      if (!box && /evan williams/i.test(p.name || "")) box = w10.evanwilliams || w10.williams;
+      if (!box && /^james cook/i.test(p.name || "")) box = w10.jcook;
+      if (box) {
+        p.weeks[10] = box;
+      } else if (!p.weeks[10]) {
+        p.weeks[10] = { result: "-", snaps: 0, ppr: "-" };
+      }
+      if ((FLOCK.viewWeek || 10) === 10) {
+        p.week1 = p.weeks[10];
+        if (p.fantasy && typeof p.weeks[10].ppr === "number") p.fantasy.week1PPR = p.weeks[10].ppr;
+      }
+    });
+  }
+  apply();
+  var prev = FLOCK.setViewWeek;
+  FLOCK.setViewWeek = function (n) {
+    if (prev) prev(n);
+    else {
+      FLOCK.viewWeek = Number(n) || 10;
+      if (FLOCK.stampWeeks) FLOCK.stampWeeks();
+    }
+    apply();
+    document.dispatchEvent(new CustomEvent("flock:week"));
+  };
+})();
