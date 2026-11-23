@@ -15,7 +15,7 @@
   window.FLOCK = window.FLOCK || {};
   var SKILL = ["QB", "RB", "WR", "TE"];
   var BRAND = { oregon: "ProDucks", alabama: "ProTide", ohiostate: "ProBucks", georgia: "ProDawgs", pennstate: "ProLions" };
-  function weeks() { return FLOCK.seasonWeeks || [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; }
+  function weeks() { return FLOCK.seasonWeeks || [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]; }
   function r1(n) { return Math.round(n * 10) / 10; }
   function pprFor(p, w) {
     var box = (p && p.weeks && p.weeks[w]) || {};

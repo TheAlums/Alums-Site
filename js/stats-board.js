@@ -169,7 +169,7 @@
     if (!el) return;
     /* re-run every week sheet so players added after the week files (alumni.js) get stamped */
     if (FLOCK.setViewWeek) FLOCK.setViewWeek(selectedWeek);
-    const weeks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const weeks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
     const weekBar = document.createElement("div");
     weekBar.className = "filters week-filters";
     weekBar.id = "week-filters";
