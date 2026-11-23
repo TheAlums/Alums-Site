@@ -1,8 +1,8 @@
 (function () {
   const SKILL = ["QB", "RB", "WR", "TE"];
-  const WEEKS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const WEEKS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
   function weekBox(p) {
-    var n = (window.FLOCK && FLOCK.viewWeek) || 10;
+    var n = (window.FLOCK && FLOCK.viewWeek) || 11;
     if (p && p.weeks && p.weeks[n]) return p.weeks[n];
     return {};
   }
@@ -100,7 +100,7 @@
   function bootToggle() {
     const bar = document.querySelector("#week-toggle");
     if (!bar) return;
-    FLOCK.viewWeek = FLOCK.viewWeek || 10;
+    FLOCK.viewWeek = FLOCK.viewWeek || 11;
     const current = FLOCK.viewWeek;
     const seasonOn = FLOCK.viewMode === "season";
     bar.innerHTML = WEEKS.map(function (n) {
@@ -123,7 +123,7 @@
     };
   }
   window.addEventListener("load", function () {
-    FLOCK.viewWeek = FLOCK.viewWeek || 10;
+    FLOCK.viewWeek = FLOCK.viewWeek || 11;
     /* re-run every week sheet so players added after the week files (alumni.js) get stamped too */
     if (FLOCK.setViewWeek) FLOCK.setViewWeek(FLOCK.viewWeek);
     bootToggle();
